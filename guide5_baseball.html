@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Guide – Baseball · 4º ESO · PE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#C1121F;--accent2:#E63946;--accent3:#8B0D17;--dark:#080808;--mid:#111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,.75);--txt-dim:rgba(255,255,255,.4)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.06);z-index:200}.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(193,18,31,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}.logo-badge{background:var(--accent);color:white;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(193,18,31,.08)}
+.subnav{position:relative}
+.subnav-menu{display:none;position:absolute;top:115%;left:0;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:8px;overflow:hidden;min-width:220px;box-shadow:0 16px 40px rgba(0,0,0,.7);z-index:200}
+.subnav:hover .subnav-menu{display:block}
+.subnav-menu a{display:block;border-radius:0;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:white!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+.hero{min-height:92vh;background:var(--dark);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 5rem}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;animation:orbF 12s ease-in-out infinite}
+.hero-orb:nth-child(1){width:600px;height:600px;background:var(--accent);top:-15%;right:-10%}
+.hero-orb:nth-child(2){width:350px;height:350px;background:var(--accent3);bottom:5%;right:25%;animation-delay:5s}
+@keyframes orbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);background:rgba(193,18,31,.1);border:1px solid rgba(193,18,31,.2);padding:.35rem .9rem;border-radius:2px;display:inline-block;margin-bottom:2rem}
+.hero-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite;margin:0 .5rem;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(5rem,12vw,11rem);line-height:.82;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:1rem}
+h1.hero-title em{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-style:normal;font-size:.7em}
+.hero-sub{font-size:1.05rem;color:var(--txt);line-height:1.8;margin-bottom:2.5rem;max-width:560px}.hero-sub strong{color:white}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:white}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(193,18,31,.4)}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.inner{max-width:1060px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(193,18,31,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.92}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+.student-bar{background:rgba(193,18,31,.06);border:1px solid rgba(193,18,31,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.student-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.student-bar input{flex:1;min-width:160px;background:transparent;border:none;border-bottom:2px solid rgba(193,18,31,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.student-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.student-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(193,18,31,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(193,18,31,.06);border-color:rgba(193,18,31,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(193,18,31,.1);border-color:rgba(193,18,31,.35)}.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(193,18,31,.08);border:1px solid rgba(193,18,31,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(193,18,31,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(193,18,31,.04)}.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(193,18,31,.25);transform:translateY(-3px)}.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(193,18,31,.12);color:var(--accent);border:1px solid rgba(193,18,31,.2)}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.dh{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(193,18,31,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(193,18,31,.12);line-height:1;transition:color .2s}.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(193,18,31,.1);color:var(--accent);border:1px solid rgba(193,18,31,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:110px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(193,18,31,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(193,18,31,.1),rgba(193,18,31,.04));border:1px solid rgba(193,18,31,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s}
+.pdf-save{background:var(--accent);color:white}.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}.btn-submit:hover{transform:translateY(-1px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:white}.toast-ok{background:#22c55e}.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}.submit-box p strong{color:white}
+.submit-warn{background:rgba(193,18,31,.08);border:1px solid rgba(193,18,31,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}.submit-warn span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}.submit-confirm:hover{transform:translateY(-1px)}.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.wm{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.wm,.prog-wrap,.submit-modal,.hero,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #8B0D17!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){.hero{padding:5rem 2rem 3rem}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+/* ── Bloques teóricos 4ESO ── */
+.theory-block{background:var(--card);border-radius:10px;padding:2.5rem;margin:1.5rem 0;border:1px solid rgba(255,255,255,.05)}
+.theory-block+.theory-block{margin-top:1.5rem}
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="wm">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">Clear</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">Save PDF</button>
+  <button class="pdf-btn btn-submit" id="btnSubmit" onclick="openSubmitModal()">Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span><h2>Submit Guide</h2>
+      <p>Check your <strong>name and group</strong> before submitting.</p>
+      <div class="submit-warn"><span>Note:</span> Multiple choice answers are auto-graded. Open questions are reviewed by the teacher.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancel</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">Confirm submission</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span><h3>Submitted!</h3>
+      <p>Your answers have reached the teacher.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:white">Save PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#home">⚾ BASEBALL <span class="logo-badge">4 ESO · PE</span></a>
+    <nav>
+    <a href="#get-active">Get Active</a>
+    <div class="subnav">
+      <a href="#theory">Challenge Yourself</a>
+      <div class="subnav-menu">
+        <a href="#theory-a">History & Cultural Impact</a>
+        <a href="#theory-b">The Diamond & Rules</a>
+        <a href="#theory-c">The Nine Positions</a>
+        <a href="#theory-d">Batting & Pitching</a>
+        <a href="#theory-e">Fielding & Base Running</a>
+        <a href="#theory-f">Analytics & Physical Demands</a>
+      </div>
+    </div>
+    <a href="#train">Train &amp; Compete</a>
+    <a href="#evaluate">Evaluate</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+<div id="home" class="hero">
+  <div class="hero-orb"></div><div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Physical Education · 4 ESO · CLIL</div>
+    <h1 class="hero-title">BASE<em>BALL</em></h1>
+    <p class="hero-sub">Nine innings. Nine positions. One diamond. Discover <strong>America's pastime</strong> — a global game that combines individual skill, team strategy and statistical thinking.</p>
+    <div class="cta-row">
+      <a href="#get-active" class="btn btn-primary">Get Started</a>
+      <a href="#theory" class="btn btn-outline">Study</a>
+      <a href="#train" class="btn btn-outline">Train</a>
+    </div>
+  </div>
+</div>
+
+<section class="sect-dark" id="get-active">
+<div class="inner">
+  <p class="sect-label reveal">Section 01 · Get Active</p>
+  <h2 class="sect-title reveal">GET <span class="accent">ACTIVE</span></h2>
+  <div class="student-bar reveal">
+    <label for="st-name">Name</label><input type="text" id="st-name" placeholder="First and last name...">
+    <label for="st-group">Group</label><input type="text" id="st-group" placeholder="4 ESO" style="max-width:160px">
+    <label for="st-date">Date</label><input type="text" id="st-date" placeholder="dd/mm/yyyy" style="max-width:130px">
+  </div>
+  <p class="lead reveal">Baseball evolved from the English game "rounders" in the early 19th century. By the late 1800s it had become deeply embedded in American culture. Today, baseball is wildly popular throughout Latin America, Japan, South Korea and Cuba. The sport is increasingly seen in European school PE programmes for its unique combination of individual skill, team strategy and mathematical thinking — no other sport uses statistics like baseball.</p>
+  <div class="dh-row reveal">
+    <div class="dh"><div class="dh-num">1869</div><div class="dh-label">First professional team</div><div class="dh-desc">The Cincinnati Red Stockings became the first professional baseball team in 1869, marking the start of the professional era.</div></div>
+    <div class="dh"><div class="dh-num">1947</div><div class="dh-label">Jackie Robinson breaks the color barrier</div><div class="dh-desc">One of sport's most significant civil rights moments — Robinson became the first Black player in Major League Baseball.</div></div>
+    <div class="dh"><div class="dh-num">27.4m</div><div class="dh-label">Distance between bases</div><div class="dh-desc">90 feet (27.4 metres) — one of the game's iconic numbers, perfectly balanced for infield defence.</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Activity 1 - Prior Knowledge (open answer)</div>
+    <h4>Reflect before studying the unit</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">Have you played baseball, softball or rounders before? Describe your experience.</label><textarea class="field-input" id="a1q1" placeholder="Your experience..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">Baseball is described as "chess at speed". Why do you think strategy is so important in baseball compared to other team sports?</label><textarea class="field-input" id="a1q2" placeholder="Your analysis..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q3">Baseball has been described as a sport where individual performance and team success are deeply connected. Can you think of examples where this is true in other sports?</label><textarea class="field-input" id="a1q3" placeholder="Your examples..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ UNIT VIDEO</span>
+    <span class="ebi-vid-ttl">Baseball Basics — How the game works</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="0-NquT1DASM" data-title="Baseball Basics — How the game works" tabindex="0" role="button" aria-label="Play: Baseball Basics — How the game works">
+    <img src="https://img.youtube.com/vi/0-NquT1DASM/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/0-NquT1DASM/mqdefault.jpg'" alt="Baseball Basics — How the game works" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Click image to play · Or open it on</span>
+    <a href="https://www.youtube.com/watch?v=0-NquT1DASM" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="theory">
+<div class="inner">
+  <p class="sect-label reveal">Section 02 · Challenge Yourself</p>
+  <h2 class="sect-title reveal">BASEBALL: RULES, <span class="accent">SKILLS & HISTORY</span></h2>
+  <p class="lead reveal">Six blocks covering baseball's history, the diamond, rules, positions, techniques and cultural impact.</p></div>
+</section>
+
+<section class="sect-dark" id="theory-a">
+<div class="inner">
+    <p class="sect-label reveal">Section 02A · Theory Block</p>
+    <h3 class="subsect reveal">History & Cultural Impact</h3>
+    <p class="body-text reveal">Baseball's history is inseparable from American social and cultural history. The sport has been a mirror of society — including its darkest chapters.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">📜</span><div class="cc-title">1845 Rules</div><div class="cc-body">Alexander Cartwright wrote the first standardised baseball rules — the foundation of the modern game.</div><div class="cc-tag">Birth of modern baseball</div></div>
+      <div class="cc"><span class="cc-icon">🏆</span><div class="cc-title">1903 World Series</div><div class="cc-body">The first World Series was played in 1903 between the Pittsburgh Pirates and Boston Americans.</div><div class="cc-tag">Baseball's championship</div></div>
+      <div class="cc"><span class="cc-icon">✊</span><div class="cc-title">Jackie Robinson (1947)</div><div class="cc-body">Robinson broke the Major League Baseball color barrier — one of sport's most significant civil rights moments.</div><div class="cc-tag">Civil rights landmark</div></div>
+      <div class="cc"><span class="cc-icon">🌍</span><div class="cc-title">Global game</div><div class="cc-body">Dominican Republic, Venezuela, Cuba, Japan and South Korea are now major baseball powers.</div><div class="cc-tag">Beyond America</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 2 - History & Cultural Impact</div>
+      <h4>Check your knowledge of baseball's historical and cultural significance</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Who is credited with writing the first standardised rules of baseball, forming the foundation of the modern game?</div>
+      <div class="options" data-q="a2q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Abner Doubleday in 1839 in Cooperstown, New York</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">William G. Morgan at the YMCA in 1895</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Alexander Cartwright in 1845 — his rules established modern baseball's key elements</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Theodore Roosevelt who promoted the sport in 1905</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What was the historical significance of Jackie Robinson joining the Brooklyn Dodgers in 1947?</div>
+      <div class="options" data-q="a2q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">He was the first player from Latin America to play in the major leagues</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">He broke the colour barrier, becoming the first Black player in Major League Baseball in the modern era</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">He was the first player to be paid more than 1 million dollars per season</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">He was the first player to hit more than 60 home runs in a single season</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Which of the following countries has NOT become a major baseball power at international level?</div>
+      <div class="options" data-q="a2q3" data-correct="D">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Dominican Republic</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Japan</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">South Korea</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">India</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Why is baseball sometimes described as a sport where statistics are more prominent than in any other sport?</div>
+      <div class="options" data-q="a2q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Because baseball was the first sport to be broadcast on television in colour</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Because baseball generates more statistical categories per player action than any other team sport — batting average, ERA, OPS, WAR etc.</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the World Baseball Classic requires all teams to publish statistical databases</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Because the International Baseball Federation mandates statistical reporting for all affiliated leagues</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What event, established in 2006, has helped globalise baseball internationally?</div>
+      <div class="options" data-q="a2q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The Olympic Baseball Tournament re-introduction at Athens 2004</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The World Baseball Classic — a tournament featuring national teams from around the world</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The formation of the Caribbean Series between Latin American nations</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">The Major League Baseball International Showcase held annually in London</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Check Answers</button>
+      <div class="act-score" id="score-a2">Score: <strong id="score-a2-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-b">
+<div class="inner">
+    <p class="sect-label reveal">Section 02B · Theory Block</p>
+    <h3 class="subsect reveal">The Diamond & Rules</h3>
+    <p class="body-text reveal">The baseball diamond — four bases arranged in a square — is the defining symbol of the sport. Understanding how runs are scored and outs are made is the foundation of the game.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">💎</span><div class="cc-title">The Diamond</div><div class="cc-body">Four bases (home, 1st, 2nd, 3rd) arranged in a square. 27.4m between each base.</div><div class="cc-tag">The playing field</div></div>
+      <div class="cc"><span class="cc-icon">⚾</span><div class="cc-title">Innings</div><div class="cc-body">9 innings per game. Each team bats and fields once per inning. 3 outs end each half-inning.</div><div class="cc-tag">Game structure</div></div>
+      <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Scoring</div><div class="cc-body">A runner scores when they touch all four bases and return to home plate without being put out.</div><div class="cc-tag">How runs are scored</div></div>
+      <div class="cc"><span class="cc-icon">❌</span><div class="cc-title">Three ways to make an out</div><div class="cc-body">Strikeout (3 strikes), fly out (caught in the air), ground out (thrown to base before runner arrives).</div><div class="cc-tag">How outs are made</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 3 - The Diamond & Rules</div>
+      <h4>Understand how baseball is structured and how runs are scored</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>How many innings does a standard professional baseball game consist of?</div>
+      <div class="options" data-q="a3q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">6 innings</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">7 innings</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">9 innings</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">12 innings</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>How many outs does the fielding team need to record to end one half-inning (their turn to field)?</div>
+      <div class="options" data-q="a3q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">2 outs</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">3 outs — the batting team then switches to fielding</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">4 outs</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">5 outs in extra-inning situations</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is a "walk" in baseball and when does it occur?</div>
+      <div class="options" data-q="a3q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">When the batter hits a ball that rolls slowly — they walk to first base</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">When the pitcher throws 4 balls outside the strike zone — the batter advances to first base without the ball being put in play</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">When the batter is hit by a pitched ball — they walk to first base as a penalty</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">When the fielder drops a fly ball — the batter is awarded first base</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>How does a batter score a run in baseball?</div>
+      <div class="options" data-q="a3q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">By hitting the ball over the outfield fence for a home run only</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">By touching all four bases and returning to home plate without being put out</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">By reaching second base before the fielder throws to first base</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">By hitting the ball into fair territory and reaching first base safely</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What is a "strike" in baseball?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">A pitch that the batter swings at and hits fair — the first contact with the ball</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">A pitch that lands in the strike zone without the batter swinging, or any swing and miss. Three strikes = strikeout</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">A ball hit directly at a fielder who catches it before it bounces</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">A pitched ball that bounces before reaching home plate</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Check Answers</button>
+      <div class="act-score" id="score-a3">Score: <strong id="score-a3-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card2" id="theory-c">
+<div class="inner">
+    <p class="sect-label reveal">Section 02C · Theory Block</p>
+    <h3 class="subsect reveal">The Nine Positions</h3>
+    <p class="body-text reveal">Baseball has nine fielding positions, each with specific responsibilities. Understanding roles on the field is essential for both batting and fielding strategy.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">1</span><div class="cc-title">Pitcher</div><div class="cc-body">Most important defensive player. Controls tempo, throws to strikeout batters.</div><div class="cc-tag">Game control</div></div>
+      <div class="cc"><span class="cc-icon">2</span><div class="cc-title">Catcher</div><div class="cc-body">Crouches behind home plate. Calls pitches, manages defence, throws out base stealers.</div><div class="cc-tag">Field general</div></div>
+      <div class="cc"><span class="cc-icon">6</span><div class="cc-title">Shortstop</div><div class="cc-body">Most versatile infielder. Covers 2nd-3rd base gap. Often the best defensive player.</div><div class="cc-tag">Defensive anchor</div></div>
+      <div class="cc"><span class="cc-icon">8</span><div class="cc-title">Centre Field</div><div class="cc-body">Covers the largest outfield zone. Usually the fastest outfielder — covers the most ground.</div><div class="cc-tag">Outfield leader</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 4 - The Nine Positions</div>
+      <h4>Demonstrate your knowledge of baseball positions and their roles</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Why is the pitcher considered the most important defensive player in baseball?</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the pitcher scores the most runs when the team bats</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Because the pitcher controls the game tempo, dictates the type of contact and can dominate for multiple innings</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the pitcher covers the most ground on defence, similar to a goalkeeper in football</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Because pitchers are the only players who can legally use specialised equipment</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is the primary role of the catcher beyond simply receiving pitched balls?</div>
+      <div class="options" data-q="a4q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">To direct base running — tell other runners when to advance</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">To manage the pitching strategy, call pitches, and control the defence from behind home plate</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">To cover home plate on bunt plays exclusively</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">To be the designated pinch runner in extra inning situations</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Why is the shortstop position generally considered the most demanding defensive position in baseball?</div>
+      <div class="options" data-q="a4q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Because shortstops must bat in the most difficult position in the lineup</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Because the shortstop covers the largest outfield zone between centre and left field</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the shortstop must cover the most territory, has the hardest throws and is involved in the most plays</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Because shortstops are responsible for all defensive signs and communication</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In baseball defensive numbering, what number is assigned to the first baseman?</div>
+      <div class="options" data-q="a4q4" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">1</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">2</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">3</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">4</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What physical attribute is most important for a centre fielder?</div>
+      <div class="options" data-q="a4q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Maximum throwing strength to reach home plate from deep in the outfield</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Speed — centre fielders cover the largest outfield zone and must chase down the most balls</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Height — taller outfielders can see the ball better off the bat</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Batting average — outfielders must contribute offensively above all else</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Check Answers</button>
+      <div class="act-score" id="score-a4">Score: <strong id="score-a4-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-mid" id="theory-d">
+<div class="inner">
+    <p class="sect-label reveal">Section 02D · Theory Block</p>
+    <h3 class="subsect reveal">Batting & Pitching Technique</h3>
+    <p class="body-text reveal">Hitting a baseball thrown at 150+ km/h requires extraordinary timing and technique. Pitching requires both physical skill and psychological strategy.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🏏</span><div class="cc-title">Batting Stance</div><div class="cc-body">Balanced, slightly crouched, weight on the balls of the feet, bat held comfortably above the shoulder.</div><div class="cc-tag">The foundation</div></div>
+      <div class="cc"><span class="cc-icon">🔄</span><div class="cc-title">Hip Rotation</div><div class="cc-body">The power in a swing comes from explosive hip rotation — not arm strength. Hips lead the hands.</div><div class="cc-tag">Power source</div></div>
+      <div class="cc"><span class="cc-icon">⚾</span><div class="cc-title">Fastball</div><div class="cc-body">The most common pitch. 4-seam grip for maximum speed and straight trajectory.</div><div class="cc-tag">Primary pitch</div></div>
+      <div class="cc"><span class="cc-icon">🌀</span><div class="cc-title">Breaking Ball</div><div class="cc-body">Curveball, slider or sinker — each with different spin creating different movement to deceive the batter.</div><div class="cc-tag">Deception pitches</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 5 - Batting & Pitching Technique</div>
+      <h4>Check your understanding of the two most important technical skills in baseball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>In baseball batting, where does the primary power in the swing come from?</div>
+      <div class="options" data-q="a5q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">The strength of the forearms and wrists at contact</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The explosive rotation of the hips — the hips initiate the swing before the hands move</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The speed of the hands bringing the bat through the hitting zone</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">The length of the stride taken toward the pitcher</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is a "four-seam fastball" and why is it thrown?</div>
+      <div class="options" data-q="a5q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">A pitch gripped across all four seams — thrown for minimum speed and maximum movement</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">A pitch gripped across the seams to create straight, maximum-speed delivery — the primary pitch for most pitchers</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">A pitch thrown with four fingers spread across the seam for a knuckleball effect</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">A pitch thrown sideways to create extreme lateral movement</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the purpose of a breaking ball (curveball, slider, sinker) in a pitcher's arsenal?</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">To throw harder than the fastball and overpower the batter</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">To deceive the batter with different spin and movement, making the ball travel unpredictably</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">To prevent home runs by keeping the ball low and inside to the batter</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">To conserve the pitcher's arm by requiring less physical effort than a fastball</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>What is the "strike zone" in baseball?</div>
+      <div class="options" data-q="a5q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">The area directly above the pitcher's mound where the ball must be released</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">The area over home plate between the batter's knees and mid-chest where a pitch must pass to be called a strike</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">The zone painted on the field between first and third base for fair ball determination</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">The defensive alignment positioned behind the pitcher to prevent stolen bases</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>In batting, what does "staying back" on a pitch mean?</div>
+      <div class="options" data-q="a5q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Stopping the swing completely when the pitch is a ball outside the strike zone</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Delaying the hip rotation slightly to give more time to read pitch location and type</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Moving the back foot further away from the plate to create more power</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Keeping the body still and only moving the arms through the hitting zone</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a5',['a5q1','a5q2','a5q3','a5q4','a5q5'])">Check Answers</button>
+      <div class="act-score" id="score-a5">Score: <strong id="score-a5-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-dark" id="theory-e">
+<div class="inner">
+    <p class="sect-label reveal">Section 02E · Theory Block</p>
+    <h3 class="subsect reveal">Fielding & Base Running</h3>
+    <p class="body-text reveal">Defence wins championships. Fielding and baserunning are the most overlooked but critically important aspects of baseball strategy.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🫱</span><div class="cc-title">Fielding Position</div><div class="cc-body">Weight forward, glove down and open, ready to move in any direction when the ball is hit.</div><div class="cc-tag">Ready position</div></div>
+      <div class="cc"><span class="cc-icon">🏃</span><div class="cc-title">Base Running</div><div class="cc-body">Reading the pitcher, knowing the situation, and making smart decisions about when to run.</div><div class="cc-tag">Strategic running</div></div>
+      <div class="cc"><span class="cc-icon">🤾</span><div class="cc-title">Double Play</div><div class="cc-body">Two outs on one play — the most exciting defensive play. Shortstop or 2nd baseman pivots and throws.</div><div class="cc-tag">Defence's best play</div></div>
+      <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Throwing Mechanics</div><div class="cc-body">Four-seam grip, step toward target, throw from over the top for accuracy and speed.</div><div class="cc-tag">Arm action</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 6 - Fielding & Baserunning</div>
+      <h4>Demonstrate your knowledge of defensive play and baserunning strategy</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the correct ready position for a baseball fielder waiting for the pitch?</div>
+      <div class="options" data-q="a6q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Standing upright with hands on knees, weight back on the heels</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Weight forward on the balls of the feet, knees slightly bent, glove down and open — ready to move</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Crouching low to the ground with glove touching the dirt to field ground balls</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Standing tall with hands behind the back, ready to sprint in any direction</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is a "double play" in baseball and why is it strategically valuable?</div>
+      <div class="options" data-q="a6q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Two consecutive home runs by the same batter in the same inning</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Recording two outs on a single play — eliminates two baserunners at once, the greatest defensive achievement</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="C"><span class="opt-letter">C</span><span class="opt-text">A pitch thrown twice at the same location to fool the batter</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Two batters reaching base on the same play due to a fielding error</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>In baserunning, why is it always safe to run through first base without stopping?</div>
+      <div class="options" data-q="a6q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the runner cannot be tagged out while touching first base even after overrunning it</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Because first base is the only base where the runner may overrun the base and return safely without being put out</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the first baseman cannot tag the runner — they can only step on the base</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Because the umpire always gives extra time at first base for the runner to slow down</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Which of the following is the correct way to grip a baseball for maximum accuracy and speed on a long throw?</div>
+      <div class="options" data-q="a6q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Two-seam grip with fingers along the seams for maximum spin</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Four-seam grip across the seams for a straight trajectory with maximum velocity</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Palm grip with the ball deep in the hand for cushioned release</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Knuckleball grip with fingernails on the seams for minimum spin</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What is a "stolen base" in baseball?</div>
+      <div class="options" data-q="a6q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q5" value="A"><span class="opt-letter">A</span><span class="opt-text">When the batter hits a ball that rolls under a fence for an automatic double</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="B"><span class="opt-letter">B</span><span class="opt-text">When a baserunner advances to the next base while the pitcher is delivering to home plate</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="C"><span class="opt-letter">C</span><span class="opt-text">When the fielding team fails to tag the runner before they reach the base safely</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="D"><span class="opt-letter">D</span><span class="opt-text">When the batter hits a home run and all runners score automatically</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a6',['a6q1','a6q2','a6q3','a6q4','a6q5'])">Check Answers</button>
+      <div class="act-score" id="score-a6">Score: <strong id="score-a6-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-f">
+<div class="inner">
+    <p class="sect-label reveal">Section 02F · Theory Block</p>
+    <h3 class="subsect reveal">Baseball Analytics & Physical Demands</h3>
+    <p class="body-text reveal">Baseball was the pioneering sport in analytics — using statistics to make better decisions. The physical demands of the sport are also highly specific.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">📊</span><div class="cc-title">Batting Average</div><div class="cc-body">Hits divided by at-bats. The traditional measure of a batter's effectiveness — though increasingly complemented by OPS, WAR.</div><div class="cc-tag">Classic stat</div></div>
+      <div class="cc"><span class="cc-icon">📈</span><div class="cc-title">Moneyball</div><div class="cc-body">The Oakland A's 2002 use of advanced stats (Sabermetrics) to build a competitive team on a small budget — revolutionised sport.</div><div class="cc-tag">Analytics revolution</div></div>
+      <div class="cc"><span class="cc-icon">💪</span><div class="cc-title">Physical Demands</div><div class="cc-body">Explosive power (pitching, batting), rotational strength (swing), arm endurance (fielding) and sprint speed.</div><div class="cc-tag">Athletic requirements</div></div>
+      <div class="cc"><span class="cc-icon">🧠</span><div class="cc-title">Decision Making</div><div class="cc-body">Baseball players make split-second decisions 100+ times per game — reading pitches, reads, defensive shifts.</div><div class="cc-tag">Cognitive demands</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 7 - Baseball Analytics & Physical Demands</div>
+      <h4>Understand the analytical and athletic dimensions of baseball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is "Sabermetrics" in baseball?</div>
+      <div class="options" data-q="a7q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q1" value="A"><span class="opt-letter">A</span><span class="opt-text">The official scoring system used by the Major League Baseball commissioner's office</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The statistical analysis of baseball using objective data to evaluate players and make strategic decisions</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The radar gun measurement system used to measure pitch velocity in km/h</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="D"><span class="opt-letter">D</span><span class="opt-text">The medical protocol for managing pitcher arm workload and recovery</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>The 2002 Oakland A's and the concept of "Moneyball" are famous for:</div>
+      <div class="options" data-q="a7q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Winning the most World Series championships in a single decade</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Using advanced statistics to identify undervalued players and compete at a fraction of other teams' budgets</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Developing the four-seam fastball as the primary pitch in modern baseball</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Setting the world record for runs scored in a single regular season game</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is a pitcher's "ERA" (Earned Run Average) and what does it measure?</div>
+      <div class="options" data-q="a7q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q3" value="A"><span class="opt-letter">A</span><span class="opt-text">The average number of pitches thrown per inning — measures efficiency</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="B"><span class="opt-letter">B</span><span class="opt-text">The average number of earned runs allowed per nine innings pitched — lower is better</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The average speed of a pitcher's fastball over a full season</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="D"><span class="opt-letter">D</span><span class="opt-text">The percentage of strikeouts compared to total outs recorded</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Which physical attribute is MOST important for a pitcher specifically?</div>
+      <div class="options" data-q="a7q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Maximum sprint speed — pitchers must cover first base on all ground balls to the right side</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Rotational power — generated from the legs and core for explosive arm acceleration and velocity</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Grip strength — the pitcher must maintain firm control of the ball throughout the delivery</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Balance — pitchers must stand on one leg during the windup for extended periods</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What does the statistic WAR (Wins Above Replacement) attempt to measure in baseball?</div>
+      <div class="options" data-q="a7q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The number of wins a team earns above their predicted win total based on run differential</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The total value a player contributes compared to a freely available replacement player, measured in wins</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The number of at-bats a batter needs to record one hit at their current batting average</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="D"><span class="opt-letter">D</span><span class="opt-text">The percentage of time a pitcher finishes games they start without relief assistance</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a7',['a7q1','a7q2','a7q3','a7q4','a7q5'])">Check Answers</button>
+      <div class="act-score" id="score-a7">Score: <strong id="score-a7-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-dark" id="train">
+<div class="inner">
+  <p class="sect-label reveal">Section 03 · Train & Compete</p>
+  <h2 class="sect-title reveal">TRAIN & <span class="accent">COMPETE</span></h2>
+  <p class="lead reveal">Complete these challenges. Record your results and upload evidence to Classroom.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Batting Tee Practice</div><span class="ch-tag">Technique</span></div>
+        <p>Using a batting tee (or improvised equivalent), focus on hip rotation. Record 20 swings analysing: contact point, hip turn and follow-through. Film yourself from the side.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c1r1">How many swings had full hip rotation before the arms? What was your most common error?</label><textarea class="field-input" id="c1r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c1r2">What adjustment made the biggest difference to your contact quality?</label><textarea class="field-input" id="c1r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Pitching Mechanics</div><span class="ch-tag">Arm action</span></div>
+        <p>Using a rubber ball against a wall target (or with a partner), practise your four-seam fastball mechanics. Focus on stride length and arm path. 30 throws minimum.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c2r1">What was the most accurate aspect of your delivery? What needed improvement?</label><textarea class="field-input" id="c2r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c2r2">Describe the feeling in your hip and shoulder at the moment of release.</label><textarea class="field-input" id="c2r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Fielding Ground Balls</div><span class="ch-tag">Fielding</span></div>
+        <p>With a partner rolling balls to you, field 20 ground balls: 10 directly at you, 5 to your right, 5 to your left. Focus on the ready position and glove angle.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c3r1">How many successful fields out of 20? What made balls to each side harder?</label><textarea class="field-input" id="c3r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c3r2">What does your ready position feel like? What was the hardest ball to field?</label><textarea class="field-input" id="c3r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Baserunning Circuit</div><span class="ch-tag">Speed & Strategy</span></div>
+        <p>Set up a simple 3-base circuit (or use PE cones). Time yourself running through first base, rounding second and stopping at third. Repeat 5 times with sprint.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c4r1">Your 5 times and any improvement between run 1 and run 5</label><textarea class="field-input" id="c4r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c4r2">What did you notice about your body angle when rounding bases? How does it differ from straight-line running?</label><textarea class="field-input" id="c4r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">05</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Mini-game (Modified Baseball)</div><span class="ch-tag">Game</span></div>
+        <p>Play a modified baseball game with your class. Focus on applying: correct fielding position, hip rotation in batting, and running through first base.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c5r1">Which skill was hardest to apply in a real game situation compared to practice?</label><textarea class="field-input" id="c5r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c5r2">What would you focus on in 2 more weeks of practice? Justify your choice.</label><textarea class="field-input" id="c5r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-mid" id="evaluate">
+<div class="inner">
+  <p class="sect-label reveal">Section 04 · Evaluate</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">ATE</span></h2>
+  <p class="lead reveal">Demonstrate what you have learned and reflect on your progress.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Final Activity - Personal Reflection (open answer)</div>
+    <h4>Complete this unit honestly</h4>
+    <div class="field-group"><label class="field-label" for="af1">Why do you think baseball is described as "a thinking person's game"? Give 3 specific examples from this unit that illustrate strategic thinking in baseball.</label><textarea class="field-input" id="af1" placeholder="Your 3 examples with explanation..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Jackie Robinson's 1947 entry into Major League Baseball is considered one of sport's most significant civil rights moments. Research and explain why this had an impact beyond sport.</label><textarea class="field-input" id="af2" placeholder="Your research and analysis..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">If you were the manager of a baseball team, what one skill or attribute would you prioritise in selecting your team and why?</label><textarea class="field-input" id="af3" placeholder="Your managerial reasoning..."></textarea></div>
+  </div>
+  <h3 class="subsect reveal">Concept Map</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">BASEBALL <span>Nine innings - nine positions - one diamond</span></div>
+    <div style="text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0">|</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">HISTORY</div>
+        <input class="field-input" type="text" placeholder="1845..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="1947..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">THE DIAMOND</div>
+        <input class="field-input" type="text" placeholder="Innings..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Strike..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">POSITIONS</div>
+        <input class="field-input" type="text" placeholder="Pitcher..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Shortstop..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">BATTING</div>
+        <input class="field-input" type="text" placeholder="Hip rotation..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Grip..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">PITCHING</div>
+        <input class="field-input" type="text" placeholder="Fastball..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Breaking ball..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">YOUR GLOBAL SCORE</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Multiple choice only. Open answers are reviewed by the teacher.</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:{bc};border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase" onclick="calcGlobalScore()">See my global score</button>
+  </div>
+</div>
+</section>
+<footer><p>Reproduction or distribution of this guide without the prior written authorisation of the author is strictly prohibited. For exclusive educational use by students of the centre. Colegio Santa Maria la Blanca. © Jaime Redondo</p></footer>
+
+<script>
+var STORE_KEY='ef4eso-baseball-v1';
+var CORRECT={'a2q1':'C','a2q2':'B','a2q3':'D','a2q4':'B','a2q5':'B','a3q1':'C','a3q2':'B','a3q3':'B','a3q4':'B','a3q5':'B','a4q1':'B','a4q2':'B','a4q3':'C','a4q4':'C','a4q5':'B','a5q1':'B','a5q2':'B','a5q3':'B','a5q4':'B','a5q5':'B','a6q1':'B','a6q2':'B','a6q3':'B','a6q4':'B','a6q5':'B','a7q1':'B','a7q2':'B','a7q3':'B','a7q4':'B','a7q5':'B'};
+var EXPL={'a2q1':'Correct. Alexander Cartwright wrote the first standardised baseball rules in 1845.','a2q2':'Correct. Jackie Robinson broke the color barrier in 1947, a landmark civil rights moment.','a2q3':'Correct. India is not a major baseball power at international level.','a2q4':'Correct. Baseball generates more statistical categories per player action than any other team sport.','a2q5':'Correct. The World Baseball Classic (2006) has helped globalise baseball internationally.','a3q1':'Correct. A standard professional baseball game consists of 9 innings.','a3q2':'Correct. 3 outs end each half-inning.','a3q3':'Correct. 4 balls outside the strike zone = walk — batter advances to first base.','a3q4':'Correct. A runner scores by touching all four bases and returning to home plate.','a3q5':'Correct. A strike is a pitch in the zone unanswered, or any swing and miss. 3 = strikeout.','a4q1':'Correct. The pitcher controls the game tempo and can dominate for multiple innings.','a4q2':'Correct. The catcher manages pitching strategy and controls the defence.','a4q3':'Correct. The shortstop covers the most territory and is involved in the most plays.','a4q4':'Correct. The first baseman is numbered 3 in defensive scoring.','a4q5':'Correct. Speed is most important for the centre fielder who covers the largest zone.','a5q1':'Correct. Hip rotation generates the power in a batting swing — not arm strength.','a5q2':'Correct. The four-seam fastball is gripped across the seams for maximum speed and straight trajectory.','a5q3':'Correct. Breaking balls deceive the batter with different spin and unpredictable movement.','a5q4':'Correct. The strike zone is over home plate between the batter\'s knees and mid-chest.','a5q5':'Correct. Staying back means delaying hip rotation to read pitch location and type.','a6q1':'Correct. The ready position has weight forward on the balls of the feet with glove down.','a6q2':'Correct. A double play records two outs on one play — the greatest defensive achievement.','a6q3':'Correct. First base is the only base where overrunning it is safe if you return immediately.','a6q4':'Correct. The four-seam grip across the seams gives maximum velocity and straight trajectory.','a6q5':'Correct. A stolen base is advancing to the next base while the pitcher is delivering.','a7q1':'Correct. Sabermetrics is the statistical analysis of baseball to evaluate players and strategy.','a7q2':'Correct. The A\'s used advanced stats to identify undervalued players on a small budget.','a7q3':'Correct. ERA = average earned runs allowed per nine innings — lower ERA is better.','a7q4':'Correct. Rotational power from legs and core generates explosive arm acceleration for pitching.','a7q5':'Correct. WAR measures a player\'s total value compared to a freely available replacement player.'};
+var ACTS={'a2':['a2q1','a2q2','a2q3','a2q4','a2q5'],'a3':['a3q1','a3q2','a3q3','a3q4','a3q5'],'a4':['a4q1','a4q2','a4q3','a4q4','a4q5'],'a5':['a5q1','a5q2','a5q3','a5q4','a5q5'],'a6':['a6q1','a6q2','a6q3','a6q4','a6q5'],'a7':['a7q1','a7q2','a7q3','a7q4','a7q5']};
+window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(function(r){ro.observe(r);});
+document.addEventListener('change',function(e){if(e.target.type==='radio'){var n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(function(r){r.closest('.opt').classList.toggle('selected',r.checked);});saveLocal();}});
+function checkQuiz(actId,qIds){
+  var correct=0;
+  qIds.forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    var fb=document.getElementById('fb-'+qId);
+    var cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(function(o){o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPL[qId]||'Correct';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var el=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');var ct=el?el.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrect. Correct answer: '+cv+' - '+ct;fb.className='q-feedback show ko';}}
+    else{fb.textContent='No option selected.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Keep reviewing the theory','On the right track - keep going','Good work! You know the concepts','Excellent - outstanding performance'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){var data={};document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});localStorage.setItem(STORE_KEY,JSON.stringify(data));}
+function loadLocal(){var raw=localStorage.getItem(STORE_KEY);if(!raw)return;var data=JSON.parse(raw);Object.keys(data).forEach(function(id){if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}else{var el=document.getElementById(id);if(el)el.value=data[id];}});}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparing PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){if(!confirm('Clear ALL answers?'))return;document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){var nombre=document.getElementById('st-name').value.trim();var res=document.getElementById('submitResumen');if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Name missing.</span> Please fill in your name.';}else{var g=document.getElementById('st-group').value.trim();var dt=document.getElementById('st-date').value.trim();res.innerHTML='<strong style="color:white">Student:</strong> '+nombre+' | <strong style="color:white">Group:</strong> '+(g||'-')+' | <strong style="color:white">Date:</strong> '+(dt||'-');}document.getElementById('submitConfirmView').style.display='block';document.getElementById('submitSentView').style.display='none';document.getElementById('submitConfirmBtn').disabled=!nombre;document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'4ESO-Baseball'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){var sel=document.querySelector('input[name="'+qId+'"]:checked');data['resp_'+qId]=sel?sel.value:'-';data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correct':'incorrect'):'-';});
+  Object.keys(ACTS).forEach(function(act){var c=0;ACTS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});data['score_'+act]=c+'/'+ACTS[act].length;});
+  var tot=0,totQ=0;Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Sending...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});document.getElementById('submitConfirmView').style.display='none';document.getElementById('submitSentView').style.display='block';var mb=document.getElementById('btnSubmit');mb.textContent='Submitted';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';showToast('Submitted!','toast-ok');}
+  catch(err){btnText.innerHTML='Confirm submission';btn.disabled=false;showToast('Error sending.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+
+</script>
+</body>
+</html>

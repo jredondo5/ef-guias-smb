@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Aprendizaje – TENIS PLAYA · 2º ESO · EF</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#E8B84B;--accent2:#F5D078;--accent3:#C99A2E;--dark:#080808;--mid:#111111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,0.75);--txt-dim:rgba(255,255,255,0.40)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,0.06);z-index:200}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(232,184,75,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--accent)}
+.logo-badge{background:var(--accent);color:#1a1000;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(232,184,75,.08)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:#1a1000!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+#inicio{min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hc-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 12s ease-in-out infinite}
+.hc-orb:nth-child(1){width:500px;height:500px;background:var(--accent);top:-10%;right:-5%}
+.hc-orb:nth-child(2){width:300px;height:300px;background:var(--accent3);bottom:10%;right:20%;animation-delay:4s}
+.hc-orb:nth-child(3){width:200px;height:200px;background:var(--accent2);top:40%;right:8%;animation-delay:8s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
+.hero-left{position:relative;z-index:2;padding:6rem 3rem 6rem 5rem}
+.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:rgba(232,184,75,.1);border:1px solid rgba(232,184,75,.2);padding:.35rem .9rem;border-radius:2px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(4rem,10vw,9rem);line-height:.85;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:.5rem}
+h1.hero-title .line2{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-size:clamp(3rem,7vw,7rem)}
+.hero-tagline{font-family:'Space Mono',monospace;font-size:.76rem;letter-spacing:.07em;color:var(--txt-dim);margin:1rem 0 2.5rem;border-left:3px solid var(--accent);padding-left:1rem;line-height:1.9}
+.hero-tagline strong{color:rgba(255,255,255,.9)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:#1a1000}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(232,184,75,.4)}
+.btn-secondary{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-right{position:relative;z-index:2;padding:4rem 5rem 4rem 2rem;display:flex;flex-direction:column;gap:1.25rem;justify-content:center}
+.hero-stat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;transition:all .25s;position:relative;overflow:hidden}
+.hero-stat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.hero-stat-card:hover{background:rgba(232,184,75,.06);border-color:rgba(232,184,75,.2);transform:translateX(4px)}
+.hero-stat-card:hover::before{transform:scaleY(1)}
+.stat-icon{font-size:1.8rem;flex-shrink:0;width:48px;text-align:center}
+.stat-num{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:var(--accent);line-height:1}
+.stat-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-top:.15rem}
+.stat-desc{font-size:.82rem;color:var(--txt);margin-top:.25rem;line-height:1.5}
+.inner{max-width:1100px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}
+.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}
+.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(232,184,75,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,5vw,4rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.95}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}
+.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+p.body-text strong{color:white;font-weight:800}
+p.body-text em{color:var(--accent2);font-style:normal;font-weight:700}
+.alumno-bar{background:rgba(232,184,75,.06);border:1px solid rgba(232,184,75,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.alumno-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.alumno-bar input{flex:1;min-width:180px;background:transparent;border:none;border-bottom:2px solid rgba(232,184,75,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.alumno-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.alumno-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(232,184,75,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(232,184,75,.06);border-color:rgba(232,184,75,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}
+.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}
+.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(232,184,75,.1);border-color:rgba(232,184,75,.35)}
+.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}
+.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(232,184,75,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(232,184,75,.04)}
+.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.concept-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(232,184,75,.25);transform:translateY(-3px)}
+.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}
+.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}
+.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(232,184,75,.12);color:var(--accent);border:1px solid rgba(232,184,75,.2)}
+.court-svg{width:100%;border-radius:10px;overflow:hidden;margin:2rem 0;background:var(--card2)}
+.accordion{margin:1.5rem 0}
+.acc-item{border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.75rem;cursor:pointer;background:rgba(255,255,255,.02);transition:background .2s;gap:1rem}
+.acc-header:hover{background:rgba(232,184,75,.06)}
+.acc-hl{display:flex;align-items:center;gap:1rem}
+.acc-icon{font-size:1.4rem;flex-shrink:0}
+.acc-title{font-weight:800;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;color:white}
+.acc-sub{font-size:.74rem;color:var(--txt-dim);margin-top:.15rem}
+.acc-arrow{color:var(--accent);transition:transform .3s;font-size:.8rem;flex-shrink:0}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.acc-item.open .acc-body{max-height:900px}
+.acc-content{padding:1.75rem;border-top:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.01)}
+.acc-content p{font-size:.9rem;color:var(--txt);line-height:1.8;margin-bottom:.85rem}
+.acc-content p strong{color:white}
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0}
+.data-table th{font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);text-align:left;padding:.85rem 1rem;border-bottom:2px solid rgba(232,184,75,.25)}
+.data-table td{padding:.95rem 1rem;font-size:.9rem;color:var(--txt);border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.5}
+.data-table tr:hover td{background:rgba(232,184,75,.04)}
+.data-table td strong{color:white}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.data-hl{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(232,184,75,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(232,184,75,.12);line-height:1;transition:color .2s}
+.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(232,184,75,.1);color:var(--accent);border:1px solid rgba(232,184,75,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-pipe{text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:120px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(232,184,75,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(232,184,75,.1),rgba(201,154,46,.05));border:1px solid rgba(232,184,75,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:.5rem}
+.pdf-save{background:var(--accent);color:#1a1000}
+.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}
+.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-entregar{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}
+.btn-entregar:hover{background:linear-gradient(135deg,#16a34a,#15803d);transform:translateY(-2px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:#1a1000}
+.toast-ok{background:#22c55e}
+.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}
+.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}
+.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}
+.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}
+.submit-box p strong{color:white}
+.submit-warning{background:rgba(232,184,75,.08);border:1px solid rgba(232,184,75,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}
+.submit-warning span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}
+.submit-confirm:hover{background:linear-gradient(135deg,#16a34a,#15803d);transform:translateY(-1px)}
+.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}
+.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.img-strip{width:100%;overflow:hidden;position:relative;height:360px}
+.img-strip-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 0%,transparent 40%,transparent 60%,var(--dark) 100%),linear-gradient(0deg,var(--dark) 0%,transparent 30%)}
+.img-strip-tag{position:absolute;top:2rem;right:4rem;background:rgba(232,184,75,.9);color:#1a1000;font-weight:800;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:2px}
+.watermark{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.watermark,.prog-wrap,.submit-modal,#inicio,.img-strip,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #a07800!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){#inicio{grid-template-columns:1fr}.hero-left{padding:5rem 2rem 3rem}.hero-right{display:none}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="watermark">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">🗑 Borrar</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">📄 Guardar PDF</button>
+  <button class="pdf-btn btn-entregar" id="btnEntregar" onclick="openSubmitModal()">✅ Entregar</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span>
+      <h2>Entregar Guía</h2>
+      <p>Vas a enviar tus respuestas al profesor. Comprueba tu <strong>nombre y curso</strong>.</p>
+      <div class="submit-warning"><span>⚠ Recuerda:</span> Las preguntas tipo test se corrigen solos. Las abiertas las revisa el profesor.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancelar</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">📤 Confirmar entrega</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span>
+      <h3>¡Entregado!</h3>
+      <p>Tus respuestas han llegado al profesor. Guarda un PDF si quieres una copia.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:#1a1000">📄 Guardar PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#inicio">🎾 TENIS PLAYA <span class="logo-badge">2º ESO · EF</span></a>
+  <nav>
+    <a href="#activacion">Activa</a>
+    <a href="#conceptos">Táctica, Técnica y Reglamento</a>
+    <a href="#practica">Entrena</a>
+    <a href="#compite">Compite</a>
+    <a href="#evalua">Evalúa</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+<!-- HERO -->
+<div id="inicio" style="min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+    <div class="hc-orb"></div><div class="hc-orb"></div><div class="hc-orb"></div>
+  </div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-badge">Educación Física · 2º ESO</span>
+      <div class="hero-dot"></div>
+      <span style="font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--txt-dim)">Deportes de Raqueta</span>
+    </div>
+    <h1 class="hero-title">TENIS<span class="line2">PLAYA</span></h1>
+    <p class="hero-tagline">El deporte de raqueta más <strong>rápido y espectacular</strong>.<br>Arena, velocidad y mucha estrategia — al alcance de todos.</p>
+    <div class="hero-ctas">
+      <a href="#activacion" class="btn btn-primary">🚀 Empezar</a>
+      <a href="#conceptos" class="btn btn-secondary">📖 Teoría</a>
+      <a href="#practica" class="btn btn-secondary">⚡ Practicar</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-card reveal" style="transition-delay:.1s"><div class="stat-icon">🏟</div><div><div class="stat-num">16 × 8 m</div><div class="stat-label">Dimensiones de la pista</div><div class="stat-desc">Más pequeña que el tenis, lo que hace el juego más rápido e intenso</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.2s"><div class="stat-icon">🎾</div><div><div class="stat-num">2 vs 2</div><div class="stat-label">Siempre en dobles</div><div class="stat-desc">El tenis playa se juega exclusivamente en parejas. La comunicación es clave</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.3s"><div class="stat-icon">🏅</div><div><div class="stat-num">1994</div><div class="stat-label">Primer campeonato mundial</div><div class="stat-desc">Deporte relativamente joven pero con millones de practicantes en todo el mundo</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.4s"><div class="stat-icon">🌊</div><div><div class="stat-num">Sin red</div><div class="stat-label">¡La pelota puede botar en la valla!</div><div class="stat-desc">La valla que rodea la pista es parte del juego — se puede jugar el rebote</div></div></div>
+  </div>
+</div>
+<!-- SVG STRIP -->
+<div class="img-strip">
+  <svg viewBox="0 0 1400 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0">
+    <defs>
+      <linearGradient id="sandG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1200"/><stop offset="100%" stop-color="#0a0800"/></linearGradient>
+      <radialGradient id="sunG" cx="75%" cy="30%" r="35%"><stop offset="0%" stop-color="#E8B84B" stop-opacity=".3"/><stop offset="100%" stop-color="#E8B84B" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1400" height="360" fill="url(#sandG)"/>
+    <ellipse cx="1050" cy="360" rx="600" ry="120" fill="url(#sunG)"/>
+    <!-- Sol -->
+    <circle cx="1100" cy="80" r="35" fill="#E8B84B" opacity=".6"/>
+    <!-- Pista simplificada -->
+    <rect x="200" y="80" width="500" height="240" fill="none" stroke="rgba(232,184,75,.15)" stroke-width="2"/>
+    <line x1="450" y1="80" x2="450" y2="320" stroke="rgba(232,184,75,.1)" stroke-width="1"/>
+    <line x1="200" y1="200" x2="700" y2="200" stroke="rgba(232,184,75,.2)" stroke-width="2"/>
+    <!-- Texto de fondo -->
+    <text x="700" y="80" text-anchor="middle" font-family="'Anton',sans-serif" font-size="80" fill="white" opacity=".02" letter-spacing="8">TENIS PLAYA</text>
+    <!-- Pelotita -->
+    <circle cx="450" cy="200" r="12" fill="#E8B84B" opacity=".5"/>
+    <!-- Linea de vuelo -->
+    <path d="M280,280 Q450,120 620,280" fill="none" stroke="rgba(232,184,75,.2)" stroke-width="1.5" stroke-dasharray="6,4"/>
+  </svg>
+  <div class="img-strip-overlay"></div>
+  <div class="img-strip-tag">Guía 2 — Tenis Playa</div>
+</div>
+
+<!-- SECCIÓN 01 — ACTÍVATE -->
+<section class="sect-dark" id="activacion">
+<div class="inner">
+  <p class="sect-label reveal">Sección 01 · Activa</p>
+  <h2 class="sect-title reveal">ACTI<span class="accent">VA</span></h2>
+  <div class="alumno-bar reveal">
+    <label for="al-nombre">👤 Nombre</label>
+    <input type="text" id="al-nombre" placeholder="Nombre y apellidos...">
+    <label for="al-curso">📚 Curso</label>
+    <input type="text" id="al-curso" placeholder="2º ESO —" style="max-width:180px">
+    <label for="al-fecha">📅 Fecha</label>
+    <input type="text" id="al-fecha" placeholder="dd/mm/aaaa" style="max-width:130px">
+  </div>
+  <p class="lead reveal">El tenis playa combina la estrategia del tenis con la dificultad de jugar en arena. Es un deporte para todos — no necesitas ser experto en tenis para disfrutarlo. Antes de empezar, reflexiona sobre lo que ya sabes.</p>
+  <div class="dh-row reveal">
+    <div class="data-hl"><div class="dh-num">16×8m</div><div class="dh-label">Tamaño de la pista</div><div class="dh-desc">La mitad de pequeña que una pista de tenis convencional. Más acción en menos espacio.</div></div>
+    <div class="data-hl"><div class="dh-num">1994</div><div class="dh-label">Primer Campeonato Mundial</div><div class="dh-desc">Roma, Italia. Desde entonces el deporte no ha parado de crecer en todo el mundo.</div></div>
+    <div class="data-hl"><div class="dh-num">2 vs 2</div><div class="dh-label">Siempre en dobles</div><div class="dh-desc">A diferencia del tenis, el tenis playa solo se juega en modalidad dobles. ¡El trabajo en equipo es esencial!</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📓 Actividad 1 — Lo que ya sé (respuesta abierta)</div>
+    <h4>Reflexiona antes de estudiar la guía</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">¿Has jugado alguna vez al tenis o al pádel? ¿Qué diferencias crees que hay con el tenis playa?</label><textarea class="field-input" id="a1q1" placeholder="Tu respuesta..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">¿Por qué crees que jugar en arena es más difícil que en una pista dura? ¿Qué cambia físicamente?</label><textarea class="field-input" id="a1q2" placeholder="Tu respuesta..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- SECCIÓN 02 — TÁCTICA, TÉCNICA Y REGLAMENTO -->
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ VÍDEO DE LA UNIDAD</span>
+    <span class="ebi-vid-ttl">Beach Tennis — Introducción al tenis playa</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="HLHMxTkFMzk" data-title="Beach Tennis — Introducción al tenis playa" tabindex="0" role="button" aria-label="Play: Beach Tennis — Introducción al tenis playa">
+    <img src="https://img.youtube.com/vi/HLHMxTkFMzk/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/HLHMxTkFMzk/mqdefault.jpg'" alt="Beach Tennis — Introducción al tenis playa" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Haz clic en la imagen para reproducir · O ábrelo en</span>
+    <a href="https://www.youtube.com/watch?v=HLHMxTkFMzk" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="conceptos">
+<div class="inner">
+  <p class="sect-label reveal">Sección 02 · Táctica, Técnica y Reglamento</p>
+  <h2 class="sect-title reveal">TÁCTICA, TÉCNICA Y <span class="accent">REGLAMENTO</span></h2>
+  <p class="lead reveal">El tenis playa es un deporte de raqueta que se juega en parejas sobre una pista de arena. Mezcla elementos del tenis, el pádel y el bádminton. No se usan redes laterales — las vallas que rodean la pista son parte del juego, porque la pelota puede rebotar en ellas.</p>
+
+  <h3 class="subsect reveal">La pista</h3>
+  <!-- SVG Pista de tenis playa -->
+  <div class="court-svg reveal">
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#1a1200;border-radius:10px;padding:20px">
+      <defs>
+        <linearGradient id="sandCourt" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#3d2e00"/><stop offset="100%" stop-color="#2a1e00"/>
+        </linearGradient>
+      </defs>
+      <!-- Arena de fondo -->
+      <rect x="80" y="40" width="540" height="340" fill="url(#sandCourt)" rx="4"/>
+      <!-- Valla perimetral -->
+      <rect x="80" y="40" width="540" height="340" fill="none" stroke="#E8B84B" stroke-width="3" rx="4"/>
+      <!-- Líneas de la pista -->
+      <rect x="120" y="70" width="460" height="280" fill="none" stroke="rgba(232,184,75,.6)" stroke-width="2"/>
+      <!-- Red (línea central) -->
+      <line x1="120" y1="210" x2="580" y2="210" stroke="#E8B84B" stroke-width="3"/>
+      <!-- Línea de servicio -->
+      <line x1="120" y1="140" x2="580" y2="140" stroke="rgba(232,184,75,.4)" stroke-width="1.5" stroke-dasharray="8,4"/>
+      <line x1="120" y1="280" x2="580" y2="280" stroke="rgba(232,184,75,.4)" stroke-width="1.5" stroke-dasharray="8,4"/>
+      <!-- Línea central -->
+      <line x1="350" y1="70" x2="350" y2="210" stroke="rgba(232,184,75,.4)" stroke-width="1.5"/>
+      <line x1="350" y1="210" x2="350" y2="350" stroke="rgba(232,184,75,.4)" stroke-width="1.5"/>
+      <!-- Medidas -->
+      <text x="350" y="32" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11" fill="#E8B84B">16 metros</text>
+      <text x="65" y="215" text-anchor="middle" font-family="'Space Mono',monospace" font-size="11" fill="#E8B84B" transform="rotate(-90,65,215)">8 metros</text>
+      <!-- Etiquetas -->
+      <text x="350" y="200" text-anchor="middle" font-family="'Anton',sans-serif" font-size="14" fill="rgba(232,184,75,.5)">RED</text>
+      <text x="230" y="108" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" fill="rgba(255,255,255,.3)">ZONA SERVICIO</text>
+      <text x="470" y="108" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" fill="rgba(255,255,255,.3)">ZONA SERVICIO</text>
+      <text x="350" y="385" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9" fill="rgba(232,184,75,.4)">La valla forma parte del juego — el rebote es válido</text>
+    </svg>
+  </div>
+
+  <h3 class="subsect reveal">Características principales</h3>
+  <div class="concept-cards reveal">
+    <div class="cc"><span class="cc-icon">🏖</span><div class="cc-title">Superficie de arena</div><div class="cc-body">Se juega siempre en arena, lo que hace los movimientos más lentos pero más exigentes físicamente. La arena amortiguamejor los golpes y reduce el riesgo de lesiones.</div><div class="cc-tag">Arena suelta · Más esfuerzo físico</div></div>
+    <div class="cc"><span class="cc-icon">🎾</span><div class="cc-title">Pelota y raqueta</div><div class="cc-body">Se usa una pelota similar a la de tenis pero algo más blanda. La raqueta es más corta y ligera que la de tenis y no tiene cuerdas — es sólida con agujeros (similar al pádel).</div><div class="cc-tag">Raqueta sólida · Sin cuerdas</div></div>
+    <div class="cc"><span class="cc-icon">🔄</span><div class="cc-title">El rebote en la valla</div><div class="cc-body">La característica más especial: la pelota puede botar en la valla que rodea la pista y seguir en juego. Esto obliga a estar siempre atento a todas las posibilidades.</div><div class="cc-tag">Valla = parte del juego</div></div>
+    <div class="cc"><span class="cc-icon">👥</span><div class="cc-title">Siempre en dobles</div><div class="cc-body">No existe la modalidad individual. Siempre se juega 2 contra 2. La comunicación y coordinación con tu pareja son tan importantes como la técnica individual.</div><div class="cc-tag">Dobles obligatorio</div></div>
+  </div>
+
+  <!-- QUIZ A — ¿QUÉ ES EL TENIS PLAYA? -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Actividad 2 — El Tenis Playa (tipo test · se corrige solo)</div>
+    <h4>Comprueba que entiendes las características básicas del deporte</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>¿Cuáles son las dimensiones de una pista de tenis playa?</div>
+      <div class="options" data-q="a2q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">23,77 × 10,97 metros (igual que el tenis)</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">20 × 10 metros (igual que el vóley playa)</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">16 × 8 metros</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">10 × 5 metros</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>¿En qué se diferencia la raqueta de tenis playa de la de tenis convencional?</div>
+      <div class="options" data-q="a2q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Es más larga y pesada</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Es más corta, sólida y con agujeros, sin cuerdas</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Es de madera y no tiene mango</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Es idéntica pero de color diferente</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>¿Qué modalidad de juego se usa en el tenis playa?</div>
+      <div class="options" data-q="a2q3" data-correct="D">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Solo individual (1 vs 1)</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Individual y dobles, según la competición</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Individual, dobles y triple</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Siempre en dobles (2 vs 2)</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>¿Qué ocurre cuando la pelota golpea la valla metálica que rodea la pista?</div>
+      <div class="options" data-q="a2q4" data-correct="A">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">El punto continúa — la valla forma parte del juego y el rebote es válido</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Es falta — la pelota debe permanecer dentro de las líneas en todo momento</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Se repite el punto (let)</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Gana el punto el equipo que golpeó a la valla</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>¿Por qué jugar en arena es más exigente físicamente que en pista dura?</div>
+      <div class="options" data-q="a2q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Porque la pelota va más rápida sobre la arena</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Porque la pista es más grande</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Porque moverse en arena consume más energía — cada paso requiere más esfuerzo muscular</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Porque el sol calienta más en la playa</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="background:var(--accent);color:#1a1000;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s" onclick="checkQuiz('act2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Corregir Actividad 2 →</button>
+      <div class="act-score" id="score-act2">Puntuación: <strong id="score-act2-val">—</strong></div>
+    </div>
+
+  <h3 class="subsect reveal" style="margin-top:3rem">Técnica — Los golpes principales</h3>
+  <p class="lead reveal">Para jugar bien al tenis playa necesitas dominar los golpes básicos. La buena noticia: con la raqueta sólida los golpes son más intuitivos que en el tenis con cuerdas.</p>
+  <div class="accordion reveal">
+    <div class="acc-item open">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🎾</div><div><div class="acc-title">El Saque (servicio)</div><div class="acc-sub">El golpe que inicia cada punto</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content">
+        <p>El saque se realiza desde detrás de la línea de fondo. Hay dos tipos principales: el <strong>saque plano</strong> (potente y rápido) y el <strong>saque con efecto</strong> (más lento pero con rebote difícil de leer).</p>
+        <p><strong>Claves técnicas:</strong> lanzamiento de pelota consistente, transferencia de peso de atrás hacia adelante, contacto en el punto más alto del alcance y seguimiento del golpe con el brazo.</p>
+        <p><strong>Importante:</strong> tienes dos intentos por punto. Si fallas los dos es doble falta y pierdes el punto.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">↩️</div><div><div class="acc-title">El Derecho (forehand)</div><div class="acc-sub">El golpe más natural para la mayoría</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content">
+        <p>Es el golpe que se ejecuta por el lado dominante (derecha para los diestros). Es el más potente y el que más se usa en el juego desde el fondo de la pista.</p>
+        <p><strong>Claves:</strong> giro de hombros para preparar el golpe, apoyo en el pie adelantado, contacto a la altura de la cintura y seguimiento completo del brazo.</p>
+        <p><strong>En la arena:</strong> los pies se hunden, por lo que es fundamental anticipar y preparar el golpe antes de que la pelota llegue.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🔄</div><div><div class="acc-title">El Revés (backhand)</div><div class="acc-sub">El golpe por el lado no dominante</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content">
+        <p>Se ejecuta por el lado contrario al dominante. Puede hacerse con una mano o con las dos manos (más estable para principiantes).</p>
+        <p><strong>Claves:</strong> rotar el cuerpo hacia el lado del revés, coger la raqueta con ambas manos si empiezas, contacto frente al cuerpo.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🏹</div><div><div class="acc-title">La Volea</div><div class="acc-sub">Golpear la pelota antes de que bote</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content">
+        <p>La volea se realiza cerca de la red cuando la pelota viene hacia ti y la golpeas en el aire, sin dejarla botar. Es un golpe más corto y contundente que los golpes de fondo.</p>
+        <p><strong>Para qué sirve:</strong> rematar el punto desde la red, aprovechar una pelota alta del rival.</p>
+        <p><strong>Clave:</strong> mantener la raqueta firme y mover solo el brazo, no la raqueta completa.</p>
+      </div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">💥</div><div><div class="acc-title">El Remate (smash)</div><div class="acc-sub">El golpe más espectacular</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content">
+        <p>Cuando la pelota viene muy alta hacia ti, ejecutas un golpe potente hacia abajo similar a un saque. Si sale bien, es casi imposible de devolver.</p>
+        <p><strong>Claves:</strong> posicionarse debajo de la pelota rápidamente, golpear en el punto más alto del salto o del alcance, dirección cruzada para máxima efectividad.</p>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- QUIZ B — TÉCNICA -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Actividad 3 — Técnica y Golpes (tipo test)</div>
+    <h4>Demuestra que conoces los golpes básicos del tenis playa</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>¿Qué es una volea en el tenis playa?</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Un golpe potente desde el fondo de la pista</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Golpear la pelota en el aire antes de que bote, generalmente cerca de la red</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Un saque especial con efecto</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Un golpe de revés con dos manos</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>¿Cuántos intentos de saque tienes antes de que se considere doble falta?</div>
+      <div class="options" data-q="a3q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Solo uno — si fallas el saque, pierdes el punto directamente</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Tres intentos</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Dos intentos — si fallas los dos es doble falta y pierdes el punto</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Tantos intentos como necesites</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>¿Por qué es más difícil ejecutar golpes de fondo en arena que en pista dura?</div>
+      <div class="options" data-q="a3q3" data-correct="A">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Porque los pies se hunden en la arena, lo que obliga a anticipar y preparar el golpe antes</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Porque la raqueta pesa más en la playa</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Porque el viento siempre dificulta los golpes en la playa</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Porque la pelota bota diferente en arena que en pista dura</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>¿Para qué sirve el remate (smash)?</div>
+      <div class="options" data-q="a3q4" data-correct="D">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Para sacar la pelota fuera de la pista y ganar espacio</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Para iniciar el punto desde la línea de fondo</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Para devolver una pelota baja que bota cerca de la red</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Para finalizar el punto con un golpe potente hacia abajo cuando la pelota viene muy alta</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Para un principiante, ¿qué variante del revés es más recomendable?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">El revés a una mano, porque es más potente</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">El revés a dos manos, porque es más estable y fácil de controlar al empezar</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">El revés de volea siempre, ya que es el más sencillo</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">No importa — los principiantes deben evitar el revés</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#1a1000;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s" onclick="checkQuiz('act3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Corregir Actividad 3 →</button>
+      <div class="act-score" id="score-act3">Puntuación: <strong id="score-act3-val">—</strong></div>
+    </div>
+  
+
+  <h3 class="subsect reveal" style="margin-top:3rem">Reglamento y puntuación</h3>
+  <p class="lead reveal">El sistema de puntuación del tenis playa es igual al del tenis. Si ya lo conoces, repásalo. Si no, ¡es más fácil de lo que parece!</p>
+  <h3 class="subsect reveal">Sistema de puntuación</h3>
+  <div style="overflow-x:auto" class="reveal">
+    <table class="data-table" style="min-width:500px">
+      <thead><tr><th>Puntos en el juego</th><th>Cómo se llama</th><th>Siguiente punto gana...</th></tr></thead>
+      <tbody>
+        <tr><td><strong>0</strong></td><td>Love (cero)</td><td>15</td></tr>
+        <tr><td><strong>15</strong></td><td>Quince</td><td>30</td></tr>
+        <tr><td><strong>30</strong></td><td>Treinta</td><td>40</td></tr>
+        <tr><td><strong>40</strong></td><td>Cuarenta</td><td>Juego (si el otro tiene menos de 40)</td></tr>
+        <tr><td><strong>40-40</strong></td><td>Deuce / Iguales</td><td>Ventaja (advantage)</td></tr>
+        <tr><td><strong>Ventaja</strong></td><td>Advantage</td><td>Juego (o vuelve a Deuce si pierde)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 class="subsect reveal">Estructura del partido</h3>
+  <div class="concept-cards reveal">
+    <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Juego (Game)</div><div class="cc-body">La unidad más pequeña. Se gana acumulando puntos: 15, 30, 40 y juego. Si hay empate a 40 (deuce), hay que ganar por dos puntos de diferencia.</div></div>
+    <div class="cc"><span class="cc-icon">📊</span><div class="cc-title">Set</div><div class="cc-body">Se gana el set el primero que llegue a 6 juegos con al menos 2 de ventaja. Si hay empate a 5-5 se puede jugar hasta 7-5 o llegar a un tie-break (juego de desempate).</div></div>
+    <div class="cc"><span class="cc-icon">🏆</span><div class="cc-title">Partido</div><div class="cc-body">Normalmente se juega al mejor de 3 sets. Gana el partido quien gane 2 sets primero. En competición oficial puede ser al mejor de 3 sets con tie-break en el tercero.</div></div>
+    <div class="cc"><span class="cc-icon">⚖️</span><div class="cc-title">Tie-Break</div><div class="cc-body">Juego de desempate que se juega cuando el marcador de sets está igualado. Se juega hasta 10 puntos (gana por 2 de ventaja). Los puntos se cuentan 1, 2, 3... no 15, 30, 40.</div></div>
+  </div>
+  <h3 class="subsect reveal">Reglas básicas del juego</h3>
+  <div class="accordion reveal">
+    <div class="acc-item open">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">📏</div><div><div class="acc-title">El saque</div><div class="acc-sub">Cómo empieza cada punto</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content"><p>El saque debe realizarse diagonalmente desde detrás de la línea de fondo. La pelota debe caer dentro del cuadro de servicio del rival. Si el saque toca la red y entra, se repite (let). Si falla los dos intentos, es doble falta y se pierde el punto.</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🎾</div><div><div class="acc-title">El rebote</div><div class="acc-sub">¿Cuándo puede botar la pelota?</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content"><p>La pelota puede botar <strong>una sola vez</strong> en el suelo antes de ser devuelta. También puede botar en la valla y seguir en juego. Puedes golpearla en el aire (volea) sin dejarla botar.</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">❌</div><div><div class="acc-title">Faltas comunes</div><div class="acc-sub">Cuándo se pierde el punto</div></div></div><span class="acc-arrow">▼</span></div>
+      <div class="acc-body"><div class="acc-content"><p>Se pierde el punto si: la pelota bota dos veces en tu campo antes de devolverla, la pelota cae fuera de los límites de la pista (incluida la valla), golpeas la red con la raqueta o el cuerpo, o la pelota te toca en el cuerpo.</p></div></div>
+    </div>
+  </div>
+
+  <!-- QUIZ C — REGLAMENTO -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Actividad 4 — Reglamento y Puntuación (tipo test)</div>
+    <h4>Comprueba que entiendes cómo funciona el juego</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>¿Cómo se llama la situación en la que ambos jugadores o parejas tienen 40-40 en un juego?</div>
+      <div class="options" data-q="a4q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Tie-break</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Match point</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Deuce (iguales)</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Set point</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>¿Cuántas veces puede botar la pelota en tu campo antes de que pierdas el punto?</div>
+      <div class="options" data-q="a4q2" data-correct="A">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Una sola vez</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Dos veces</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Tres veces</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Las que necesites</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>¿Cuántos juegos hay que ganar para llevarse un set?</div>
+      <div class="options" data-q="a4q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">4 juegos</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">6 juegos (con al menos 2 de ventaja)</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">10 juegos</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">3 juegos</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>¿Qué es un "let" en el saque?</div>
+      <div class="options" data-q="a4q4" data-correct="D">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Un saque fallado que cuenta como primer intento</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Un punto ganado directamente con el saque</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Cuando el saque sale fuera de la pista</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Cuando el saque toca la red pero entra — se repite sin penalización</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>¿Cómo se cuentan los puntos en un tie-break?</div>
+      <div class="options" data-q="a4q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Igual que en un juego normal: 15, 30, 40</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Solo hay un punto — el que gane ese punto gana el set</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">1, 2, 3, 4... hasta 10 (ganando por 2 de diferencia)</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Se juega hasta 7 puntos y gana quien llegue primero</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#1a1000;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s" onclick="checkQuiz('act4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Corregir Actividad 4 →</button>
+      <div class="act-score" id="score-act4">Puntuación: <strong id="score-act4-val">—</strong></div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECCIÓN 03 — ENTRENA ═══ -->
+<section class="sect-dark" id="practica">
+<div class="inner">
+  <p class="sect-label reveal">Sección 03 · Entrena</p>
+  <h2 class="sect-title reveal">EN<span class="accent">TRENA</span></h2>
+  <p class="lead reveal">Hora de ponerse en movimiento. Completa estos retos y anota tus resultados.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Control de pelota individual</div><span class="ch-tag">🎯 Técnica</span></div>
+        <p>Bota la pelota con la raqueta hacia arriba de forma controlada. Primero con la cara plana, luego alternando cara y canto. ¿Cuántas veces consecutivas puedes hacerlo sin perder el control?</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d1r1">Tu mejor marca (número de botes consecutivos)</label><input class="field-input" id="d1r1" type="text" placeholder="Cara plana: ___ · Alternando: ___"></div>
+        <div class="field-group"><label class="field-label" for="d1r2">¿Qué ha sido más difícil? ¿Cómo lo has mejorado?</label><textarea class="field-input" id="d1r2" placeholder="Tu reflexión..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Saque dirigido</div><span class="ch-tag">🎾 Saque</span></div>
+        <p>Realiza 10 saques intentando que caigan dentro del cuadro de servicio correcto. Cuenta cuántos entran a la primera y cuántos a la segunda. Anota también si has tenido alguna doble falta.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d2r1">Saques válidos a la primera / segunda / dobles faltas (de 10 intentos)</label><input class="field-input" id="d2r1" type="text" placeholder="1ª: ___ / 2ª: ___ / Dobles faltas: ___"></div>
+        <div class="field-group"><label class="field-label" for="d2r2">¿Qué parte del saque te resulta más difícil de controlar?</label><textarea class="field-input" id="d2r2" placeholder="Tu reflexión..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Peloteo en pareja</div><span class="ch-tag">👥 Trabajo en equipo</span></div>
+        <p>Con un compañero, pelotead desde el fondo de la pista intentando mantener la pelota en juego el mayor tiempo posible. Primero solo con el derecho, luego alternando derechos y reveses.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d3r1">Mejor racha de golpes consecutivos sin que caiga la pelota</label><input class="field-input" id="d3r1" type="text" placeholder="Solo derecho: ___ golpes · Alternando: ___ golpes"></div>
+        <div class="field-group"><label class="field-label" for="d3r2">¿Cómo habéis comunicado con vuestra pareja para mantener el peloteo?</label><textarea class="field-input" id="d3r2" placeholder="Tu reflexión..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Partido de aplicación</div><span class="ch-tag">🏆 Competición</span></div>
+        <p>Juega un set completo (o hasta 4 juegos si el tiempo no da) aplicando todas las reglas. Anota el marcador final y reflexiona sobre tu rendimiento.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d4r1">Resultado del partido / set</label><input class="field-input" id="d4r1" type="text" placeholder="Mi pareja: ___ · Pareja rival: ___ · Resultado: ___"></div>
+        <div class="field-group"><label class="field-label" for="d4r2">¿Qué ha funcionado bien? ¿Qué mejorarías para el próximo partido?</label><textarea class="field-input" id="d4r2" placeholder="Puntos fuertes y a mejorar..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECCIÓN 04 — COMPITE ═══ -->
+<section class="sect-card" id="compite">
+<div class="inner">
+  <p class="sect-label reveal">Sección 04 · Compite</p>
+  <h2 class="sect-title reveal">COMPI<span class="accent">TE</span></h2>
+  <p class="lead reveal">Aplica todo lo aprendido en situaciones reales de juego. El tenis playa se aprende <strong>jugando y compitiendo</strong>.</p>
+
+  <h3 class="subsect reveal">Reto 1 — Partido por Puntos</h3>
+  <p class="body-text reveal">Jugad un partido en parejas con el sistema de puntuación real. Antes de empezar, acordad con vuestro compañero la táctica: ¿quién cubre el fondo? ¿quién ataca la red?</p>
+  <div class="cc-grid reveal">
+    <div class="cc"><span class="cc-icon">🎾</span><div class="cc-title">Resultado</div><div class="cc-body"><input class="field-input" type="text" id="c1r1" placeholder="Nuestra pareja ___ vs ___ · Sets ___"></div></div>
+    <div class="cc"><span class="cc-icon">🧠</span><div class="cc-title">Táctica acordada</div><div class="cc-body"><input class="field-input" type="text" id="c1r2" placeholder="Nuestra estrategia fue..."></div></div>
+    <div class="cc"><span class="cc-icon">✅</span><div class="cc-title">¿Funcionó?</div><div class="cc-body"><input class="field-input" type="text" id="c1r3" placeholder="Sí/No — ¿Por qué?"></div></div>
+  </div>
+
+  <h3 class="subsect reveal">Reto 2 — Torneo de Golpes</h3>
+  <p class="body-text reveal">En grupos de 4: <strong>10 saques</strong> en zona correcta, <strong>10 derechas</strong> y <strong>10 reveses</strong> desde la línea de fondo. Se puntúa 1 por golpe correcto.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📊 Mis resultados técnicos</div>
+    <div class="field-group"><label class="field-label" for="c2r1">Saques en zona correcta (sobre 10)</label><input class="field-input" id="c2r1" type="text" placeholder="___ / 10"></div>
+    <div class="field-group"><label class="field-label" for="c2r2">Derechas exitosas (sobre 10)</label><input class="field-input" id="c2r2" type="text" placeholder="___ / 10"></div>
+    <div class="field-group"><label class="field-label" for="c2r3">Reveses exitosos (sobre 10)</label><input class="field-input" id="c2r3" type="text" placeholder="___ / 10"></div>
+    <div class="field-group"><label class="field-label" for="c2r4">¿Qué golpe necesitas mejorar más y por qué?</label><textarea class="field-input" id="c2r4" placeholder="El golpe que más me cuesta es... porque..."></textarea></div>
+  </div>
+
+  <h3 class="subsect reveal">Reto 3 — Análisis Táctico</h3>
+  <p class="body-text reveal">Observa un partido de tus compañeros 5 minutos. Anota qué golpes usan más, dónde tienen problemas y qué consejo táctico les darías.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">🔍 Mi análisis como entrenador</div>
+    <div class="field-group"><label class="field-label" for="c3r1">Golpe más usado por la pareja observada</label><input class="field-input" id="c3r1" type="text" placeholder="Principalmente usan..."></div>
+    <div class="field-group"><label class="field-label" for="c3r2">Punto débil detectado</label><input class="field-input" id="c3r2" type="text" placeholder="Les cuesta..."></div>
+    <div class="field-group"><label class="field-label" for="c3r3">Consejo táctico que les darías</label><textarea class="field-input" id="c3r3" placeholder="Mi recomendación es..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECCIÓN 05 — EVALÚA ═══ -->
+<section class="sect-mid" id="evalua">
+<div class="inner">
+  <p class="sect-label reveal">Sección 05 · Evalúa</p>
+  <h2 class="sect-title reveal">EVALÚ<span class="accent">A</span></h2>
+  <p class="lead reveal">Demuestra lo que has aprendido y reflexiona sobre tu experiencia en esta unidad.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📓 Actividad Final — Reflexión personal (respuesta abierta)</div>
+    <h4>Cierra la guía con honestidad</h4>
+    <div class="field-group"><label class="field-label" for="af1">¿Qué es lo que más te ha gustado del tenis playa? ¿Y lo que menos?</label><textarea class="field-input" id="af1" placeholder="Lo que más: ... · Lo que menos: ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Nombra 3 cosas concretas que has aprendido que antes no sabías sobre el tenis playa.</label><textarea class="field-input" id="af2" placeholder="1. ... · 2. ... · 3. ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">¿Qué golpe te resulta más difícil? ¿Cómo podrías practicarlo fuera de clase?</label><textarea class="field-input" id="af3" placeholder="Golpe difícil: ... · Cómo practicarlo: ..."></textarea></div>
+  </div>
+
+  <div class="quiz-box reveal" style="margin-top:2rem">
+    <div class="quiz-label">&#x1F4DD; Test Final &mdash; Tenis Playa (autocorregible)</div>
+    <h4>Demuestra lo que has aprendido en esta unidad</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span> Sobre que superficie se juega siempre el tenis playa?</div>
+      <div class="options" data-q="a5q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Hierba artificial</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Arena</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Cemento poroso</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Tierra batida</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span> Cuantos jugadores forman cada equipo en tenis playa?</div>
+      <div class="options" data-q="a5q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">1 individual</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">3 trio</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">2 parejas</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">4 dobles</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span> Que elemento del campo forma parte del juego porque la pelota puede rebotar en el?</div>
+      <div class="options" data-q="a5q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">La red</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">El arbitro de silla</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">La valla perimetral</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Las lineas del fondo</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span> Cual es el golpe de inicio de cada punto en tenis playa?</div>
+      <div class="options" data-q="a5q4" data-correct="A">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">El saque</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">El remate</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">El globo</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">La volea</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span> Por que la arena hace mas exigente fisicamente el tenis playa?</div>
+      <div class="options" data-q="a5q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">La pelota bota mas alto</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Los movimientos son mas lentos y requieren mayor esfuerzo muscular</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">El viento afecta mas</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Las caidas son mas frecuentes</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">6.</span> Cuantos sets se juegan normalmente en un partido de tenis playa?</div>
+      <div class="options" data-q="a5q6" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q6" value="A"><span class="opt-letter">A</span><span class="opt-text">5 sets</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="B"><span class="opt-letter">B</span><span class="opt-text">1 set unico</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="C"><span class="opt-letter">C</span><span class="opt-text">3 sets al mejor de 3</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="D"><span class="opt-letter">D</span><span class="opt-text">4 sets con prorroga</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q6"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act5',['a5q1','a5q2','a5q3','a5q4','a5q5','a5q6'])">Corregir Test Final &rarr;</button>
+      <div class="act-score" id="score-act5">Puntuaci&oacute;n: <strong id="score-act5-val">-</strong></div>
+    </div>
+  </div>
+
+  <h3 class="subsect reveal">Mapa Conceptual</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">🎾 TENIS PLAYA <span>Deporte de raqueta en pareja sobre arena</span></div>
+    <div class="scheme-pipe">│</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">PISTA</div>
+        <input class="field-input" type="text" placeholder="Medidas..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Superficie..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">GOLPES</div>
+        <input class="field-input" type="text" placeholder="Golpe 1..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Golpe 2..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">PUNTUACIÓN</div>
+        <input class="field-input" type="text" placeholder="Deuce = ___" style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Set = ___ juegos" style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">REGLAS CLAVE</div>
+        <input class="field-input" type="text" placeholder="Regla 1..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Regla 2..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">DIFERENCIAS</div>
+        <input class="field-input" type="text" placeholder="vs tenis: ..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="vs padel: ..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">TU PUNTUACIÓN GLOBAL</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Solo incluye las preguntas tipo test · Las preguntas abiertas las corrige el profesor</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:#1a1000;border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;transition:all .2s" onclick="calcGlobalScore()">📊 Ver mi puntuación global</button>
+  </div>
+</div>
+</section>
+<footer>
+  <p>Queda expresamente prohibida cualquier reproducción o distribución de esta guía sin autorización previa del autor. Uso exclusivo para estudiantes y familias del centro. · Colegio Santa María la Blanca · © Jaime Redondo</p>
+</footer>
+<script>
+const STORE_KEY='ef2eso-tenisplaya-v1';
+const CORRECT={
+  a2q1:'C',a2q2:'B',a2q3:'D',a2q4:'A',a2q5:'C',
+  a3q1:'B',a3q2:'C',a3q3:'A',a3q4:'D',a3q5:'B',
+  a4q1:'C',a4q2:'A',a4q3:'B',a4q4:'D',a4q5:'C',
+  a5q1:'B',a5q2:'C',a5q3:'C',a5q4:'A',a5q5:'B',a5q6:'C'
+};
+const ACT_QUESTIONS={
+  act2:['a2q1','a2q2','a2q3','a2q4','a2q5'],
+  act3:['a3q1','a3q2','a3q3','a3q4','a3q5'],
+  act4:['a4q1','a4q2','a4q3','a4q4','a4q5'],
+  act5:['a5q1', 'a5q2', 'a5q3', 'a5q4', 'a5q5', 'a5q6']
+};
+const EXPLANATIONS={
+  a2q1:'✅ Correcto. La pista de tenis playa mide 16 x 8 metros.',
+  a2q2:'✅ Correcto. La raqueta es mas corta, solida y con agujeros, sin cuerdas (similar al padel).',
+  a2q3:'✅ Correcto. El tenis playa se juega siempre en dobles (2 vs 2), nunca en individual.',
+  a2q4:'✅ Correcto. La valla forma parte del juego - el rebote en ella es valido y el punto continua.',
+  a2q5:'✅ Correcto. En arena los pies se hunden, cada paso consume mas energia muscular.',
+  a3q1:'✅ Correcto. La volea es golpear la pelota en el aire antes de que bote, normalmente cerca de la red.',
+  a3q2:'✅ Correcto. Tienes dos intentos de saque. Si fallas los dos es doble falta y pierdes el punto.',
+  a3q3:'✅ Correcto. Los pies se hunden en la arena, lo que obliga a anticipar y preparar antes el golpe.',
+  a3q4:'✅ Correcto. El remate sirve para finalizar el punto con un golpe potente hacia abajo cuando la pelota viene alta.',
+  a3q5:'✅ Correcto. Para principiantes, el reves a dos manos es mas estable y facil de controlar.',
+  a4q1:'✅ Correcto. Cuando ambos tienen 40-40 se llama Deuce (iguales).',
+  a4q2:'✅ Correcto. La pelota solo puede botar una vez en tu campo antes de ser devuelta.',
+  a4q3:'✅ Correcto. Se gana el set llegando a 6 juegos con al menos 2 de ventaja.',
+  a4q4:'✅ Correcto. El let es cuando el saque toca la red pero entra - se repite sin penalizacion.',
+  a4q5:'✅ Correcto. En el tie-break los puntos se cuentan 1, 2, 3... hasta 10 (ganando por 2).',
+  a5q1:'Correcto. El tenis playa se juega siempre sobre arena.',a5q2:'Correcto. Se juega en parejas, 2 jugadores por equipo.',a5q3:'Correcto. La valla perimetral es parte del campo y el rebote en ella es valido.',a5q4:'Correcto. El saque inicia cada punto.',a5q5:'Correcto. La arena frena los desplazamientos y exige mayor esfuerzo muscular.',a5q6:'Correcto. Se juegan 3 sets y gana quien primero consigue 2.'
+};
+window.addEventListener('scroll',()=>{const d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+const revObs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});
+document.querySelectorAll('.reveal').forEach(r=>revObs.observe(r));
+function toggleAcc(h){const i=h.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item.open').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');}
+document.addEventListener('change',e=>{if(e.target.type==='radio'){const n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(r=>r.closest('.opt').classList.toggle('selected',r.checked));saveLocal();}});
+function checkQuiz(actId,qIds){
+  let correct=0;
+  qIds.forEach(qId=>{
+    const sel=document.querySelector('input[name="'+qId+'"]:checked');
+    const fb=document.getElementById('fb-'+qId);
+    const cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(o=>{o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPLANATIONS[qId]||'Correcto';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var ct=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');ct=ct?ct.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrecto. La respuesta correcta es '+cv+': "'+ct+'"';fb.className='q-feedback show ko';}}
+    else{fb.textContent='No has seleccionado ninguna opcion.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');
+  var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACT_QUESTIONS).forEach(function(act){ACT_QUESTIONS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;
+  var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Hay que repasar la teoria','Vas por buen camino, sigue estudiando','Buen trabajo! Dominas los conceptos','Excelente! Todo muy bien aprendido'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){
+  var data={};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});
+  document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});
+  localStorage.setItem(STORE_KEY,JSON.stringify(data));
+}
+function loadLocal(){
+  var raw=localStorage.getItem(STORE_KEY);if(!raw)return;
+  var data=JSON.parse(raw);
+  Object.keys(data).forEach(function(id){
+    if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}
+    else{var el=document.getElementById(id);if(el)el.value=data[id];}
+  });
+}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparando PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){
+  if(!confirm('Borrar TODAS las respuestas? No se puede deshacer.'))return;
+  document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});
+  document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});
+  document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});
+  document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});
+  document.getElementById('global-score-box').style.display='none';
+  localStorage.removeItem(STORE_KEY);
+}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){
+  var nombre=document.getElementById('al-nombre').value.trim();
+  var curso=document.getElementById('al-curso').value.trim();
+  var fecha=document.getElementById('al-fecha').value.trim();
+  var res=document.getElementById('submitResumen');
+  if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Falta el nombre.</span> Escribe tu nombre antes de entregar.';}
+  else{res.innerHTML='<strong style="color:white">Alumno:</strong> '+nombre+' | <strong style="color:white">Curso:</strong> '+(curso||'-')+' | <strong style="color:white">Fecha:</strong> '+(fecha||'-');}
+  document.getElementById('submitConfirmView').style.display='block';
+  document.getElementById('submitSentView').style.display='none';
+  document.getElementById('submitConfirmBtn').disabled=!nombre;
+  document.getElementById('submitModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');
+  var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'2ESO-TenisPlaya'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    data['resp_'+qId]=sel?sel.value:'-';
+    data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correcto':'incorrecto'):'-';
+  });
+  Object.keys(ACT_QUESTIONS).forEach(function(act){
+    var c=0;ACT_QUESTIONS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});
+    data['nota_'+act]=c+'/'+ACT_QUESTIONS[act].length;
+  });
+  var tot=0,totQ=0;
+  Object.keys(ACT_QUESTIONS).forEach(function(act){ACT_QUESTIONS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';
+  data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Enviando...';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    document.getElementById('submitConfirmView').style.display='none';
+    document.getElementById('submitSentView').style.display='block';
+    var mb=document.getElementById('btnEntregar');mb.textContent='Entregado';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';
+    showToast('Entregado correctamente!','toast-ok');
+  }catch(err){btnText.innerHTML='Confirmar entrega';btn.disabled=false;showToast('Error al enviar. Revisa tu conexion.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+</script>
+</body>
+</html>

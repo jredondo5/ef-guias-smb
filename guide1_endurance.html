@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Guide – ENDURANCE · 4º ESO · PE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#FF6B00;--accent2:#FFB347;--accent3:#FF3D00;--dark:#080808;--mid:#111111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,0.72);--txt-dim:rgba(255,255,255,0.38)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,0.05);z-index:200}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.96);height:var(--nav-h);display:flex;align-items:center;padding:0 3rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,107,0,.12);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1.05rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--accent)}
+.logo-badge{background:var(--accent);color:white;font-family:'Space Mono',monospace;font-size:.55rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .7rem;border-radius:3px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(255,107,0,.08)}
+.subnav{position:relative}
+.subnav-menu{display:none;position:absolute;top:115%;left:0;background:var(--card);border:1px solid rgba(255,107,0,.15);border-radius:8px;overflow:hidden;min-width:210px;box-shadow:0 16px 40px rgba(0,0,0,.7)}
+.subnav:hover .subnav-menu{display:block}
+.subnav-menu a{display:block;border-radius:0;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:white!important;border-radius:4px;padding:.45rem 1rem!important;font-size:.7rem!important}
+/* HERO */
+#home{min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hc-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 12s ease-in-out infinite}
+.hc-orb:nth-child(1){width:500px;height:500px;background:var(--accent);top:-10%;right:-5%}
+.hc-orb:nth-child(2){width:300px;height:300px;background:var(--accent3);bottom:10%;right:20%;animation-delay:4s}
+.hc-orb:nth-child(3){width:200px;height:200px;background:var(--accent2);top:40%;right:8%;animation-delay:8s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+.hero-left{position:relative;z-index:2;padding:6rem 3rem 6rem 5rem}
+.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:rgba(255,107,0,.1);border:1px solid rgba(255,107,0,.2);padding:.35rem .9rem;border-radius:2px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(4.5rem,10vw,9rem);line-height:.85;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:.5rem}
+h1.hero-title .line2{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-size:clamp(3rem,7vw,6.5rem)}
+.hero-tagline{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.08em;color:var(--txt-dim);margin-top:1rem;margin-bottom:2.5rem;border-left:3px solid var(--accent);padding-left:1rem;line-height:1.8}
+.hero-tagline strong{color:rgba(255,255,255,.9)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:3px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:white}
+.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,107,0,.4)}
+.btn-secondary{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-right{position:relative;z-index:2;padding:4rem 5rem 4rem 2rem;display:flex;flex-direction:column;gap:1.25rem;justify-content:center}
+.hero-stat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;transition:all .25s;position:relative;overflow:hidden}
+.hero-stat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.hero-stat-card:hover{background:rgba(255,107,0,.06);border-color:rgba(255,107,0,.2);transform:translateX(4px)}
+.hero-stat-card:hover::before{transform:scaleY(1)}
+.stat-icon{font-size:1.8rem;flex-shrink:0;width:48px;text-align:center}
+.stat-num{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:var(--accent);line-height:1}
+.stat-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-top:.15rem}
+.stat-desc{font-size:.8rem;color:var(--txt);margin-top:.2rem;line-height:1.4}
+/* SECTIONS */
+.inner{max-width:1180px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:6rem 0}
+.sect-mid{background:var(--mid);padding:6rem 0}
+.sect-card{background:var(--card);padding:6rem 0}
+.sect-card2{background:var(--card2);padding:6rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,107,0,.3),transparent);max-width:120px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5.5vw,4.5rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.5rem;line-height:.95}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;margin-top:3rem;display:flex;align-items:center;gap:.75rem}
+h3.subsect::before{content:'';width:24px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.05rem;line-height:1.85;color:var(--txt);margin-bottom:1.2rem;max-width:780px}
+.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.97rem;line-height:1.82;color:var(--txt);margin-bottom:1rem}
+p.body-text strong{color:white;font-weight:800}
+p.body-text em{color:var(--accent2);font-style:normal;font-weight:700}
+/* STUDENT BAR */
+.student-bar{background:rgba(255,107,0,.06);border:1px solid rgba(255,107,0,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.student-bar label{font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.student-bar input{flex:1;min-width:180px;background:transparent;border:none;border-bottom:2px solid rgba(255,107,0,.3);padding:.5rem .6rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.student-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.student-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+/* QUIZ */
+.quiz-box{background:var(--card2);border:1px solid rgba(255,107,0,.15);border-left:4px solid var(--accent);border-radius:6px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.88rem;letter-spacing:.12em;text-transform:uppercase;color:white;margin-bottom:1.5rem;padding-bottom:.75rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-item:last-child{margin-bottom:0}
+.q-text{font-size:.95rem;color:rgba(255,255,255,.9);font-weight:700;margin-bottom:.85rem;line-height:1.5}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.5rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.65rem .9rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(255,107,0,.06);border-color:rgba(255,107,0,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:20px;line-height:1.4}
+.opt-text{font-size:.88rem;color:var(--txt);line-height:1.5}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}
+.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}
+.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(255,107,0,.1);border-color:rgba(255,107,0,.35)}
+.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.8rem;font-weight:700;padding:.5rem .75rem;border-radius:4px}
+.q-feedback.show{display:block}
+.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}
+.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}
+.act-score.show{opacity:1}
+/* OPEN FIELDS */
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(255,107,0,.2);border-radius:3px 3px 0 0;padding:.6rem .8rem;font-family:'Mulish',sans-serif;font-size:.92rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(255,107,0,.05)}
+.field-input::placeholder{color:rgba(255,255,255,.12)}
+textarea.field-input{min-height:85px;line-height:1.65}
+/* ENERGY CARDS */
+.energy-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:2rem 0}
+.energy-card{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:2rem;position:relative;overflow:hidden;transition:all .25s}
+.energy-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.energy-card:hover{border-color:rgba(255,107,0,.25);transform:translateY(-3px)}
+.energy-card:hover::after{transform:scaleX(1)}
+.ec-time{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.75rem}
+.ec-icon{font-size:2.5rem;margin-bottom:.75rem;display:block}
+.ec-title{font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.05em;color:white;margin-bottom:.5rem}
+.ec-body{font-size:.85rem;color:var(--txt);line-height:1.6}
+.ec-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(255,107,0,.12);color:var(--accent);border:1px solid rgba(255,107,0,.2)}
+/* CALC */
+.calc-box{background:linear-gradient(135deg,rgba(255,107,0,.08),rgba(255,61,0,.04));border:1px solid rgba(255,107,0,.2);border-radius:12px;padding:2.5rem;margin:2.5rem 0}
+.calc-title{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.3rem}
+.calc-sub{font-size:.78rem;color:var(--txt-dim);margin-bottom:2rem}
+.calc-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.calc-label{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--txt-dim);min-width:100px}
+.calc-input{background:rgba(255,255,255,.06);border:1px solid rgba(255,107,0,.2);border-radius:6px;padding:.65rem 1rem;font-family:'Anton',sans-serif;font-size:1.4rem;color:white;width:110px;text-align:center}
+.calc-input:focus{outline:none;border-color:var(--accent)}
+.calc-result-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;margin-top:1.5rem}
+.calc-zone{background:rgba(255,255,255,.04);border-radius:6px;padding:1rem .5rem;text-align:center;border:1px solid rgba(255,255,255,.06);transition:all .3s}
+.cz-num{font-family:'Anton',sans-serif;font-size:.85rem;color:var(--accent);margin-bottom:.2rem}
+.cz-label{font-size:.6rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.5rem}
+.cz-range{font-family:'Space Mono',monospace;font-size:.78rem;color:white;font-weight:700}
+.cz-bar{height:4px;border-radius:2px;margin-top:.5rem}
+.calc-btn{background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.75rem 2rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;transition:all .2s;margin-top:.5rem}
+.calc-btn:hover{background:var(--accent2);transform:translateY(-1px)}
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:2rem 0}
+.data-table th{font-family:'Space Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);text-align:left;padding:.85rem 1.1rem;border-bottom:2px solid rgba(255,107,0,.25)}
+.data-table td{padding:1rem 1.1rem;font-size:.88rem;color:var(--txt);border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;line-height:1.55}
+.data-table tr:hover td{background:rgba(255,107,0,.04)}
+.data-table td strong{color:white;font-weight:800}
+.pill{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.15rem .5rem;border-radius:2px}
+.pill-green{background:rgba(50,200,100,.15);color:#50e090;border:1px solid rgba(50,200,100,.25)}
+.pill-orange{background:rgba(255,107,0,.15);color:var(--accent);border:1px solid rgba(255,107,0,.25)}
+.pill-red{background:rgba(255,60,60,.15);color:#ff6060;border:1px solid rgba(255,60,60,.25)}
+/* METHODS GRID */
+.methods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.method-card{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:1.75rem;transition:all .25s;cursor:pointer}
+.method-card:hover{border-color:rgba(255,107,0,.25);transform:translateY(-3px)}
+.mc-icon{font-size:2rem;margin-bottom:.75rem}
+.mc-title{font-weight:900;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.mc-body{font-size:.82rem;color:var(--txt);line-height:1.55}
+.mc-more{margin-top:.75rem;font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);cursor:pointer;background:none;border:none;padding:0}
+/* ACCORDION */
+.accordion{margin:1.5rem 0}
+.acc-item{border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.75rem;cursor:pointer;background:rgba(255,255,255,.02);transition:background .2s;gap:1rem}
+.acc-header:hover{background:rgba(255,107,0,.06)}
+.acc-header-left{display:flex;align-items:center;gap:1rem}
+.acc-icon{font-size:1.4rem;flex-shrink:0}
+.acc-title{font-weight:800;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:white}
+.acc-sub{font-size:.75rem;color:var(--txt-dim);margin-top:.15rem}
+.acc-arrow{color:var(--accent);transition:transform .3s;font-size:.8rem;flex-shrink:0}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.acc-item.open .acc-body{max-height:1400px}
+.acc-content{padding:1.75rem;border-top:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.01)}
+.acc-content p{font-size:.88rem;color:var(--txt);line-height:1.75;margin-bottom:.85rem}
+.acc-content p strong{color:white}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:2rem;backdrop-filter:blur(8px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-box{background:var(--card);border:1px solid rgba(255,107,0,.2);border-radius:12px;max-width:860px;width:100%;max-height:85vh;overflow-y:auto;transform:translateY(20px) scale(.98);transition:transform .3s}
+.modal-overlay.open .modal-box{transform:translateY(0) scale(1)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2.5rem;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;background:var(--card);z-index:2}
+.modal-title{font-family:'Anton',sans-serif;font-size:1.4rem;letter-spacing:.06em;text-transform:uppercase;color:white}
+.modal-close{background:rgba(255,255,255,.08);border:none;color:white;width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.modal-close:hover{background:rgba(255,107,0,.2)}
+.modal-body{padding:2.5rem}
+.modal-body p{font-size:.93rem;line-height:1.8;color:var(--txt);margin-bottom:1rem}
+.modal-body p strong{color:white}
+.modal-body h3{font-weight:900;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-top:2rem;margin-bottom:.75rem}
+/* SIDE PANEL */
+.side-panel{position:fixed;right:0;top:0;bottom:0;width:min(520px,90vw);background:var(--card);border-left:1px solid rgba(255,107,0,.15);z-index:450;transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1);overflow-y:auto}
+.side-panel.open{transform:translateX(0)}
+.side-panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:449;opacity:0;pointer-events:none;transition:opacity .3s}
+.side-panel-overlay.open{opacity:1;pointer-events:all}
+.sp-header{display:flex;align-items:center;justify-content:space-between;padding:1.75rem 2rem;border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;background:var(--card);z-index:2}
+.sp-badge{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:rgba(255,107,0,.1);padding:.25rem .6rem;border-radius:2px}
+.sp-title{font-family:'Anton',sans-serif;font-size:1.3rem;letter-spacing:.05em;text-transform:uppercase;color:white;margin-top:.3rem}
+.sp-close{background:rgba(255,255,255,.08);border:none;color:white;width:34px;height:34px;border-radius:6px;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.sp-close:hover{background:rgba(255,107,0,.2)}
+.sp-body{padding:2rem}
+.sp-body p{font-size:.88rem;line-height:1.8;color:var(--txt);margin-bottom:1rem}
+.sp-body p strong{color:white}
+.sp-body h3{font-weight:900;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-top:1.75rem;margin-bottom:.65rem}
+.infographic-trigger{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.2);border-radius:4px;padding:.5rem 1rem;cursor:pointer;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);transition:all .2s;margin:.4rem .4rem .4rem 0}
+.infographic-trigger:hover{background:rgba(255,107,0,.15);border-color:var(--accent);transform:translateY(-1px)}
+/* TIMELINE */
+.timeline{margin:2.5rem 0;position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),transparent)}
+.tl-item{margin-bottom:2rem;position:relative}
+.tl-item::before{content:'';position:absolute;left:-2.4rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--dark)}
+.tl-year{font-family:'Anton',sans-serif;font-size:1.1rem;color:var(--accent);letter-spacing:.08em}
+.tl-title{font-weight:900;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin:.2rem 0 .4rem}
+.tl-body{font-size:.85rem;color:var(--txt);line-height:1.6}
+/* CHALLENGES */
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:80px 1fr;gap:2rem;padding:2.25rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .22s}
+.ch-item:hover{padding-left:.6rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.5rem;color:rgba(255,107,0,.12);line-height:1;transition:color .22s}
+.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(255,107,0,.1);color:var(--accent);border:1px solid rgba(255,107,0,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.87rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.timer-widget{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:.5rem 1rem;margin:.75rem 0;cursor:pointer;transition:all .2s}
+.timer-widget:hover{border-color:var(--accent);background:rgba(255,107,0,.06)}
+.tw-icon{font-size:1.1rem}
+.tw-label{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--txt)}
+.tw-time{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;color:var(--accent);min-width:50px}
+/* DATA HIGHLIGHTS */
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin:2rem 0}
+.data-highlight{border-left:4px solid var(--accent);padding:1.5rem 2rem;background:rgba(255,107,0,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3.5rem;color:var(--accent);line-height:1;margin-bottom:.25rem}
+.dh-label{font-size:.75rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.dh-desc{font-size:.88rem;color:var(--txt);line-height:1.6}
+/* SCHEME */
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:3rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.8rem;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;text-transform:uppercase}
+.scheme-center span{font-size:1rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:300;letter-spacing:.05em;margin-top:.3rem}
+.scheme-pipe{text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.5rem 0}
+.scheme-row{display:flex;gap:1rem;justify-content:center;margin:.75rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:130px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.75rem;border-bottom:2px solid rgba(255,107,0,.3);padding-bottom:.4rem;margin-bottom:.6rem;letter-spacing:.12em;text-transform:uppercase}
+/* SVG */
+.svg-img{width:100%;border-radius:10px;overflow:hidden;margin:2rem 0;background:var(--card2)}
+/* FLOATING */
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.9);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;padding:.75rem 1.75rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:.5rem}
+.pdf-save{background:var(--accent);color:white}
+.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}
+.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 20px rgba(34,197,94,.35)}
+.btn-submit:hover{background:linear-gradient(135deg,#16a34a,#15803d);transform:translateY(-2px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+.toast-pdf{background:var(--accent)}
+.toast-ok{background:#22c55e}
+.toast-err{background:#ef4444}
+/* SUBMIT MODAL */
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}
+.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:520px;width:100%;padding:3rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}
+.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.5rem;margin-bottom:1rem;display:block}
+.submit-box h2{font-family:'Anton',sans-serif;font-size:2rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.5rem}
+.submit-box p strong{color:white}
+.submit-warning{background:rgba(255,107,0,.08);border:1px solid rgba(255,107,0,.2);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.75rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}
+.submit-warning span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.9rem 2rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}
+.submit-confirm:hover{background:linear-gradient(135deg,#16a34a,#15803d);transform:translateY(-1px)}
+.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.9rem 1.5rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}
+.submit-sent .sent-icon{font-size:4rem;display:block;margin-bottom:1rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.6rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* GLOBAL SCORE */
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(255,107,0,.1),rgba(255,61,0,.05));border:1px solid rgba(255,107,0,.3);border-radius:12px;padding:2.5rem;text-align:center}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.watermark{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.12);pointer-events:none;user-select:none}
+/* IMG STRIP */
+.img-strip{width:100%;overflow:hidden;position:relative;height:400px}
+.img-strip-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 0%,transparent 40%,transparent 60%,var(--dark) 100%),linear-gradient(0deg,var(--dark) 0%,transparent 30%)}
+.img-strip-tag{position:absolute;top:2rem;right:4rem;background:rgba(255,107,0,.9);color:white;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding:.4rem .9rem;border-radius:2px}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.15);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.watermark,.prog-wrap,.modal-overlay,.side-panel,.side-panel-overlay,#home,.img-strip,.hero-ctas,.timer-widget,.infographic-trigger{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #c95000!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){#home{grid-template-columns:1fr}.hero-left{padding:5rem 2rem 3rem}.hero-right{display:none}.inner{padding:0 1.5rem}.energy-cards{grid-template-columns:1fr}.calc-result-grid{grid-template-columns:repeat(3,1fr)}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="watermark">© Jaime Redondo</div>
+
+<!-- FLOATING BUTTONS -->
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">🗑 Clear</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">📄 Save PDF</button>
+  <button class="pdf-btn btn-submit" id="btnSubmit" onclick="openSubmitModal()">✅ Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- SUBMIT MODAL -->
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span>
+      <h2>Submit Guide</h2>
+      <p>You are about to send all your answers to your teacher. Make sure you have filled in your <strong>name and group</strong> before continuing.</p>
+      <div class="submit-warning"><span>⚠ Note:</span> Multiple choice answers will be marked automatically. Open questions will be reviewed manually by your teacher.</div>
+      <div id="submitStudentSummary" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.75rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancel</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">📤 Confirm submission</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span>
+      <h3>Submitted!</h3>
+      <p>Your answers have been sent to your teacher successfully. Save a PDF copy for your records.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3))">📄 Save PDF too</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- SIDE PANEL -->
+<div class="side-panel-overlay" id="spOverlay" onclick="closeSidePanel()"></div>
+<div class="side-panel" id="sidePanel">
+  <div class="sp-header">
+    <div><div class="sp-badge" id="spBadge">INFO</div><div class="sp-title" id="spTitle"></div></div>
+    <button class="sp-close" onclick="closeSidePanel()">✕</button>
+  </div>
+  <div class="sp-body" id="spBody"></div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#home">❤️ ENDURANCE <span class="logo-badge">4º ESO · PE</span></a>
+  <nav>
+    <a href="#get-active">Get Active</a>
+    <div class="subnav">
+      <a href="#challenge">Challenge Yourself</a>
+      <div class="subnav-menu">
+        <a href="#energy-systems">Energy Systems</a>
+        <a href="#cardiovascular">Cardiovascular System</a>
+        <a href="#training-zones">Training Zones</a>
+        <a href="#training-methods">Training Methods</a>
+        <a href="#principles">Training Principles</a>
+        <a href="#fitness-tests">Fitness Tests</a>
+      </div>
+    </div>
+    <a href="#train">Train & Compete</a>
+    <a href="#evaluate">Evaluate</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div id="home" style="min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden">
+    <div class="hc-orb"></div><div class="hc-orb"></div><div class="hc-orb"></div>
+  </div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="hero-badge">Physical Education · 4º ESO · CLIL</span>
+      <div class="hero-dot"></div>
+      <span style="font-size:.65rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--txt-dim)">Physical Fitness</span>
+    </div>
+    <h1 class="hero-title">ENDUR<span class="line2">ANCE</span></h1>
+    <p class="hero-tagline">The ability to <strong>sustain physical effort over time</strong>.<br>The foundation of all athletic performance — and a healthier life.</p>
+    <div class="hero-ctas">
+      <a href="#get-active" class="btn btn-primary">🚀 Get Started</a>
+      <a href="#energy-systems" class="btn btn-secondary">📖 Theory</a>
+      <a href="#train" class="btn btn-secondary">⚡ Challenges</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-card reveal" style="transition-delay:.1s"><div class="stat-icon">🫀</div><div><div class="stat-num">220 − age</div><div class="stat-label">Max Heart Rate Formula</div><div class="stat-desc">The basis for calculating your personalised training zones</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.2s"><div class="stat-icon">⚡</div><div><div class="stat-num">3 Systems</div><div class="stat-label">Energy Systems</div><div class="stat-desc">ATP-PCr, Lactic Acid and Aerobic — each for different intensities</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.3s"><div class="stat-icon">📊</div><div><div class="stat-num">5 Zones</div><div class="stat-label">Training Zones</div><div class="stat-desc">From active recovery to maximum effort</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.4s"><div class="stat-icon">🏃</div><div><div class="stat-num">4 Methods</div><div class="stat-label">Training Methods</div><div class="stat-desc">Continuous, interval, fartlek and circuit training</div></div></div>
+    <div class="hero-stat-card reveal" style="transition-delay:.5s"><div class="stat-icon">📋</div><div><div class="stat-num">1:59:40</div><div class="stat-label">Kipchoge — Sub-2h Marathon</div><div class="stat-desc">Vienna 2019 — the greatest endurance feat in history</div></div></div>
+  </div>
+</div>
+
+<!-- SVG STRIP -->
+<div class="img-strip">
+  <svg viewBox="0 0 1400 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0">
+    <defs>
+      <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0a00"/><stop offset="100%" stop-color="#0a0500"/></linearGradient>
+      <radialGradient id="glowG" cx="75%" cy="80%" r="40%"><stop offset="0%" stop-color="#FF6B00" stop-opacity=".25"/><stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1400" height="400" fill="url(#skyG)"/>
+    <ellipse cx="1050" cy="400" rx="600" ry="150" fill="url(#glowG)"/>
+    <!-- Track lanes -->
+    <ellipse cx="700" cy="340" rx="580" ry="60" fill="none" stroke="rgba(255,107,0,.08)" stroke-width="2"/>
+    <ellipse cx="700" cy="340" rx="520" ry="52" fill="none" stroke="rgba(255,107,0,.05)" stroke-width="2"/>
+    <!-- Runners silhouettes -->
+    <g transform="translate(350,220)" opacity=".85">
+      <circle cx="0" cy="-22" r="12" fill="#FF6B00"/>
+      <ellipse cx="0" cy="-5" rx="9" ry="12" fill="#FF8C3A"/>
+      <line x1="0" y1="7" x2="-15" y2="50" stroke="#FF6B00" stroke-width="6" stroke-linecap="round"/>
+      <line x1="-15" y1="50" x2="-22" y2="80" stroke="#FF4500" stroke-width="5" stroke-linecap="round"/>
+      <line x1="0" y1="7" x2="18" y2="45" stroke="#FF6B00" stroke-width="6" stroke-linecap="round"/>
+      <line x1="18" y1="45" x2="24" y2="72" stroke="#FF4500" stroke-width="5" stroke-linecap="round"/>
+      <line x1="-5" y1="0" x2="-28" y2="35" stroke="#FF8C3A" stroke-width="5" stroke-linecap="round"/>
+      <line x1="5" y1="0" x2="26" y2="28" stroke="#FF8C3A" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(420,225)" opacity=".6">
+      <circle cx="0" cy="-20" r="10" fill="#CC5500"/>
+      <ellipse cx="0" cy="-5" rx="8" ry="10" fill="#DD7733"/>
+      <line x1="0" y1="5" x2="-12" y2="42" stroke="#CC5500" stroke-width="5" stroke-linecap="round"/>
+      <line x1="-12" y1="42" x2="-18" y2="68" stroke="#AA4400" stroke-width="4" stroke-linecap="round"/>
+      <line x1="0" y1="5" x2="15" y2="40" stroke="#CC5500" stroke-width="5" stroke-linecap="round"/>
+      <line x1="15" y1="40" x2="20" y2="62" stroke="#AA4400" stroke-width="4" stroke-linecap="round"/>
+      <line x1="-4" y1="0" x2="-22" y2="28" stroke="#DD7733" stroke-width="4" stroke-linecap="round"/>
+      <line x1="4" y1="0" x2="22" y2="24" stroke="#DD7733" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <!-- ECG line -->
+    <polyline points="0,370 80,370 100,340 120,395 140,315 160,400 180,370 320,370 340,350 360,385 380,330 400,395 420,370 580,370 600,355 620,382 640,338 660,392 680,370 840,370" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity=".2"/>
+    <!-- Title text faint -->
+    <text x="700" y="80" text-anchor="middle" font-family="'Anton',sans-serif" font-size="90" fill="white" opacity=".02" letter-spacing="12">ENDURANCE</text>
+  </svg>
+  <div class="img-strip-overlay"></div>
+  <div class="img-strip-tag">Guide 1 — Endurance</div>
+</div>
+
+<!-- ═══ SECTION 01 — GET ACTIVE ═══ -->
+<section class="sect-dark" id="get-active">
+<div class="inner">
+  <p class="sect-label reveal">Section 01 / Get Active</p>
+  <h2 class="sect-title reveal">GET <span class="accent">ACTIVE</span></h2>
+  <div class="student-bar reveal">
+    <label for="st-name">👤 Name</label>
+    <input type="text" id="st-name" placeholder="Full name...">
+    <label for="st-group">📚 Group</label>
+    <input type="text" id="st-group" placeholder="4º ESO —" style="max-width:180px">
+    <label for="st-date">📅 Date</label>
+    <input type="text" id="st-date" placeholder="dd/mm/yyyy" style="max-width:130px">
+  </div>
+  <p class="lead reveal">Endurance is your body's ability to <strong>sustain physical effort over time</strong>. It is the base of the fitness pyramid — without it, every other physical quality suffers. Before studying the theory, reflect on what you already know.</p>
+  <div class="dh-row reveal">
+    <div class="data-highlight"><div class="dh-num">1:59:40</div><div class="dh-label">Kipchoge Sub-2h Marathon</div><div class="dh-desc">Vienna, 2019. The first human to run 42.195 km in under 2 hours.</div></div>
+    <div class="data-highlight"><div class="dh-num">40%</div><div class="dh-label">Possible VO₂max Improvement</div><div class="dh-desc">With 8–12 weeks of systematic aerobic training.</div></div>
+    <div class="data-highlight"><div class="dh-num">220−age</div><div class="dh-label">Max Heart Rate Formula</div><div class="dh-desc">The starting point for all personalised training zone calculations.</div></div>
+  </div>
+
+  <!-- HISTORY TIMELINE -->
+  <h3 class="subsect reveal">A Brief History of Endurance</h3>
+  <div class="timeline reveal">
+    <div class="tl-item"><div class="tl-year">490 BC</div><div class="tl-title">The First Marathon</div><div class="tl-body">Greek soldier Pheidippides ran ~40 km from Marathon to Athens to announce the victory over the Persians — the origin of the modern marathon.</div></div>
+    <div class="tl-item"><div class="tl-year">1896</div><div class="tl-title">Olympic Marathon</div><div class="tl-body">The marathon became an official event at the first modern Olympic Games in Athens. The distance was standardised at 42.195 km in 1921.</div></div>
+    <div class="tl-item"><div class="tl-year">1968</div><div class="tl-title">The Cooper Test</div><div class="tl-body">Dr Kenneth Cooper developed his famous 12-minute run test for the US Air Force — still one of the most widely used measures of aerobic fitness worldwide.</div></div>
+    <div class="tl-item"><div class="tl-year">1982</div><div class="tl-title">The Course Navette</div><div class="tl-body">Canadian researcher Luc Léger developed the progressive shuttle run test, ideal for group testing in schools — still used in PE classes globally.</div></div>
+    <div class="tl-item"><div class="tl-year">2019</div><div class="tl-title">Sub-2 Hours</div><div class="tl-body">Eliud Kipchoge (Kenya) ran the marathon in 1:59:40 in Vienna, redefining the limits of human endurance. His VO₂max is estimated at ~84 ml/kg/min.</div></div>
+  </div>
+
+  <!-- ACTIVITY 1: OPEN PRIOR KNOWLEDGE -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📓 Activity 1 — Prior Knowledge (open answers)</div>
+    <h4>What do you already know about endurance?</h4>
+    <p style="font-size:.88rem;color:var(--txt);margin-bottom:1.5rem">Answer honestly BEFORE studying the theory. There are no wrong answers — these are your starting point.</p>
+    <div class="field-group"><label class="field-label" for="a1q1">How long do you think you can run without stopping? Do you play any sport regularly? How often?</label><textarea class="field-input" id="a1q1" placeholder="Your answer..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">What is the difference between sprinting 100m and running 5 km at an easy pace? Why do we get tired differently?</label><textarea class="field-input" id="a1q2" placeholder="Your answer..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q3">Do you think endurance can be improved with training, or is it something you are born with? Explain your reasoning.</label><textarea class="field-input" id="a1q3" placeholder="Your reasoned opinion..."></textarea></div>
+  </div>
+</div>
+</section>
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ UNIT VIDEO</span>
+    <span class="ebi-vid-ttl">Cooper Test — How to perform it correctly</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="NN2u39yYJvg" data-title="Cooper Test — How to perform it correctly" tabindex="0" role="button" aria-label="Play: Cooper Test — How to perform it correctly">
+    <img src="https://img.youtube.com/vi/NN2u39yYJvg/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/NN2u39yYJvg/mqdefault.jpg'" alt="Cooper Test — How to perform it correctly" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Click image to play · Or open it on</span>
+    <a href="https://www.youtube.com/watch?v=NN2u39yYJvg" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+
+<!-- ═══ SECTION 02A — ENERGY SYSTEMS ═══ -->
+<section class="sect-mid" id="energy-systems">
+<div class="inner">
+  <p class="sect-label reveal">Section 02A / Challenge Yourself</p>
+  <h2 class="sect-title reveal">ENERGY <span class="accent">SYSTEMS</span></h2>
+  <p class="lead reveal">To move, your muscles need <strong>ATP (Adenosine Triphosphate)</strong> — the universal energy currency of cells. Your body has three systems to produce ATP, each suited to different intensities and durations.</p>
+  <div class="reveal" style="margin-bottom:1rem">
+    <button class="infographic-trigger" onclick="openModal('atp-detail')">🔬 What is ATP?</button>
+    <button class="infographic-trigger" onclick="openSidePanel('vo2max-detail')">📈 VO₂ Max in depth</button>
+  </div>
+  <div class="energy-cards reveal">
+    <div class="energy-card">
+      <div class="ec-time">0 – 10 seconds</div>
+      <span class="ec-icon">⚡</span>
+      <div class="ec-title">ATP–PCr System</div>
+      <div class="ec-body">Immediate energy, no oxygen required. Uses stored ATP and phosphocreatine (PCr) for instant muscle contraction. Fastest but depletes in 8–15 seconds. Recovers fully in 3–5 minutes.<br><br>Examples: sprint starts, jumps, throws, powerful kicks.</div>
+      <div class="ec-tag">Anaerobic Alactic</div>
+    </div>
+    <div class="energy-card">
+      <div class="ec-time">15 seconds – 2 minutes</div>
+      <span class="ec-icon">🔥</span>
+      <div class="ec-title">Lactic Acid System</div>
+      <div class="ec-body">Anaerobic glycolysis breaks down glucose rapidly without oxygen. Produces lactic acid — the cause of the burning sensation during intense exercise. The <em>anaerobic threshold</em> is the intensity at which lactate accumulates faster than it can be cleared.<br><br>Examples: 400m, 800m, intense pressing in team sports.</div>
+      <div class="ec-tag">Anaerobic Lactic</div>
+    </div>
+    <div class="energy-card">
+      <div class="ec-time">2+ minutes</div>
+      <span class="ec-icon">🌿</span>
+      <div class="ec-title">Aerobic System</div>
+      <div class="ec-body">Uses oxygen to oxidise carbohydrates, fats and proteins in the mitochondria. Highly efficient and virtually unlimited in duration. At low intensity, fats are the main fuel. At higher intensity, carbohydrates dominate.<br><br>VO₂ max is the key indicator: the maximum volume of O₂ the body can absorb, transport and use per minute (ml/kg/min).</div>
+      <div class="ec-tag">Aerobic Oxidative</div>
+    </div>
+  </div>
+
+  <!-- SVG energy contribution graph -->
+  <div class="svg-img reveal">
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#0d0d0d;border-radius:10px">
+      <rect width="900" height="200" fill="#0d0d0d" rx="10"/>
+      <text x="450" y="24" text-anchor="middle" font-family="'Anton',sans-serif" font-size="13" fill="#FF6B00" letter-spacing="3">ENERGY SYSTEM CONTRIBUTION BY DURATION</text>
+      <line x1="70" y1="40" x2="70" y2="168" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+      <line x1="70" y1="168" x2="860" y2="168" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+      <text x="65" y="45" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="end">100%</text>
+      <text x="65" y="105" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)" text-anchor="end">50%</text>
+      <text x="100" y="182" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)">5s</text>
+      <text x="220" y="182" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)">15s</text>
+      <text x="370" y="182" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)">1min</text>
+      <text x="540" y="182" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)">5min</text>
+      <text x="700" y="182" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.3)">30min+</text>
+      <path d="M80,45 C110,45 150,50 190,90 C230,130 270,155 380,162 C500,166 650,167 860,168" fill="none" stroke="#CC0000" stroke-width="2.5" stroke-dasharray="5,3"/>
+      <path d="M80,165 C110,155 150,105 210,78 C260,58 310,62 380,82 C480,112 600,145 860,167" fill="none" stroke="#FF6B00" stroke-width="2.5"/>
+      <path d="M80,168 C140,165 190,155 260,138 C360,112 470,84 580,68 C700,54 790,48 860,45" fill="none" stroke="#50C878" stroke-width="2.5"/>
+      <line x1="100" y1="192" x2="125" y2="192" stroke="#CC0000" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="130" y="196" font-family="'Space Mono',monospace" font-size="7" fill="#CC0000">ATP-PCr</text>
+      <line x1="220" y1="192" x2="245" y2="192" stroke="#FF6B00" stroke-width="2"/>
+      <text x="250" y="196" font-family="'Space Mono',monospace" font-size="7" fill="#FF6B00">Lactic Acid</text>
+      <line x1="360" y1="192" x2="385" y2="192" stroke="#50C878" stroke-width="2"/>
+      <text x="390" y="196" font-family="'Space Mono',monospace" font-size="7" fill="#50C878">Aerobic</text>
+    </svg>
+  </div>
+
+  <!-- QUIZ A2: ENERGY SYSTEMS -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 2 — Energy Systems (multiple choice · auto-marked)</div>
+    <h4>Test your understanding of how your body produces energy</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the universal energy molecule that all muscles use to contract?</div>
+      <div class="options" data-q="a2q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Glucose</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Lactic acid</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">ATP (Adenosine Triphosphate)</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Phosphocreatine</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>A 100m sprinter cannot maintain top speed in the final 20 metres. The main reason is:</div>
+      <div class="options" data-q="a2q2" data-correct="A">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">The ATP–PCr stores are depleted after approximately 8–15 seconds of maximal effort</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The heart cannot pump enough blood to the muscles</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Lactic acid builds up in the first few seconds and slows the runner</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The lungs cannot absorb enough oxygen at that pace</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Where in the muscle cell does aerobic energy production take place?</div>
+      <div class="options" data-q="a2q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">In the cell nucleus</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">In the mitochondria</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">In the ribosomes</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">In the cytoplasm</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>The "burning" sensation in your muscles during an intense 800m race is caused mainly by:</div>
+      <div class="options" data-q="a2q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Depletion of the ATP–PCr phosphagen system</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Accumulation of lactic acid and a drop in muscle pH</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">A lack of oxygen in the bloodstream</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Heat generated by friction between muscle fibres</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>A trained endurance athlete burns more fat than an untrained person running at the same pace. This is because training:</div>
+      <div class="options" data-q="a2q5" data-correct="D">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Reduces the amount of glucose available in the body</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Increases lactic acid production, forcing the body to use fat</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Lowers the maximum heart rate</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Increases mitochondrial density and the activity of oxidative enzymes</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Mark Activity 2 →</button>
+      <div class="act-score" id="score-act2">Score: <strong id="score-act2-val">—</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 02B — CARDIOVASCULAR SYSTEM ═══ -->
+<section class="sect-card" id="cardiovascular">
+<div class="inner">
+  <p class="sect-label reveal">Section 02B</p>
+  <h2 class="sect-title reveal">CARDIOVASCULAR <span class="accent">SYSTEM</span></h2>
+  <p class="lead reveal">The heart, lungs and blood vessels are the protagonists of aerobic endurance. With systematic training, your heart adapts and becomes significantly more efficient.</p>
+  <div class="reveal" style="margin-bottom:1rem">
+    <button class="infographic-trigger" onclick="openModal('athlete-heart')">🫀 The Athlete's Heart</button>
+    <button class="infographic-trigger" onclick="openSidePanel('cardio-adaptations')">📈 Adaptations in detail</button>
+  </div>
+
+  <!-- SVG cardiovascular diagram -->
+  <div class="svg-img reveal">
+    <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;background:#141414;border-radius:10px">
+      <rect width="900" height="260" fill="#141414" rx="10"/>
+      <g transform="translate(450,130)">
+        <path d="M0,-70 C-35,-105 -88,-88 -88,-44 C-88,9 -44,44 0,88 C44,44 88,9 88,-44 C88,-88 35,-105 0,-70Z" fill="#CC0000" opacity=".8"/>
+        <polyline points="-52,0 -35,0 -26,-22 -18,22 -9,-35 0,26 9,0 26,0 44,0 52,-13 62,13 70,0" fill="none" stroke="white" stroke-width="2" opacity=".6"/>
+        <path d="M0,-70 C4,-115 26,-123 44,-115 C62,-106 62,-79 53,-62" fill="none" stroke="#FF6B00" stroke-width="5" stroke-linecap="round"/>
+        <line x1="-70" y1="-26" x2="-115" y2="-44" stroke="#5090FF" stroke-width="4"/>
+        <line x1="-70" y1="9" x2="-115" y2="-9" stroke="#5090FF" stroke-width="4"/>
+        <line x1="70" y1="-26" x2="115" y2="-44" stroke="#FF6B00" stroke-width="4"/>
+        <line x1="70" y1="9" x2="115" y2="-9" stroke="#FF6B00" stroke-width="4"/>
+        <text x="-130" y="-52" font-family="'Space Mono',monospace" font-size="8" fill="#5090FF">LUNGS</text>
+        <text x="80" y="-52" font-family="'Space Mono',monospace" font-size="8" fill="#FF6B00">AORTA</text>
+      </g>
+      <text x="30" y="45" font-family="'Anton',sans-serif" font-size="10" fill="rgba(255,255,255,.4)">AT REST</text>
+      <text x="30" y="65" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.3)">HR: 60-80 bpm</text>
+      <text x="30" y="82" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.3)">CO: ~5 L/min</text>
+      <text x="30" y="120" font-family="'Anton',sans-serif" font-size="10" fill="#FF6B00">MAX EXERCISE</text>
+      <text x="30" y="140" font-family="'Space Mono',monospace" font-size="8" fill="#FF8C3A">HR: 180-220 bpm</text>
+      <text x="30" y="157" font-family="'Space Mono',monospace" font-size="8" fill="#FF8C3A">CO: ~20-25 L/min</text>
+      <text x="650" y="45" font-family="'Anton',sans-serif" font-size="10" fill="rgba(255,255,255,.4)">ELITE ATHLETE</text>
+      <text x="650" y="65" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.3)">Resting HR: 28-40 bpm</text>
+      <text x="650" y="82" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.3)">VO₂max: 80+ ml/kg/min</text>
+      <text x="650" y="120" font-family="'Anton',sans-serif" font-size="10" fill="#50C878">ADAPTATIONS</text>
+      <text x="650" y="140" font-family="'Space Mono',monospace" font-size="8" fill="#80E0A0">↑ Mitochondria · ↑ Capillaries</text>
+      <text x="650" y="157" font-family="'Space Mono',monospace" font-size="8" fill="#80E0A0">↑ Stroke volume · ↓ Resting HR</text>
+    </svg>
+  </div>
+
+  <h3 class="subsect reveal">Cardiovascular Adaptations to Training</h3>
+  <div style="overflow-x:auto" class="reveal">
+    <table class="data-table" style="min-width:650px">
+      <thead><tr><th>Adaptation</th><th>What happens?</th><th>Benefit</th><th>Timeline</th></tr></thead>
+      <tbody>
+        <tr><td><strong>↓ Resting heart rate</strong></td><td>The heart pumps the same amount of blood with fewer beats (greater efficiency)</td><td>More cardiac reserve for exercise</td><td><span class="pill pill-green">4–8 weeks</span></td></tr>
+        <tr><td><strong>↑ Stroke volume</strong></td><td>Left ventricle enlarges, pumping more blood per beat</td><td>Greater O₂ delivery to muscles</td><td><span class="pill pill-orange">8–16 weeks</span></td></tr>
+        <tr><td><strong>↑ VO₂ max</strong></td><td>Better O₂ absorption, transport and use; improved mitochondrial efficiency</td><td>Higher sustainable exercise intensity</td><td><span class="pill pill-orange">8–20 weeks</span></td></tr>
+        <tr><td><strong>↑ Muscle capillarisation</strong></td><td>More capillaries surrounding muscle fibres</td><td>Better O₂ and nutrient exchange</td><td><span class="pill pill-red">Months</span></td></tr>
+        <tr><td><strong>↑ Mitochondrial density</strong></td><td>Up to 40% more mitochondria per muscle fibre</td><td>Greater fat oxidation at higher intensities</td><td><span class="pill pill-red">Weeks–months</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- QUIZ B: CARDIOVASCULAR -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 3 — Cardiovascular System (multiple choice)</div>
+    <h4>Demonstrate your understanding of the heart and its adaptations</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>An elite endurance athlete has a resting heart rate of 38 bpm. This indicates:</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">A serious cardiac condition that needs medical attention</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">A highly efficient heart that pumps more blood per beat (greater stroke volume)</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The heart is beating too slowly and needs medication</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Lower aerobic capacity than someone with a resting HR of 70 bpm</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is VO₂ max?</div>
+      <div class="options" data-q="a3q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">The maximum heart rate an athlete can achieve</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The volume of blood pumped by the heart per minute</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The maximum volume of oxygen the body can absorb, transport and use per minute</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The total air capacity of the lungs</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Using the standard formula, what is the estimated maximum heart rate of a 16-year-old?</div>
+      <div class="options" data-q="a3q3" data-correct="A">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">204 bpm</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">196 bpm</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">210 bpm</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">200 bpm</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Increased muscle capillarisation as a result of endurance training allows:</div>
+      <div class="options" data-q="a3q4" data-correct="D">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Faster muscle contraction speed</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Complete elimination of lactic acid during maximal effort</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">An increase in lung size</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Better exchange of oxygen and nutrients with muscle fibres</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Approximately how long does it take to notice an improvement in resting heart rate with regular aerobic training?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">1–2 days</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">4–8 weeks</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">At least 1–2 years</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Never — resting HR does not change with training</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Mark Activity 3 →</button>
+      <div class="act-score" id="score-act3">Score: <strong id="score-act3-val">—</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 02C — TRAINING ZONES + CALCULATOR ═══ -->
+<section class="sect-dark" id="training-zones">
+<div class="inner">
+  <p class="sect-label reveal">Section 02C</p>
+  <h2 class="sect-title reveal">TRAINING <span class="accent">ZONES</span></h2>
+  <p class="lead reveal">Heart rate (HR) is the most accessible tool to monitor exercise intensity. Calculate your personalised zones using the interactive calculator below.</p>
+  <div class="reveal" style="margin-bottom:1rem">
+    <button class="infographic-trigger" onclick="openModal('measure-hr')">📍 How to measure your HR</button>
+    <button class="infographic-trigger" onclick="openSidePanel('karvonen-method')">🧮 Karvonen Method</button>
+  </div>
+  <div class="calc-box reveal">
+    <div class="calc-title">🧮 My Training Zone Calculator</div>
+    <div class="calc-sub">Enter your age and resting heart rate to calculate your personalised zones</div>
+    <div class="calc-row">
+      <span class="calc-label">Age (years)</span>
+      <input class="calc-input" id="calcAge" type="number" min="12" max="99" value="16" oninput="calcFC()">
+      <span class="calc-label" style="margin-left:1.5rem">Resting HR (bpm)</span>
+      <input class="calc-input" id="calcRHR" type="number" min="30" max="120" value="68" oninput="calcFC()">
+      <button class="calc-btn" onclick="calcFC()">Calculate →</button>
+    </div>
+    <div style="margin-bottom:.75rem"><span style="font-size:.75rem;color:var(--txt-dim)">Estimated MHR (220 − age): </span><span id="mhrDisplay" style="font-family:'Space Mono',monospace;color:var(--accent);font-weight:700;font-size:.9rem">—</span></div>
+    <div class="calc-result-grid">
+      <div class="calc-zone"><div class="cz-num">Z1</div><div class="cz-label">Recovery</div><div class="cz-range" id="z1r">—</div><div class="cz-bar" style="background:rgba(100,200,100,.5)"></div></div>
+      <div class="calc-zone"><div class="cz-num">Z2</div><div class="cz-label">Aerobic Base</div><div class="cz-range" id="z2r">—</div><div class="cz-bar" style="background:rgba(50,180,255,.5)"></div></div>
+      <div class="calc-zone"><div class="cz-num">Z3</div><div class="cz-label">Aerobic+</div><div class="cz-range" id="z3r">—</div><div class="cz-bar" style="background:rgba(255,180,0,.5)"></div></div>
+      <div class="calc-zone"><div class="cz-num">Z4</div><div class="cz-label">Threshold</div><div class="cz-range" id="z4r">—</div><div class="cz-bar" style="background:rgba(255,107,0,.7)"></div></div>
+      <div class="calc-zone"><div class="cz-num">Z5</div><div class="cz-label">Maximum</div><div class="cz-range" id="z5r">—</div><div class="cz-bar" style="background:rgba(200,0,0,.7)"></div></div>
+    </div>
+  </div>
+
+  <!-- QUIZ C: TRAINING ZONES -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 4 — Training Zones (multiple choice)</div>
+    <h4>Apply your knowledge of heart rate zones</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>You are running and can hold a full conversation without difficulty. Which training zone are you most likely in?</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Zone 4 — Anaerobic threshold (80–90%)</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Zone 2 — Aerobic base (60–70%)</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Zone 5 — Maximum (90–100%)</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Zone 1 — Recovery (50–60%)</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>For a 16-year-old, what is the estimated MHR using the standard formula?</div>
+      <div class="options" data-q="a4q2" data-correct="A">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">204 bpm</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">196 bpm</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">210 bpm</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">220 bpm</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Zone 4 training (80–90% MHR) is most suitable for:</div>
+      <div class="options" data-q="a4q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Active recovery after intense sessions</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Building the aerobic base in beginners</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Improving the anaerobic threshold and lactate tolerance</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Maximising fat burning per session</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Your calculator shows your Zone 3 is 143–163 bpm. After 25 minutes of running your HR is 158 bpm. How would you describe your effort?</div>
+      <div class="options" data-q="a4q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">You are in recovery — you could push harder</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">You are in Zone 3 — a solid cardiovascular training stimulus</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">You have exceeded your MHR and should stop immediately</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">You are at maximum intensity — unsustainable beyond 1 minute</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Which statement about Zone 5 (90–100% MHR) is CORRECT?</div>
+      <div class="options" data-q="a4q5" data-correct="D">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">It is the best zone for complete beginners as it produces fast results</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">It can be sustained for 30–40 minutes by trained athletes</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">It is the zone that burns the most fat per minute</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">It can only be maintained for seconds or a few minutes and requires a solid aerobic base</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Mark Activity 4 →</button>
+      <div class="act-score" id="score-act4">Score: <strong id="score-act4-val">—</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 02D — TRAINING METHODS ═══ -->
+<section class="sect-card" id="training-methods">
+<div class="inner">
+  <p class="sect-label reveal">Section 02D</p>
+  <h2 class="sect-title reveal">TRAINING <span class="accent">METHODS</span></h2>
+  <p class="lead reveal">There are four main methods to develop endurance. Each targets different energy systems and produces different physiological adaptations.</p>
+  <div class="reveal" style="margin-bottom:1rem">
+    <button class="infographic-trigger" onclick="openSidePanel('periodisation')">📅 How to plan your training year</button>
+    <button class="infographic-trigger" onclick="openModal('progressive-overload')">📈 Progressive Overload explained</button>
+  </div>
+  <div class="methods-grid reveal">
+    <div class="method-card" onclick="openModal('continuous-method')">
+      <div class="mc-icon">〰️</div>
+      <div class="mc-title">Continuous Training</div>
+      <div class="mc-body">Sustained effort at constant pace, 20+ min. Develops aerobic base. Zones 2–3. The "conversation pace" test.</div>
+      <button class="mc-more">+ Full details →</button>
+    </div>
+    <div class="method-card" onclick="openModal('interval-method')">
+      <div class="mc-icon">⏱️</div>
+      <div class="mc-title">Interval Training</div>
+      <div class="mc-body">High-intensity efforts with INCOMPLETE recovery. Improves VO₂ max and anaerobic threshold. Highly adaptable.</div>
+      <button class="mc-more">+ Full details →</button>
+    </div>
+    <div class="method-card" onclick="openModal('fartlek-method')">
+      <div class="mc-icon">🌲</div>
+      <div class="mc-title">Fartlek Training</div>
+      <div class="mc-body">Swedish for "speed play." Unstructured pace changes during a continuous run. Combines all zones naturally.</div>
+      <button class="mc-more">+ Full details →</button>
+    </div>
+    <div class="method-card" onclick="openModal('circuit-method')">
+      <div class="mc-icon">🔄</div>
+      <div class="mc-title">Circuit Training</div>
+      <div class="mc-body">6–12 exercise stations with minimal rest. Develops muscular endurance and cardiovascular fitness simultaneously.</div>
+      <button class="mc-more">+ Full details →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ D: TRAINING METHODS -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 5 — Training Methods (multiple choice + open question)</div>
+    <h4>Identify the right method for each situation</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>The key difference between interval training and training by series is:</div>
+      <div class="options" data-q="a5q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">The distance covered per repetition (series are always longer)</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The effort intensity (interval training is less intense)</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The type of recovery: incomplete in interval training, complete in series</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">The number of repetitions (interval always has more)</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>For a complete beginner starting endurance training from scratch, which method is most appropriate?</div>
+      <div class="options" data-q="a5q2" data-correct="A">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Continuous running at Zone 2 for 20–30 minutes at "conversation pace"</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">HIIT with 100% intensity sprints from the first session</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Interval training 8 × 400m with incomplete recovery</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Trail running with steep elevation changes</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Fartlek training differs from standard continuous running because:</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Fartlek always includes complete rest stops between efforts</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Fartlek involves voluntary, unstructured pace changes without stopping</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Fartlek is shorter and more intense than continuous running</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Fartlek can only be done on an athletics track</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Why is HIIT only recommended for athletes with a good aerobic base?</div>
+      <div class="options" data-q="a5q4" data-correct="D">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Because it requires specialist equipment such as heart rate monitors and GPS</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Because it is prohibited for those under 18 years of age</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Because it produces no aerobic adaptations in beginners</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Because high intensity without a base significantly increases the risk of injury and overtraining</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act5',['a5q1','a5q2','a5q3','a5q4'])">Mark test questions →</button>
+      <div class="act-score" id="score-act5">Score: <strong id="score-act5-val">—</strong></div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,.06);margin-top:2rem;padding-top:1.5rem">
+      <div class="q-text" style="margin-bottom:1rem">📓 <strong>Open question:</strong> Design a complete 45-minute endurance session for a 4º ESO group. Choose ONE method, specify the warm-up (10 min), main activity (25 min) with training zone, and cool-down (10 min). Explain how you would progress the difficulty over 3 weeks.</div>
+      <div class="field-group"><label class="field-label" for="a5open">Your session plan</label><textarea class="field-input" id="a5open" style="min-height:130px" placeholder="Method chosen: ...&#10;Warm-up (10 min): ...&#10;Main activity (25 min) · Zone: ...&#10;Cool-down (10 min): ...&#10;3-week progression: ..."></textarea></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 02E — TRAINING PRINCIPLES ═══ -->
+<section class="sect-card2" id="principles">
+<div class="inner">
+  <p class="sect-label reveal">Section 02E</p>
+  <h2 class="sect-title reveal">TRAINING <span class="accent">PRINCIPLES</span></h2>
+  <p class="lead reveal">Training smart is more important than training hard. These scientific principles ensure your effort produces real, safe and lasting improvements.</p>
+  <div class="accordion reveal">
+    <div class="acc-item open"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">📈</div><div><div class="acc-title">1. Progressive Overload</div><div class="acc-sub">Gradually increase the training load to force adaptation</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>The body adapts to the stress you place on it. If you always do the same workout, you stop improving. To keep progressing, you must gradually increase <strong>volume</strong> (distance/time), <strong>intensity</strong> (% MHR) or <strong>frequency</strong> (sessions/week). The <strong>10% rule</strong>: never increase weekly volume by more than 10% from the previous week.</p></div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">🔁</div><div><div class="acc-title">2. Continuity</div><div class="acc-sub">Training must be regular and sustained over time</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>Fitness adaptations disappear when you stop training (detraining). Cardiovascular adaptations can be lost in just 2–4 weeks of inactivity. To maintain fitness: 2 sessions/week. To improve: 3–5 sessions/week. <strong>Consistency beats intensity.</strong></p></div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">🎯</div><div><div class="acc-title">3. Specificity</div><div class="acc-sub">Train in a way that resembles how you want to perform</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>The body improves in what it trains. A swimmer should mainly swim, not just run. Muscular adaptations are specific to the movement pattern. Cross-training is useful to prevent injury and add variety, but the bulk of training should mirror the target sport.</p></div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">😴</div><div><div class="acc-title">4. Recovery (Supercompensation)</div><div class="acc-sub">Rest is part of training — without it there is no improvement</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>Improvement happens during recovery, not during training itself. The body repairs and exceeds its previous level — this is <em>supercompensation</em>. Sleep is the most powerful recovery tool: 8–9 hours per night for teenagers is essential for training to produce its effects.</p></div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">👤</div><div><div class="acc-title">5. Individualisation</div><div class="acc-sub">Every person is different — training must be tailored to you</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>There is no universal training plan. The same session produces very different effects depending on fitness level, genetics, age, sex and lifestyle. This is why personalised HR zones matter — what is hard for one person is a warm-up for another.</p></div></div></div>
+  </div>
+
+  <!-- QUIZ E: PRINCIPLES -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 6 — Training Principles (multiple choice)</div>
+    <h4>Identify which principle applies in each scenario</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Sarah runs 20 minutes every week for months and stops improving. The problem is she is not applying the principle of:</div>
+      <div class="options" data-q="a6q1" data-correct="A">
+        <label class="opt"><input type="radio" name="a6q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Progressive overload — she needs to gradually increase her training load</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Continuity — she should train more days per week</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Specificity — she should change her sport</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Recovery — she needs more sleep</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What does "supercompensation" mean in the context of training?</div>
+      <div class="options" data-q="a6q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a6q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Training twice as hard to compensate for a rest day</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Eating extra protein after a training session</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The process by which the body, during recovery, surpasses its previous performance level</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Completing more repetitions than planned in a session</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What does the "10% rule" mean in endurance training?</div>
+      <div class="options" data-q="a6q3" data-correct="D">
+        <label class="opt"><input type="radio" name="a6q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Only 10% of training should be at high intensity</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Rest for at least 10% of your total training time</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Increase intensity by 10% every session</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Never increase weekly training volume by more than 10% compared to the previous week</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>An Olympic swimmer and a sedentary person complete the same 30-minute running session. According to the principle of individualisation:</div>
+      <div class="options" data-q="a6q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Both will improve equally because the stimulus is the same</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="B"><span class="opt-letter">B</span><span class="opt-text">The session will be a warm-up for the swimmer but a real challenge for the sedentary person</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="C"><span class="opt-letter">C</span><span class="opt-text">The sedentary person will improve more because they start from a lower base</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="D"><span class="opt-letter">D</span><span class="opt-text">The swimmer cannot train running because it is a different sport</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q4"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act6',['a6q1','a6q2','a6q3','a6q4'])">Mark Activity 6 →</button>
+      <div class="act-score" id="score-act6">Score: <strong id="score-act6-val">—</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 02F — FITNESS TESTS ═══ -->
+<section class="sect-dark" id="fitness-tests">
+<div class="inner">
+  <p class="sect-label reveal">Section 02F</p>
+  <h2 class="sect-title reveal">FITNESS <span class="accent">TESTS</span></h2>
+  <p class="lead reveal">To know whether your training is working, you need to <strong>measure your endurance objectively</strong>. These are the most widely used tests in physical education.</p>
+  <div class="reveal" style="margin-bottom:1rem">
+    <button class="infographic-trigger" onclick="openModal('cooper-full')">🏃 Cooper Test — full protocol</button>
+    <button class="infographic-trigger" onclick="openModal('navette-full')">📻 Course Navette — step by step</button>
+  </div>
+  <div class="accordion reveal">
+    <div class="acc-item open"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">🏃</div><div><div class="acc-title">Cooper Test (12 minutes)</div><div class="acc-sub">The most widely used endurance test in the world</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content">
+      <p>Created by Dr Kenneth Cooper in 1968. <strong>Goal:</strong> cover the greatest possible distance in 12 minutes. <strong>VO₂max estimate:</strong> (distance in metres − 504.9) ÷ 44.73</p>
+      <table class="data-table" style="margin-top:1rem"><thead><tr><th>Level</th><th>Boys 16 years</th><th>Girls 16 years</th></tr></thead><tbody>
+        <tr><td><span class="pill pill-red">Very low</span></td><td>&lt;2,100 m</td><td>&lt;1,700 m</td></tr>
+        <tr><td><span class="pill pill-orange">Low</span></td><td>2,100–2,300 m</td><td>1,700–2,000 m</td></tr>
+        <tr><td><span class="pill pill-green">Average</span></td><td>2,300–2,600 m</td><td>2,000–2,300 m</td></tr>
+        <tr><td><span class="pill pill-green">Good</span></td><td>2,600–2,900 m</td><td>2,300–2,600 m</td></tr>
+        <tr><td><span class="pill pill-green">Excellent</span></td><td>&gt;2,900 m</td><td>&gt;2,600 m</td></tr>
+      </tbody></table>
+    </div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">📻</div><div><div class="acc-title">Course Navette (Léger Test)</div><div class="acc-sub">Progressive shuttle run — ideal for school groups</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>Run between two lines 20m apart in time with progressive audio beeps. Each minute (level/palier) the pace increases. Stop when you fail to reach the line before the beep twice in a row. Can be done indoors with the whole class simultaneously.</p></div></div></div>
+    <div class="acc-item"><div class="acc-header" onclick="toggleAcc(this)"><div class="acc-header-left"><div class="acc-icon">⏱</div><div><div class="acc-title">6-Minute Run Test</div><div class="acc-sub">Accessible version of the Cooper — great for class use</div></div></div><span class="acc-arrow">▼</span></div><div class="acc-body"><div class="acc-content"><p>Same protocol as Cooper but in 6 minutes. More manageable for PE sessions. Ideal as an initial test at the start of the unit and a final test at the end to measure real improvement.</p></div></div></div>
+  </div>
+
+  <!-- QUIZ F: FITNESS TESTS -->
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📝 Activity 7 — Fitness Tests (multiple choice)</div>
+    <h4>Demonstrate you know how and when to use each test</h4>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>In the Cooper Test, what exactly is measured?</div>
+      <div class="options" data-q="a7q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q1" value="A"><span class="opt-letter">A</span><span class="opt-text">The time taken to run a fixed distance of 2,400 metres</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The maximum distance covered in exactly 12 minutes</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The maximum heart rate reached during the effort</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="D"><span class="opt-letter">D</span><span class="opt-text">The number of repetitions completed on a circuit</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q1"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>A 16-year-old boy covers 2,450 metres in the Cooper Test. According to the reference tables, his level is:</div>
+      <div class="options" data-q="a7q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a7q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Low</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Good</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Average</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Excellent</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q2"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the main advantage of the Course Navette over the Cooper Test for use in PE class?</div>
+      <div class="options" data-q="a7q3" data-correct="A">
+        <label class="opt"><input type="radio" name="a7q3" value="A"><span class="opt-letter">A</span><span class="opt-text">It can be done indoors with the whole group at the same time, with the pace set by the audio</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="B"><span class="opt-letter">B</span><span class="opt-text">It better measures maximum running speed</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="C"><span class="opt-letter">C</span><span class="opt-text">It is shorter in total duration</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="D"><span class="opt-letter">D</span><span class="opt-text">It requires less space than the Cooper Test</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q3"></div>
+    </div>
+
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Why is it recommended to use the 6-Minute Run Test at the start AND end of the unit?</div>
+      <div class="options" data-q="a7q4" data-correct="D">
+        <label class="opt"><input type="radio" name="a7q4" value="A"><span class="opt-letter">A</span><span class="opt-text">To calculate the term grade objectively</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="B"><span class="opt-letter">B</span><span class="opt-text">To compare your result with classmates</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Because PE regulations require a minimum of two tests per unit</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="D"><span class="opt-letter">D</span><span class="opt-text">To objectively measure the personal improvement produced by training during the unit</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q4"></div>
+    </div>
+
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act7',['a7q1','a7q2','a7q3','a7q4'])">Mark Activity 7 →</button>
+      <div class="act-score" id="score-act7">Score: <strong id="score-act7-val">—</strong></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 03 — TRAIN & COMPETE ═══ -->
+<section class="sect-mid" id="train">
+<div class="inner">
+  <p class="sect-label reveal">Section 03</p>
+  <h2 class="sect-title reveal">TRAIN & <span class="accent">COMPETE</span></h2>
+  <p class="lead reveal">Put your knowledge into action. Record your results honestly — they are your baseline for improvement. Upload evidence to Google Classroom where indicated.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Resting Heart Rate Log</div><span class="ch-tag">📊 7-day log</span></div>
+        <p>Measure your resting heart rate every morning for 7 consecutive days (immediately on waking, before getting up). Calculate the average. Is it improving with training?</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d1r1">Daily values (Day 1 to Day 7) and calculated average</label><input class="field-input" id="d1r1" type="text" placeholder="D1:___ D2:___ D3:___ D4:___ D5:___ D6:___ D7:___ · Avg:___"></div>
+        <div class="field-group"><label class="field-label" for="d1r2">Reflection: did your resting HR change over the 7 days? What might explain the variation?</label><textarea class="field-input" id="d1r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">12-Minute Cooper Test</div><span class="ch-tag">🏃 Aerobic test</span></div>
+        <p>Run as far as possible in 12 minutes on a measured track. Record your distance, compare with the reference tables and identify your estimated VO₂ max category.</p>
+        <div class="timer-widget" onclick="startTimer(this,720)"><span class="tw-icon">⏱</span><span class="tw-label">Cooper 12 min timer →</span><span class="tw-time">12:00</span></div>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d2r1">Distance covered, VO₂max estimate and reference level</label><input class="field-input" id="d2r1" type="text" placeholder="Distance: ___ m · VO₂max est: ___ ml/kg/min · Level: ___"></div>
+        <div class="field-group"><label class="field-label" for="d2r2">How did you pace yourself? What would you do differently next time?</label><textarea class="field-input" id="d2r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">20-Minute Fartlek Challenge</div><span class="ch-tag">🌲 Outdoors</span></div>
+        <p>Go for a 20-minute outdoor run varying your pace freely — fast stretches, jogging and walking. Minimum 8 pace changes. Write a reflection: how did each change of pace feel? Which energy systems were you using?</p>
+        <div class="timer-widget" onclick="startTimer(this,1200)"><span class="tw-icon">⏱</span><span class="tw-label">Fartlek 20 min timer →</span><span class="tw-time">20:00</span></div>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d3r1">Number of pace changes and HR at your fastest effort</label><input class="field-input" id="d3r1" type="text" placeholder="Changes: ___ · HR at sprint: ___ bpm · Zone reached: ___"></div>
+        <div class="field-group"><label class="field-label" for="d3r2">Reflection: which energy systems were active during fast and slow phases? How did your body recover?</label><textarea class="field-input" id="d3r2" placeholder="Energy systems analysis..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Interval Ladder</div><span class="ch-tag">🔴 Anaerobic</span></div>
+        <p>Complete the interval ladder: 30s sprint → 30s recovery → 60s sprint → 60s recovery → 90s sprint → 90s recovery → 60s sprint → 60s recovery → 30s sprint. Record your HR after each effort.</p>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <div class="timer-widget" onclick="startTimer(this,30)"><span class="tw-icon">⚡</span><span class="tw-label">30 sec effort →</span><span class="tw-time">0:30</span></div>
+          <div class="timer-widget" onclick="startTimer(this,60)"><span class="tw-icon">⚡</span><span class="tw-label">60 sec effort →</span><span class="tw-time">1:00</span></div>
+          <div class="timer-widget" onclick="startTimer(this,90)"><span class="tw-icon">⚡</span><span class="tw-label">90 sec effort →</span><span class="tw-time">1:30</span></div>
+        </div>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d4r1">HR after each sprint (30s / 60s / 90s / 60s / 30s)</label><input class="field-input" id="d4r1" type="text" placeholder="30s:___ · 60s:___ · 90s:___ · 60s:___ · 30s:___"></div>
+        <div class="field-group"><label class="field-label" for="d4r2">How did your HR recover between efforts? What difference did you notice between the 30s and 90s sprints?</label><textarea class="field-input" id="d4r2" placeholder="Your observations..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">05</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">4-Week Personal Training Plan</div><span class="ch-tag">📅 4 weeks</span></div>
+        <p>Design and carry out a 4-week endurance programme using at least 2 different training methods, 3 sessions per week. Apply all 5 training principles. After completing it, evaluate your improvement.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d5r1">Week 1 plan (days, method, duration, target zone)</label><textarea class="field-input" id="d5r1" placeholder="Monday: ___ · Wednesday: ___ · Friday: ___"></textarea></div>
+        <div class="field-group"><label class="field-label" for="d5r2">Weeks 2–4 progression and final evaluation (did your Cooper Test score improve?)</label><textarea class="field-input" id="d5r2" style="min-height:100px" placeholder="Week 2 progression: ... &#10;Week 3: ... &#10;Week 4: ... &#10;Final evaluation: ..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECTION 04 — EVALUATE ═══ -->
+<section class="sect-dark" id="evaluate">
+<div class="inner">
+  <p class="sect-label reveal">Section 04</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">ATE</span></h2>
+  <p class="lead reveal">Demonstrate what you have learned and reflect on your progress throughout this unit.</p>
+
+  <div class="quiz-box reveal">
+    <div class="quiz-label">📓 Final Activity — Reflection & Commitment (open answers)</div>
+    <h4>Your learning in this unit</h4>
+    <div class="field-group"><label class="field-label" for="af1">Final test result vs initial test. How much did you improve? (distance / level / VO₂max estimate)</label><textarea class="field-input" id="af1" placeholder="Initial: ___ · Final: ___ · Improvement: ___"></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">What have you learned in this unit that you did not know before? Mention at least 3 specific concepts.</label><textarea class="field-input" id="af2" style="min-height:100px" placeholder="1. ... · 2. ... · 3. ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">Will you continue training endurance outside school? Write a specific personal commitment (what, when, how).</label><textarea class="field-input" id="af3" placeholder="My personal commitment..."></textarea></div>
+  </div>
+
+  <!-- CONCEPT MAP -->
+  <h3 class="subsect reveal">Interactive Concept Map</h3>
+  <p class="body-text reveal">Complete the map below to show you have understood the key concepts of this unit.</p>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">❤️ PHYSICAL FITNESS — ENDURANCE <span>The ability to sustain physical effort over time</span></div>
+    <div class="scheme-pipe">│</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">ENERGY SYSTEMS</div>
+        <input class="field-input" type="text" placeholder="System 1..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="System 2..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="System 3..." style="text-align:center;font-size:.8rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">TRAINING ZONES</div>
+        <input class="field-input" type="text" placeholder="Z1: ___%" style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Z2: ___%" style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Z3–5: ___%" style="text-align:center;font-size:.8rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">METHODS</div>
+        <input class="field-input" type="text" placeholder="Continuous..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Interval..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Fartlek..." style="text-align:center;font-size:.8rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">PRINCIPLES</div>
+        <input class="field-input" type="text" placeholder="Principle 1..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Principle 2..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Principle 3..." style="text-align:center;font-size:.8rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">FITNESS TESTS</div>
+        <input class="field-input" type="text" placeholder="Test 1..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="Test 2..." style="margin-bottom:.4rem;text-align:center;font-size:.8rem">
+        <input class="field-input" type="text" placeholder="My score..." style="text-align:center;font-size:.8rem">
+      </div>
+    </div>
+  </div>
+
+  <!-- GLOBAL SCORE -->
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">YOUR OVERALL SCORE</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Based on multiple choice questions only · Open questions are reviewed manually by your teacher</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button class="calc-btn" style="font-size:.85rem;padding:1rem 2.5rem" onclick="calcGlobalScore()">📊 View my overall score</button>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>All rights reserved. No part of this guide may be reproduced, distributed or communicated without the prior written authorisation of the copyright holder. Exclusive use for students and families of the school. · Colegio Santa María la Blanca · © Jaime Redondo</p>
+</footer>
+
+<script>
+const STORE_KEY = 'ef4eso-endurance-v1';
+const CORRECT = {
+  a2q1:'C', a2q2:'A', a2q3:'B', a2q4:'B', a2q5:'D',
+  a3q1:'B', a3q2:'C', a3q3:'A', a3q4:'D', a3q5:'B',
+  a4q1:'B', a4q2:'A', a4q3:'C', a4q4:'B', a4q5:'D',
+  a5q1:'C', a5q2:'A', a5q3:'B', a5q4:'D',
+  a6q1:'A', a6q2:'C', a6q3:'D', a6q4:'B',
+  a7q1:'B', a7q2:'C', a7q3:'A', a7q4:'D'
+};
+const ACT_QUESTIONS = {
+  act2:['a2q1','a2q2','a2q3','a2q4','a2q5'],
+  act3:['a3q1','a3q2','a3q3','a3q4','a3q5'],
+  act4:['a4q1','a4q2','a4q3','a4q4','a4q5'],
+  act5:['a5q1','a5q2','a5q3','a5q4'],
+  act6:['a6q1','a6q2','a6q3','a6q4'],
+  act7:['a7q1','a7q2','a7q3','a7q4']
+};
+const EXPLANATIONS = {
+  a2q1:'✅ Correct. ATP (Adenosine Triphosphate) is the universal energy currency used by all muscle cells.',
+  a2q2:'✅ Correct. The ATP–PCr system only lasts 8–15 seconds of maximal effort before depleting.',
+  a2q3:'✅ Correct. Aerobic energy production (oxidative phosphorylation) takes place in the mitochondria.',
+  a2q4:'✅ Correct. The burning sensation is caused by lactic acid accumulation and the resulting drop in muscle pH.',
+  a2q5:'✅ Correct. Training increases mitochondrial density and oxidative enzyme activity, improving fat metabolism.',
+  a3q1:'✅ Correct. A low resting HR in athletes indicates an efficient heart with greater stroke volume per beat.',
+  a3q2:'✅ Correct. VO₂ max = maximum volume of O₂ absorbed, transported and used per minute (ml/kg/min).',
+  a3q3:'✅ Correct. 220 − 16 = 204 bpm.',
+  a3q4:'✅ Correct. More capillaries = better oxygen and nutrient exchange with muscle fibres.',
+  a3q5:'✅ Correct. Resting HR improvements are typically visible after 4–8 weeks of regular aerobic training.',
+  a4q1:'✅ Correct. Being able to hold a conversation = Zone 2, aerobic base (60–70% MHR).',
+  a4q2:'✅ Correct. 220 − 16 = 204 bpm.',
+  a4q3:'✅ Correct. Zone 4 targets the anaerobic threshold and lactate tolerance.',
+  a4q4:'✅ Correct. 158 bpm within the 143–163 Zone 3 range = solid aerobic training stimulus.',
+  a4q5:'✅ Correct. Zone 5 can only be sustained for seconds; it requires a solid aerobic base first.',
+  a5q1:'✅ Correct. The key difference is the recovery: incomplete in interval training, complete in series.',
+  a5q2:'✅ Correct. Beginners should start with continuous easy running in Zone 2 at conversation pace.',
+  a5q3:'✅ Correct. Fartlek involves voluntary, unstructured pace changes without stopping (continuous variable).',
+  a5q4:'✅ Correct. Without an aerobic base, high intensity significantly increases injury and overtraining risk.',
+  a6q1:'✅ Correct. Sarah needs progressive overload — she must gradually increase her load to keep improving.',
+  a6q2:'✅ Correct. Supercompensation = the body exceeds its previous performance level during recovery.',
+  a6q3:'✅ Correct. The 10% rule: never increase weekly volume by more than 10% from the previous week.',
+  a6q4:'✅ Correct. The same session is a warm-up for the swimmer but a real challenge for the sedentary person.',
+  a7q1:'✅ Correct. Cooper = maximum distance covered in exactly 12 minutes.',
+  a7q2:'✅ Correct. 2,300–2,600 m for boys aged 16 = Average level.',
+  a7q3:'✅ Correct. Course Navette allows the whole class indoors simultaneously, with external pacing.',
+  a7q4:'✅ Correct. Initial + final test = objective measure of the improvement produced by the unit.'
+};
+
+/* PROGRESS BAR */
+window.addEventListener('scroll',()=>{
+  const d=document.documentElement;
+  document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';
+});
+/* REVEAL */
+const revObs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting)en.target.classList.add('visible')}),{threshold:.07});
+document.querySelectorAll('.reveal').forEach(r=>revObs.observe(r));
+/* ACCORDION */
+function toggleAcc(h){const i=h.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item.open').forEach(x=>x.classList.remove('open'));if(!o)i.classList.add('open');}
+/* OPTION SELECT */
+document.addEventListener('change',e=>{if(e.target.type==='radio'){const n=e.target.name;document.querySelectorAll(`.opt input[name="${n}"]`).forEach(r=>r.closest('.opt').classList.toggle('selected',r.checked));saveLocal();}});
+/* QUIZ CHECK */
+function checkQuiz(actId,qIds){
+  let correct=0;
+  qIds.forEach(qId=>{
+    const sel=document.querySelector(`input[name="${qId}"]:checked`);
+    const fb=document.getElementById('fb-'+qId);
+    const correctVal=CORRECT[qId];
+    document.querySelectorAll(`.options[data-q="${qId}"] .opt`).forEach(o=>{
+      const v=o.querySelector('input').value;
+      o.classList.remove('correct','wrong','selected');
+      if(v===correctVal)o.classList.add('correct');
+    });
+    if(sel){
+      if(sel.value===correctVal){correct++;fb.textContent=EXPLANATIONS[qId]||'✅ Correct';fb.className='q-feedback show ok';}
+      else{sel.closest('.opt').classList.add('wrong');const ct=document.querySelector(`.options[data-q="${qId}"] input[value="${correctVal}"]`)?.closest('.opt').querySelector('.opt-text')?.textContent||'';fb.textContent=`❌ Incorrect. The correct answer is ${correctVal}: "${ct}"`;fb.className='q-feedback show ko';}
+    } else {fb.textContent='⚠ No option selected.';fb.className='q-feedback show ko';}
+  });
+  const sv=document.getElementById('score-'+actId+'-val');
+  const se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=`${correct}/${qIds.length} (${Math.round(correct/qIds.length*100)}%)`;se.classList.add('show');}
+  const d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');
+  d['score_'+actId]=`${correct}/${qIds.length}`;
+  localStorage.setItem(STORE_KEY,JSON.stringify(d));
+  saveLocal();
+}
+/* GLOBAL SCORE */
+function calcGlobalScore(){
+  let tot=0,totQ=0;
+  Object.keys(ACT_QUESTIONS).forEach(act=>{ACT_QUESTIONS[act].forEach(qId=>{totQ++;const s=document.querySelector(`input[name="${qId}"]:checked`);if(s&&s.value===CORRECT[qId])tot++;});});
+  const pct=totQ>0?Math.round(tot/totQ*100):0;
+  const nota=(pct/100*10).toFixed(1);
+  const box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  const lbls=['Keep reviewing the theory 📚','On the right track, keep studying 💪','Good work! You know the concepts 👏','Excellent! Outstanding performance 🏆'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';
+  box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+/* HR CALCULATOR */
+function calcFC(){
+  const age=parseInt(document.getElementById('calcAge').value)||16;
+  const mhr=220-age;
+  document.getElementById('mhrDisplay').textContent=mhr+' bpm';
+  [[.50,.60],[.60,.70],[.70,.80],[.80,.90],[.90,1.00]].forEach((z,i)=>{
+    document.getElementById('z'+(i+1)+'r').textContent=Math.round(mhr*z[0])+' – '+Math.round(mhr*z[1])+' bpm';
+  });
+}
+window.addEventListener('load',()=>{calcFC();loadLocal();});
+/* TIMERS */
+const timers={};
+function startTimer(w,s){
+  const k=w.dataset.tid||(w.dataset.tid=Math.random().toString(36).slice(2));
+  const d=w.querySelector('.tw-time');
+  if(timers[k]){clearInterval(timers[k]);delete timers[k];w.style.borderColor='';return;}
+  let r=s;w.style.borderColor='var(--accent)';
+  const fmt=x=>Math.floor(x/60)+':'+(x%60<10?'0':'')+(x%60);
+  d.textContent=fmt(r);
+  timers[k]=setInterval(()=>{r--;d.textContent=fmt(r);if(r<=0){clearInterval(timers[k]);delete timers[k];d.textContent='✅';w.style.borderColor='#50C878';}},1000);
+}
+/* LOCAL STORAGE */
+function saveLocal(){
+  const data={};
+  document.querySelectorAll('input[id],textarea[id]').forEach(el=>{if(el.id)data[el.id]=el.value;});
+  document.querySelectorAll('input[type=radio]:checked').forEach(r=>{data['radio_'+r.name]=r.value;});
+  localStorage.setItem(STORE_KEY,JSON.stringify(data));
+}
+function loadLocal(){
+  const raw=localStorage.getItem(STORE_KEY);if(!raw)return;
+  const data=JSON.parse(raw);
+  Object.entries(data).forEach(([id,val])=>{
+    if(id.startsWith('radio_')){const n=id.replace('radio_','');const r=document.querySelector(`input[name="${n}"][value="${val}"]`);if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}
+    else{const el=document.getElementById(id);if(el)el.value=val;}
+  });
+}
+document.querySelectorAll('input,textarea').forEach(el=>el.addEventListener('input',saveLocal));
+
+/* MODALS */
+const MODALS={
+  'atp-detail':{title:'What is ATP?',html:`<p><strong>ATP (Adenosine Triphosphate)</strong> is the universal energy currency of cells. Without ATP, no muscle can contract. The body cannot store large quantities — only enough for a few seconds of maximal effort — so it must regenerate ATP constantly using the three energy systems.</p><h3>Why is it the limiting factor?</h3><p>The rate at which ATP can be regenerated defines the limit of sustainable intensity. The aerobic system regenerates ATP slowly but almost without time limit. The anaerobic systems do it very quickly but only briefly.</p><h3>The paradox</h3><p>You need energy to make energy. To rebuild ATP from ADP, the body needs energy obtained from nutrients (glucose, fats, amino acids). The three energy systems are essentially three different ways to regenerate ATP at different speeds.</p>`},
+  'athlete-heart':{title:"The Athlete's Heart",html:`<p>With prolonged aerobic training, the heart undergoes structural adaptations known collectively as <strong>"athlete's heart"</strong>.</p><h3>Eccentric hypertrophy</h3><p>Unlike strength sports (concentric hypertrophy — thicker walls), aerobic training produces <strong>eccentric hypertrophy</strong>: the left ventricle enlarges internally, holding more blood per beat — greater stroke volume.</p><h3>Athlete bradycardia</h3><p>It is normal for elite endurance athletes to have resting HR of 28–40 bpm. This is not a disease — the heart pumps the same amount of blood with fewer beats because each beat is more powerful.</p><h3>When to seek advice</h3><p>Athlete's heart is benign and reversible. However, adolescents experiencing syncope during exercise, irregular palpitations, or with a family history of sudden cardiac death should have a cardiological review before competitive sport.</p>`},
+  'measure-hr':{title:'How to Measure Your HR Without a Monitor',html:`<h3>Radial artery (wrist)</h3><p>Place index and middle fingers on the inner wrist, just below the base of the thumb. Press gently until you feel the pulse. Count beats for 60 seconds (or 15 seconds × 4).</p><h3>Carotid artery (neck)</h3><p>Place fingers to one side of the neck, between the windpipe and the sternocleidomastoid muscle. Never compress both sides simultaneously.</p><h3>During exercise</h3><p>Stop immediately after the effort. Count the first 15 seconds × 4. Waiting longer gives a value already below the actual exercise HR.</p><h3>Resting HR</h3><p>Measure every morning for 5–7 days before getting up. Calculate the average. This is your true basal HR. Typical values: 60–80 bpm (sedentary adult), 40–60 bpm (trained athlete), 28–40 bpm (endurance elite).</p>`},
+  'progressive-overload':{title:'Progressive Overload — The Key Principle',html:`<p><strong>Progressive overload</strong> is the single most important principle in training. Without it, the body adapts to the current workload and stops improving.</p><h3>Three dimensions of load</h3><p><strong>Volume:</strong> how much (km, minutes, repetitions).<br><strong>Intensity:</strong> how hard (% MHR, pace per km).<br><strong>Frequency:</strong> how often (sessions per week).</p><h3>Safe progression</h3><p>Never increase all three simultaneously. Typically: increase volume first, then intensity. The 10% rule is the golden standard to avoid overuse injuries.</p><h3>Signs of overtraining</h3><p>Performance dropping despite training more; irritability; disturbed sleep; elevated morning resting HR. If these appear, reduce load immediately and prioritise recovery.</p>`},
+  'cooper-full':{title:'Cooper Test — Full Protocol',html:`<h3>History</h3><p>Created by Dr Kenneth Cooper in 1968 for the US Air Force. One of the most widely used fitness assessments worldwide, still used in schools and military services globally.</p><h3>Full protocol</h3><p>1. Warm-up: 8–10 minutes easy jogging and dynamic stretches.<br>2. Start signal. Run as far as possible in exactly 12 minutes.<br>3. Mark and measure the exact distance covered.<br>4. Cool-down: 10 minutes easy jog and static stretches.</p><h3>VO₂max estimation</h3><p>VO₂max ≈ (distance in metres − 504.9) ÷ 44.73<br>Example: 2,450 m → (2450 − 504.9) ÷ 44.73 ≈ <strong>43.5 ml/kg/min</strong></p><h3>Most common mistake</h3><p>Starting too fast and being unable to maintain the pace. The optimal strategy is an even, sustainable pace for the full 12 minutes.</p>`},
+  'navette-full':{title:'Course Navette — Step by Step',html:`<h3>What is it?</h3><p>Progressive shuttle run test created by Luc Léger (Canada, 1982). Run between two lines 20m apart in time with audio beeps that speed up every minute (levels/paliers). Stop when you fail to reach the line before the beep twice in a row.</p><h3>Advantages for PE class</h3><p>• Entire group simultaneously.<br>• Valid for indoor use (gymnasium).<br>• External pacing eliminates tactical differences.<br>• High group motivation.</p><h3>Result</h3><p>Record the level (palier) reached and the number of runs completed in that level. This allows VO₂max estimation using Léger's formula.</p>`},
+  'continuous-method':{title:'Continuous Training — Full Guide',html:`<h3>When to use it</h3><p>Ideal for building or maintaining the aerobic base, for beginners, and during recovery/tapering weeks before competition.</p><h3>The conversation test</h3><p>You should be able to speak in full sentences while running. If you can only say single words, you are going too fast. If you could sing, you are going too slow.</p><h3>8-week beginner progression</h3><p>Weeks 1–2: 20 min Zone 2. Weeks 3–4: 25 min Zone 2. Weeks 5–6: 30 min (last 5 min Zone 3). Weeks 7–8: 35 min (last 10 min Zone 3).</p>`},
+  'interval-method':{title:'Interval Training — The Science',html:`<h3>Why incomplete recovery is the key</h3><p>Unlike series training (complete recovery), in interval training the heart never fully recovers between efforts. This sustained elevated cardiac output produces greater cardiovascular adaptation in less time.</p><h3>Variables</h3><p>• Effort distance/time: 200m, 400m, 800m, 30s, 60s...<br>• Effort intensity: 80–95% MHR<br>• Recovery duration: HR should drop to ~120–130 bpm<br>• Number of reps: 4–12 depending on level<br>• Recovery type: light jog (never static rest)</p><h3>For teenagers — precautions</h3><p>Effective but demanding. Recommended to have at least 8 weeks of continuous running before introducing intervals. No more than 2 interval sessions per week.</p>`},
+  'fartlek-method':{title:'Fartlek — Speed Play',html:`<h3>Swedish origin</h3><p>The name comes from Swedish: <em>fart</em> (speed) + <em>lek</em> (play). Developed in the 1930s by Swedish coach Gösta Holmér for middle-distance runners. The idea was to make training more natural and less monotonous than track repetitions.</p><h3>Types of fartlek</h3><p><strong>Unstructured (free):</strong> athlete changes pace based on feel, terrain or landmarks. No pre-set structure. Best for motivation and maintenance sessions.<br><strong>Structured:</strong> pace changes are planned in advance. Example: 5 × (2 min Zone 4 + 3 min Zone 2). More similar to interval training but without full stops.</p>`},
+  'circuit-method':{title:'Circuit Training — Design Your Own',html:`<h3>How to design an effective circuit</h3><p>• Stations: 6–12<br>• Duration per station: 20–60 seconds<br>• Rest between stations: 15–30 seconds<br>• Number of rounds: 2–4<br>• Rest between rounds: 1–3 minutes</p><h3>Alternation principle</h3><p>Stations must alternate to avoid localised fatigue: arm → leg → core → cardio → arm → leg... This way no muscle group exhausts before the circuit ends.</p><h3>Example circuit (8 stations)</h3><p>Burpees 30s → Squats 40s → Plank 30s → Skipping 45s → Press-ups 30s → Mountain climbers 30s → Lunges 40s → Jumping jacks 45s → Rest 90s → Repeat.</p>`}
+};
+function openModal(key){const c=MODALS[key];if(!c)return;document.getElementById('modalTitle').textContent=c.title;document.getElementById('modalBody').innerHTML=c.html;document.getElementById('modalOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(e){if(!e||e.target===document.getElementById('modalOverlay')||!e.target){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}}
+
+/* SIDE PANELS */
+const PANELS={
+  'vo2max-detail':{badge:'ADVANCED CONCEPT',title:'VO₂ Max in Depth',html:`<h3>Reference values — age 16</h3><p>• Sedentary: 35–42 ml/kg/min<br>• Active: 42–52 ml/kg/min<br>• Athlete: 52–65 ml/kg/min<br>• World elite: 75–90 ml/kg/min</p><h3>World record</h3><p>Norwegian cyclist Oskar Svendsen recorded 97.5 ml/kg/min at age 18. Eliud Kipchoge has ~84 ml/kg/min.</p><h3>Can it be improved?</h3><p>Yes, significantly. An 8–12 week programme can improve VO₂ max by 15–25% in untrained individuals. Genetics determine the ceiling (~50%); training brings you closer to it.</p>`},
+  'cardio-adaptations':{badge:'PHYSIOLOGY',title:'Cardiovascular Adaptations',html:`<h3>Central (heart and lungs)</h3><p>• Stroke volume: from ~70 mL to ~120–130 mL<br>• Resting HR: from 70–80 bpm to 40–50 bpm after 6–12 months<br>• Maximum cardiac output: from ~15 L/min to ~25–30 L/min</p><h3>Peripheral (muscles)</h3><p>• Mitochondrial density: up to +40% per muscle fibre<br>• Capillarisation: more capillaries per fibre → better O₂ exchange<br>• More active oxidative enzymes → greater fat-burning efficiency</p><h3>Timeline</h3><p>Resting HR improves in 4–6 weeks. Muscular adaptations: 8–16 weeks. Cardiac structural changes: months to years of systematic training.</p>`},
+  'karvonen-method':{badge:'ADVANCED METHOD',title:'Karvonen Heart Rate Reserve',html:`<h3>The formula</h3><p>Target HR = Resting HR + % × (MHR − Resting HR)</p><p>Where (MHR − Resting HR) = <strong>Heart Rate Reserve (HRR)</strong>.</p><h3>Example — age 16, resting HR 65 bpm</h3><p>MHR = 204 bpm · HRR = 139 bpm<br>Zone 3 (70–80%): 65 + 0.70×139 = <strong>162 bpm</strong> / 65 + 0.80×139 = <strong>176 bpm</strong></p><h3>Why is it more accurate?</h3><p>Two people with the same MHR but different resting HRs have different usable cardiac ranges. Karvonen accounts for this: an athlete with resting HR 40 bpm has far greater cardiac reserve than someone at 80 bpm.</p>`},
+  'periodisation':{badge:'PLANNING',title:'Periodisation of Training',html:`<h3>Macrocycle, mesocycle, microcycle</h3><p><strong>Macrocycle:</strong> the full competitive season.<br><strong>Mesocycle:</strong> 3–6 week blocks (base, threshold, speed, competition, recovery).<br><strong>Microcycle:</strong> the training week.</p><h3>For your unit</h3><p>Weeks 1–2: aerobic base, easy continuous running Zone 2.<br>Weeks 3–4: increase intensity, add fartlek and Zone 3.<br>Week 5: introduce basic intervals, Zone 4 sessions.<br>Week 6: reduce volume, retest (Cooper or 6-min run).</p><h3>Taper</h3><p>In the final days before a test or competition, reduce volume by 30–50% while maintaining intensity. This allows full recovery and supercompensation before the event.</p>`}
+};
+function openSidePanel(key){const c=PANELS[key];if(!c)return;document.getElementById('spBadge').textContent=c.badge;document.getElementById('spTitle').textContent=c.title;document.getElementById('spBody').innerHTML=c.html;document.getElementById('sidePanel').classList.add('open');document.getElementById('spOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeSidePanel(){document.getElementById('sidePanel').classList.remove('open');document.getElementById('spOverlay').classList.remove('open');document.body.style.overflow='';}
+
+/* PDF */
+function savePDF(){saveLocal();showToast('Preparing PDF...','toast-pdf');setTimeout(()=>window.print(),400);}
+function clearAll(){if(!confirm('Clear ALL answers? This cannot be undone.'))return;document.querySelectorAll('input,textarea').forEach(el=>el.value='');document.querySelectorAll('input[type=radio]').forEach(r=>{r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(f=>{f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(s=>s.classList.remove('show'));document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){const t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(()=>t.classList.remove('show'),3000);}
+
+/* SUBMIT MODAL */
+const SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+
+function openSubmitModal(){
+  const name=document.getElementById('st-name').value.trim();
+  const group=document.getElementById('st-group').value.trim();
+  const date=document.getElementById('st-date').value.trim();
+  const res=document.getElementById('submitStudentSummary');
+  if(!name){res.innerHTML='<span style="color:#ef4444;font-weight:800">⚠ Name missing.</span> Please fill in your name before submitting.';}
+  else{res.innerHTML=`<strong style="color:white">👤</strong> ${name} &nbsp;|&nbsp; <strong style="color:white">📚</strong> ${group||'—'} &nbsp;|&nbsp; <strong style="color:white">📅</strong> ${date||'—'}`;}
+  document.getElementById('submitConfirmView').style.display='block';
+  document.getElementById('submitSentView').style.display='none';
+  document.getElementById('submitConfirmBtn').disabled=!name;
+  document.getElementById('submitModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+
+async function submitToSheets(){
+  const btn=document.getElementById('submitConfirmBtn');
+  const btnText=document.getElementById('submitBtnText');
+  const data={__guide__:'4ESO-Endurance'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(el=>{if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(qId=>{
+    const sel=document.querySelector(`input[name="${qId}"]:checked`);
+    data['resp_'+qId]=sel?sel.value:'—';
+    data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'✓':'✗'):'—';
+  });
+  Object.keys(ACT_QUESTIONS).forEach(act=>{
+    let c=0;
+    ACT_QUESTIONS[act].forEach(qId=>{const s=document.querySelector(`input[name="${qId}"]:checked`);if(s&&s.value===CORRECT[qId])c++;});
+    data['nota_'+act]=c+'/'+ACT_QUESTIONS[act].length;
+  });
+  let tot=0,totQ=0;
+  Object.keys(ACT_QUESTIONS).forEach(act=>{ACT_QUESTIONS[act].forEach(qId=>{totQ++;const s=document.querySelector(`input[name="${qId}"]:checked`);if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'—';
+  data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'—';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Sending...';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+    document.getElementById('submitConfirmView').style.display='none';
+    document.getElementById('submitSentView').style.display='block';
+    const mb=document.getElementById('btnSubmit');mb.textContent='✅ Submitted';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';
+    showToast('Submitted successfully! 🎉','toast-ok');
+  }catch(err){btnText.innerHTML='📤 Confirm submission';btn.disabled=false;showToast('Error sending. Check your connection.','toast-err');}
+}
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+</script>
+</body>
+</html>

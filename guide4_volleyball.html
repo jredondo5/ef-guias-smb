@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Guide – Volleyball · 4º ESO · PE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#1D3557;--accent2:#457B9D;--accent3:#0D2240;--dark:#080808;--mid:#111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,.75);--txt-dim:rgba(255,255,255,.4)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.06);z-index:200}.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(29,53,87,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}.logo-badge{background:var(--accent);color:white;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(29,53,87,.08)}
+.subnav{position:relative}
+.subnav-menu{display:none;position:absolute;top:115%;left:0;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:8px;overflow:hidden;min-width:220px;box-shadow:0 16px 40px rgba(0,0,0,.7);z-index:200}
+.subnav:hover .subnav-menu{display:block}
+.subnav-menu a{display:block;border-radius:0;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:white!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+.hero{min-height:92vh;background:var(--dark);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 5rem}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;animation:orbF 12s ease-in-out infinite}
+.hero-orb:nth-child(1){width:600px;height:600px;background:var(--accent);top:-15%;right:-10%}
+.hero-orb:nth-child(2){width:350px;height:350px;background:var(--accent3);bottom:5%;right:25%;animation-delay:5s}
+@keyframes orbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);background:rgba(29,53,87,.1);border:1px solid rgba(29,53,87,.2);padding:.35rem .9rem;border-radius:2px;display:inline-block;margin-bottom:2rem}
+.hero-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite;margin:0 .5rem;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(5rem,12vw,11rem);line-height:.82;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:1rem}
+h1.hero-title em{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-style:normal;font-size:.7em}
+.hero-sub{font-size:1.05rem;color:var(--txt);line-height:1.8;margin-bottom:2.5rem;max-width:560px}.hero-sub strong{color:white}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:white}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(29,53,87,.4)}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.inner{max-width:1060px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(29,53,87,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.92}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+.student-bar{background:rgba(29,53,87,.06);border:1px solid rgba(29,53,87,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.student-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.student-bar input{flex:1;min-width:160px;background:transparent;border:none;border-bottom:2px solid rgba(29,53,87,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.student-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.student-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(29,53,87,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(29,53,87,.06);border-color:rgba(29,53,87,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(29,53,87,.1);border-color:rgba(29,53,87,.35)}.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(29,53,87,.08);border:1px solid rgba(29,53,87,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(29,53,87,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(29,53,87,.04)}.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(29,53,87,.25);transform:translateY(-3px)}.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(29,53,87,.12);color:var(--accent);border:1px solid rgba(29,53,87,.2)}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.dh{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(29,53,87,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(29,53,87,.12);line-height:1;transition:color .2s}.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(29,53,87,.1);color:var(--accent);border:1px solid rgba(29,53,87,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:110px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(29,53,87,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(29,53,87,.1),rgba(29,53,87,.04));border:1px solid rgba(29,53,87,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s}
+.pdf-save{background:var(--accent);color:white}.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}.btn-submit:hover{transform:translateY(-1px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:white}.toast-ok{background:#22c55e}.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}.submit-box p strong{color:white}
+.submit-warn{background:rgba(29,53,87,.08);border:1px solid rgba(29,53,87,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}.submit-warn span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}.submit-confirm:hover{transform:translateY(-1px)}.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.wm{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.wm,.prog-wrap,.submit-modal,.hero,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #0D2240!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){.hero{padding:5rem 2rem 3rem}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+/* ── Bloques teóricos 4ESO ── */
+.theory-block{background:var(--card);border-radius:10px;padding:2.5rem;margin:1.5rem 0;border:1px solid rgba(255,255,255,.05)}
+.theory-block+.theory-block{margin-top:1.5rem}
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="wm">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">Clear</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">Save PDF</button>
+  <button class="pdf-btn btn-submit" id="btnSubmit" onclick="openSubmitModal()">Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span><h2>Submit Guide</h2>
+      <p>Check your <strong>name and group</strong> before submitting.</p>
+      <div class="submit-warn"><span>Note:</span> Multiple choice answers are auto-graded. Open questions are reviewed by the teacher.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancel</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">Confirm submission</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span><h3>Submitted!</h3>
+      <p>Your answers have reached the teacher.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:white">Save PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#home">🏐 VOLLEYBALL <span class="logo-badge">4 ESO · PE</span></a>
+    <nav>
+    <a href="#get-active">Get Active</a>
+    <div class="subnav">
+      <a href="#theory">Challenge Yourself</a>
+      <div class="subnav-menu">
+        <a href="#theory-a">Rules & Court</a>
+        <a href="#theory-b">The Six Positions</a>
+        <a href="#theory-c">Offensive Techniques</a>
+        <a href="#theory-d">Defensive Techniques</a>
+        <a href="#theory-e">Team Systems & Tactics</a>
+        <a href="#theory-f">Beach Volleyball & Fitness</a>
+      </div>
+    </div>
+    <a href="#train">Train &amp; Compete</a>
+    <a href="#evaluate">Evaluate</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+<div id="home" class="hero">
+  <div class="hero-orb"></div><div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Physical Education · 4 ESO · CLIL</div>
+    <h1 class="hero-title">VOLLEY<em>BALL</em></h1>
+    <p class="hero-sub">Six players. Three touches. One goal. Master the sport that blends <strong>athleticism, teamwork and precision</strong> in every single rally.</p>
+    <div class="cta-row">
+      <a href="#get-active" class="btn btn-primary">Get Started</a>
+      <a href="#theory" class="btn btn-outline">Study</a>
+      <a href="#train" class="btn btn-outline">Train</a>
+    </div>
+  </div>
+</div>
+
+<section class="sect-dark" id="get-active">
+<div class="inner">
+  <p class="sect-label reveal">Section 01 · Get Active</p>
+  <h2 class="sect-title reveal">GET <span class="accent">ACTIVE</span></h2>
+  <div class="student-bar reveal">
+    <label for="st-name">Name</label><input type="text" id="st-name" placeholder="First and last name...">
+    <label for="st-group">Group</label><input type="text" id="st-group" placeholder="4 ESO" style="max-width:160px">
+    <label for="st-date">Date</label><input type="text" id="st-date" placeholder="dd/mm/yyyy" style="max-width:130px">
+  </div>
+  <p class="lead reveal">Volleyball was invented in 1895 by William G. Morgan at the YMCA in Holyoke, Massachusetts. Originally called "Mintonette", it was designed as a less physically demanding alternative to basketball. Today it is one of the most played sports in the world, with over 800 million players in 220 countries.</p>
+  <div class="dh-row reveal">
+    <div class="dh"><div class="dh-num">800M</div><div class="dh-label">Players worldwide</div><div class="dh-desc">Volleyball is one of the most played sports on the planet, present in 220 countries.</div></div>
+    <div class="dh"><div class="dh-num">1964</div><div class="dh-label">Olympic debut in Tokyo</div><div class="dh-desc">Volleyball became an Olympic sport at the 1964 Tokyo Games. Beach volleyball joined in 1996.</div></div>
+    <div class="dh"><div class="dh-num">18m x 9m</div><div class="dh-label">Court dimensions</div><div class="dh-desc">Divided by a net 2.43m high (men) or 2.24m (women) at the centre.</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Activity 1 - Prior Knowledge (open answer)</div>
+    <h4>Reflect before studying the unit</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">Have you played volleyball or beach volleyball before? What position did you play? What was the most difficult skill?</label><textarea class="field-input" id="a1q1" placeholder="Your experience..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">What do you think are the most important attributes for a good volleyball player — physical or mental? Why?</label><textarea class="field-input" id="a1q2" placeholder="Your analysis..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q3">Which volleyball position do you think would suit you best and why?</label><textarea class="field-input" id="a1q3" placeholder="Your preferred position and reasoning..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ UNIT VIDEO</span>
+    <span class="ebi-vid-ttl">Volleyball Skills — Fundamentals</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="sHJ-LCvRXiI" data-title="Volleyball Skills — Fundamentals" tabindex="0" role="button" aria-label="Play: Volleyball Skills — Fundamentals">
+    <img src="https://img.youtube.com/vi/sHJ-LCvRXiI/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/sHJ-LCvRXiI/mqdefault.jpg'" alt="Volleyball Skills — Fundamentals" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Click image to play · Or open it on</span>
+    <a href="https://www.youtube.com/watch?v=sHJ-LCvRXiI" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="theory">
+<div class="inner">
+  <p class="sect-label reveal">Section 02 · Challenge Yourself</p>
+  <h2 class="sect-title reveal">VOLLEYBALL: RULES, <span class="accent">SKILLS & POSITIONS</span></h2>
+  <p class="lead reveal">Six blocks covering volleyball history, rules, scoring, positions, techniques and game systems.</p></div>
+</section>
+
+<section class="sect-dark" id="theory-a">
+<div class="inner">
+    <p class="sect-label reveal">Section 02A · Theory Block</p>
+    <h3 class="subsect reveal">Rules & Court</h3>
+    <p class="body-text reveal">Volleyball is played on an 18m x 9m court divided by a net. Each team has a maximum of 3 contacts to return the ball. Understanding the core rules is the foundation of the game.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">3</span><div class="cc-title">Maximum contacts</div><div class="cc-body">Each team has 3 touches to return the ball. The same player cannot hit it twice consecutively.</div><div class="cc-tag">Fundamental rule</div></div>
+      <div class="cc"><span class="cc-icon">🔄</span><div class="cc-title">Rotation</div><div class="cc-body">After winning a rally while the opponent served (side-out), players rotate clockwise.</div><div class="cc-tag">Mandatory rotation</div></div>
+      <div class="cc"><span class="cc-icon">📏</span><div class="cc-title">Court zones</div><div class="cc-body">Front zone (attack): 3 attackers near the net. Back zone (defence): 3 defenders at the baseline.</div><div class="cc-tag">Two zones</div></div>
+      <div class="cc"><span class="cc-icon">🏅</span><div class="cc-title">Rally point</div><div class="cc-body">A point is scored on every rally regardless of which team served — modern volleyball.</div><div class="cc-tag">Scoring system</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 2 - Rules & Court</div>
+      <h4>Check your understanding of volleyball's fundamental rules</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the maximum number of contacts each team may have before returning the ball over the net?</div>
+      <div class="options" data-q="a2q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">2 contacts</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">3 contacts — the same player cannot touch the ball twice consecutively</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">4 contacts if a block touch is not counted</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">5 contacts in women's volleyball only</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>When does a rotation occur in volleyball?</div>
+      <div class="options" data-q="a2q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">After every point is scored regardless of which team won the rally</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">When the receiving team wins a rally while the opponent was serving — they rotate before they serve</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">After every three consecutive serves by the same player</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Rotations only occur in beach volleyball, not indoor volleyball</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What does the "3-metre attack line" in volleyball restrict?</div>
+      <div class="options" data-q="a2q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Front-row players from defending near the baseline</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Back-row players from attacking the ball above net height while jumping from inside the 3-metre line</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The libero from approaching the net during service</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">All players from jumping within 3 metres of the net when blocking</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In the rally point system used in modern volleyball, when is a point scored?</div>
+      <div class="options" data-q="a2q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Only when the serving team wins the rally</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">On every rally, regardless of which team was serving</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Only when the receiving team wins 3 consecutive rallies</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">A point is only scored after both teams have used all 3 of their contacts</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What is the standard game score in a volleyball set, and what is the deciding set played to?</div>
+      <div class="options" data-q="a2q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">First to 15 — deciding set to 10</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">First to 21 — deciding set to 15</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">First to 25 (win by 2) — deciding set (set 5) played to 15 (win by 2)</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">First to 30 — deciding set to 20</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Check Answers</button>
+      <div class="act-score" id="score-a2">Score: <strong id="score-a2-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-b">
+<div class="inner">
+    <p class="sect-label reveal">Section 02B · Theory Block</p>
+    <h3 class="subsect reveal">The Six Positions</h3>
+    <p class="body-text reveal">Each position in volleyball has a specific role in both attack and defence. Understanding these roles is essential for effective team play.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">1</span><div class="cc-title">Outside Hitter</div><div class="cc-body">Main attacker from the left side. Most versatile player — attacks, serves and passes.</div><div class="cc-tag">Primary attacker</div></div>
+      <div class="cc"><span class="cc-icon">2</span><div class="cc-title">Setter</div><div class="cc-body">The playmaker. Touches the ball on the 2nd contact and delivers accurate sets to attackers.</div><div class="cc-tag">Team architect</div></div>
+      <div class="cc"><span class="cc-icon">3</span><div class="cc-title">Libero</div><div class="cc-body">Defensive specialist in a different colour jersey. Cannot attack, block or serve.</div><div class="cc-tag">Defensive specialist</div></div>
+      <div class="cc"><span class="cc-icon">4</span><div class="cc-title">Middle Blocker</div><div class="cc-body">Tallest player. Blocks at the net and performs quick attacks through the middle zone.</div><div class="cc-tag">Net dominance</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 3 - The Six Positions</div>
+      <h4>Demonstrate your understanding of volleyball positions and roles</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the primary role of the setter in volleyball?</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">To serve the ball from behind the baseline with maximum power</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">To touch the ball on the second contact and deliver accurate sets to attackers</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">To perform the most powerful spikes from the outside hitter position</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">To cover the back court and dig all hard-driven balls</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What makes the libero position unique compared to all other volleyball positions?</div>
+      <div class="options" data-q="a3q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">The libero is the only player allowed to serve in modern volleyball</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The libero wears a different coloured jersey and cannot attack above net height, serve or block</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The libero can replace any player on the court without using a substitution</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The libero is the captain of the team and calls all tactical decisions</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Which position is typically the tallest player on the team, and why?</div>
+      <div class="options" data-q="a3q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">The outside hitter — taller players have a longer reach for receiving hard serves</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">The libero — height helps cover more ground in the back court</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The middle blocker — height allows them to close the net and block quickly in both directions</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">The setter — height gives them better vision of the court during the set</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In volleyball, the "opposite hitter" plays on which side of the court relative to the setter?</div>
+      <div class="options" data-q="a3q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Directly next to the setter on the left side of the court</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">On the opposite (right) side of the court from the setter</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Behind the setter in the back zone at all times during the rally</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">At the centre of the front row regardless of rotation position</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What is a "defensive specialist" (DS) in volleyball, and how does their role differ from a libero?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">DS and libero are exactly the same position with different names in different countries</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">A DS can serve, attack and replace any player, while a libero has strict substitution rules and cannot attack</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The DS plays only the front row while the libero covers the back row</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">A DS is a reserve player who only enters when the libero needs a rest</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Check Answers</button>
+      <div class="act-score" id="score-a3">Score: <strong id="score-a3-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card2" id="theory-c">
+<div class="inner">
+    <p class="sect-label reveal">Section 02C · Theory Block</p>
+    <h3 class="subsect reveal">Offensive Techniques</h3>
+    <p class="body-text reveal">Volleyball offence flows through three linked skills: serve, set and spike. Each requires specific technique.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🤜</span><div class="cc-title">Float Serve</div><div class="cc-body">No spin. The ball moves unpredictably in the air — the most effective serve in modern volleyball.</div><div class="cc-tag">Unpredictable movement</div></div>
+      <div class="cc"><span class="cc-icon">🙌</span><div class="cc-title">Overhead Set</div><div class="cc-body">Fingertip contact to direct the ball accurately to the attacker. The setter's primary weapon.</div><div class="cc-tag">Precision required</div></div>
+      <div class="cc"><span class="cc-icon">💥</span><div class="cc-title">Spike</div><div class="cc-body">Jumping and hitting the ball downward with power and angle into the opponent's court.</div><div class="cc-tag">Point winner</div></div>
+      <div class="cc"><span class="cc-icon">⚡</span><div class="cc-title">Jump Serve</div><div class="cc-body">Tossed high, approached and hit like a spike from behind the end line. Maximum speed.</div><div class="cc-tag">Power serve</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 4 - Offensive Techniques</div>
+      <h4>Check your knowledge of the main attacking skills</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Why is the float serve considered more effective than a spin serve in modern volleyball?</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Float serves are always easier to execute technically than spin serves</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The lack of spin causes the ball to move unpredictably in flight, making it harder for the receiver to judge</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Float serves travel faster through the air than topspin serves</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Float serves are required by FIVB rules in all international competitions</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What part of the hand makes contact during an overhead set?</div>
+      <div class="options" data-q="a4q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">The palm of the hand for maximum control and cushioning</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The fingertips — both hands contact the ball simultaneously above forehead height</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The knuckles of the closed fist to create a consistent flat surface</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The back of the hand to direct the ball backward over the setter's head</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>In a volleyball spike, what determines the direction of the ball primarily?</div>
+      <div class="options" data-q="a4q3" data-correct="A">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">The angle of the wrist snap at the moment of contact</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">The position of the attacker's body in the air during the jump</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The angle of the setter's set and the timing of the attacker's approach</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">The speed of the approach run before the jump</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>What is the key technical difference between a jump serve and a standing float serve?</div>
+      <div class="options" data-q="a4q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">A jump serve is always faster but less accurate than a standing float serve</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">In a jump serve the ball is tossed high, the player approaches and contacts the ball in the air like a spike</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">A jump serve must be executed from inside the court while a float serve is from behind the line</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Jump serves are only legal in beach volleyball, not indoor volleyball</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Which of the following is the correct sequence of contacts in an ideal volleyball attack?</div>
+      <div class="options" data-q="a4q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Serve - Spike - Set</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Pass (forearm) - Set (fingertips) - Spike</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Set - Pass - Spike</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Block - Set - Spike</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Check Answers</button>
+      <div class="act-score" id="score-a4">Score: <strong id="score-a4-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-mid" id="theory-d">
+<div class="inner">
+    <p class="sect-label reveal">Section 02D · Theory Block</p>
+    <h3 class="subsect reveal">Defensive Techniques</h3>
+    <p class="body-text reveal">Great defence is what separates good teams from great teams. The forearm pass, block and dive are the foundations of defensive volleyball.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🫰</span><div class="cc-title">Forearm Pass (Dig)</div><div class="cc-body">Two forearms together forming a flat platform to redirect a hard-driven ball upward.</div><div class="cc-tag">Defensive foundation</div></div>
+      <div class="cc"><span class="cc-icon">🤚</span><div class="cc-title">Block</div><div class="cc-body">Jumping at the net with arms extended to deflect the opponent's attack. 1, 2 or 3 players.</div><div class="cc-tag">First line of defence</div></div>
+      <div class="cc"><span class="cc-icon">🤸</span><div class="cc-title">Dive / Roll</div><div class="cc-body">Emergency technique to save a ball close to the ground without losing court position.</div><div class="cc-tag">Emergency save</div></div>
+      <div class="cc"><span class="cc-icon">📡</span><div class="cc-title">Court Coverage</div><div class="cc-body">Defenders must read the setter, attacker and block to position correctly before the attack.</div><div class="cc-tag">Anticipation</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 5 - Defensive Techniques</div>
+      <h4>Demonstrate your knowledge of volleyball defensive skills</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the correct body position for an effective forearm pass (dig)?</div>
+      <div class="options" data-q="a5q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Arms bent at the elbows to absorb the impact of a hard-hit ball</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Arms extended and locked at the elbows creating a flat platform for the ball to rebound off</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Arms held above the head with fingers spread apart to redirect the ball</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">One arm extended and the other bent to guide the ball to the setter</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>In a blocking situation, what is the purpose of angling the hands and wrists inward over the net?</div>
+      <div class="options" data-q="a5q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">To create more surface area and increase the chance of touching the ball</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">To direct blocked balls back into the opponent's court rather than out of bounds</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">To prevent injury to the wrist from contact with the ball at high speed</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">To stay in contact with the net for longer to block a delayed spike</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the primary tactical purpose of the block in volleyball?</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">To score direct points — the block always wins the rally when the ball touches it</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">To reduce the attackable court area, channel the ball to where defenders are positioned</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">To intimidate the opposing attacker into making an error before spiking</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">To substitute for a poor forearm pass when the first contact is too close to the net</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In what situation would a dive or rolling save be the appropriate defensive response?</div>
+      <div class="options" data-q="a5q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">When the ball is coming directly at the player at shoulder height</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">When the ball is falling rapidly towards the floor in front of or beside the player</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">When the player needs to cover a wide area quickly to intercept a deep serve</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">After a successful dig to recover position before the second contact</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What information should a defender read BEFORE the attacker makes contact with the ball?</div>
+      <div class="options" data-q="a5q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The score of the current set and the time remaining</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The setter's body position and hands to predict which attacker will be set</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The libero's starting position at the beginning of the set</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">The number of substitutions used by the other team</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a5',['a5q1','a5q2','a5q3','a5q4','a5q5'])">Check Answers</button>
+      <div class="act-score" id="score-a5">Score: <strong id="score-a5-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-dark" id="theory-e">
+<div class="inner">
+    <p class="sect-label reveal">Section 02E · Theory Block</p>
+    <h3 class="subsect reveal">Team Systems & Game Tactics</h3>
+    <p class="body-text reveal">Volleyball teams use specific offensive and defensive systems to maximise their strengths and exploit opponents' weaknesses.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">6-2</span><div class="cc-title">6-2 System</div><div class="cc-body">6 attackers, 2 setters (one always in back row). More attacking options but complex rotation.</div><div class="cc-tag">Complex offence</div></div>
+      <div class="cc"><span class="cc-icon">5-1</span><div class="cc-title">5-1 System</div><div class="cc-body">One setter — the most common at high level. Consistent setting but fewer attacking options.</div><div class="cc-tag">Standard system</div></div>
+      <div class="cc"><span class="cc-icon">4-2</span><div class="cc-title">4-2 System</div><div class="cc-body">4 attackers, 2 setters (always in front row). Simpler for beginners and school teams.</div><div class="cc-tag">Beginner-friendly</div></div>
+      <div class="cc"><span class="cc-icon">🔄</span><div class="cc-title">Rotation Systems</div><div class="cc-body">Serve receive patterns and rotation position assignments that keep the best attackers in the right spots.</div><div class="cc-tag">Tactical positioning</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 6 - Team Systems & Tactics</div>
+      <h4>Understand how volleyball teams organise their offence and defence</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>In the 5-1 volleyball system, what does the "1" represent?</div>
+      <div class="options" data-q="a6q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q1" value="A"><span class="opt-letter">A</span><span class="opt-text">1 libero who plays the entire match without rotation</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="B"><span class="opt-letter">B</span><span class="opt-text">1 setter who plays all six rotations — the most common system at professional level</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="C"><span class="opt-letter">C</span><span class="opt-text">1 designated server who takes all first serves in each set</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="D"><span class="opt-letter">D</span><span class="opt-text">1 setter who only plays in the front row and is replaced when rotating to back row</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is the 4-2 system recommended for school and beginner volleyball teams?</div>
+      <div class="options" data-q="a6q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Because it allows the two setters to alternate without any rotation complexity</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="B"><span class="opt-letter">B</span><span class="opt-text">It is the simplest system — two setters always in the front row make it easy for beginners to learn</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Because back-row attacks are not allowed in most school competitions</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The 4-2 is the same as the 5-1 but with different naming conventions</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>In volleyball serve reception, what is the most common formation (W-formation)?</div>
+      <div class="options" data-q="a6q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q3" value="A"><span class="opt-letter">A</span><span class="opt-text">5 players in a W-shape with the setter in the centre ready to set</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="B"><span class="opt-letter">B</span><span class="opt-text">5 receivers in a W-shape with the setter positioned near the net out of the W</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="C"><span class="opt-letter">C</span><span class="opt-text">3 players at the back and 2 at the front forming a W when viewed from above</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Only the libero receives serve while the 5 other players stand at the net</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>What is a "free ball" in volleyball and why is it considered an opportunity?</div>
+      <div class="options" data-q="a6q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q4" value="A"><span class="opt-letter">A</span><span class="opt-text">A ball that lands in the net — play continues after the net is cleared</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="B"><span class="opt-letter">B</span><span class="opt-text">A ball returned easily over the net by the opponent, giving your team an ideal platform to attack</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="C"><span class="opt-letter">C</span><span class="opt-text">A serve that lands out of bounds — the receiving team earns a free point</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="D"><span class="opt-letter">D</span><span class="opt-text">A ball that travels under the net — play continues from the other side</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Why do front-row players always take the positions closest to the net after rotating?</div>
+      <div class="options" data-q="a6q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because FIVB rules require all front-row players to stay within 1 metre of the net</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="B"><span class="opt-letter">B</span><span class="opt-text">To be ready for attacks and blocks — their primary responsibilities in that rotation</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because back-row players are not permitted to stand within the front zone</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="D"><span class="opt-letter">D</span><span class="opt-text">To help the libero cover the serve reception more effectively</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a6',['a6q1','a6q2','a6q3','a6q4','a6q5'])">Check Answers</button>
+      <div class="act-score" id="score-a6">Score: <strong id="score-a6-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-f">
+<div class="inner">
+    <p class="sect-label reveal">Section 02F · Theory Block</p>
+    <h3 class="subsect reveal">Beach Volleyball & Physical Fitness</h3>
+    <p class="body-text reveal">Beach volleyball (2 vs 2 on sand) became Olympic in 1996. It develops the same skills as indoor but with added physical demands from the sand surface.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🏖</span><div class="cc-title">Beach vs Indoor</div><div class="cc-body">2 players instead of 6. Same skills, different physical demands. No libero. Players cover the full court.</div><div class="cc-tag">Key difference</div></div>
+      <div class="cc"><span class="cc-icon">💪</span><div class="cc-title">Sand Training</div><div class="cc-body">Playing on sand increases lower-body muscular demand — jumps are 15-20% harder than on hard court.</div><div class="cc-tag">Physical advantage</div></div>
+      <div class="cc"><span class="cc-icon">❤️</span><div class="cc-title">Fitness Benefits</div><div class="cc-body">Volleyball develops cardiovascular endurance, explosive power, coordination and reaction time.</div><div class="cc-tag">Full fitness package</div></div>
+      <div class="cc"><span class="cc-icon">🧠</span><div class="cc-title">Reaction Time</div><div class="cc-body">Serving, passing and attacking require split-second decisions at high ball speeds.</div><div class="cc-tag">Neurological demand</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 7 - Beach Volleyball & Fitness</div>
+      <h4>Understand the differences and fitness benefits of volleyball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is the main structural difference between indoor volleyball and beach volleyball?</div>
+      <div class="options" data-q="a7q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Beach volleyball uses a lighter ball and a higher net to compensate for wind conditions</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Beach volleyball is played 2 vs 2 on sand while indoor volleyball is 6 vs 6 on a hard court</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Beach volleyball sets are played to 21 points while indoor sets go to 30</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Beach volleyball allows unlimited contacts before returning the ball over the net</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why does playing volleyball on sand provide greater physical benefits than on a hard court?</div>
+      <div class="options" data-q="a7q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Sand courts are larger, requiring players to cover more distance per rally</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The instability and resistance of sand increases muscular demand — jumps require 15-20% more effort</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Sand is softer and therefore allows higher jumps without risk of injury</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Sand courts have no boundary lines so players must run further to save balls</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Which physical capacity is MOST directly developed by the repeated jumping required in volleyball?</div>
+      <div class="options" data-q="a7q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Cardiovascular endurance through sustained aerobic effort</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Explosive leg power and rate of force development through repeated vertical jumps</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Flexibility of the lower back and hamstrings through landing mechanics</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Grip strength through blocking and setting actions</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>At what Olympic Games did beach volleyball make its debut as an official sport?</div>
+      <div class="options" data-q="a7q4" data-correct="C">
+        <label class="opt"><input type="radio" name="a7q4" value="A"><span class="opt-letter">A</span><span class="opt-text">1984 Los Angeles</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="B"><span class="opt-letter">B</span><span class="opt-text">1992 Barcelona</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="C"><span class="opt-letter">C</span><span class="opt-text">1996 Atlanta</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="D"><span class="opt-letter">D</span><span class="opt-text">2004 Athens</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Why is reaction time particularly important for a volleyball libero?</div>
+      <div class="options" data-q="a7q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the libero is responsible for making all offensive decisions for the team</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Because the libero must react and position correctly to hard-driven attacks in fractions of a second</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the libero serves the most difficult serves requiring precise timing</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Because the libero must jump with the middle blocker on every attacking play</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a7',['a7q1','a7q2','a7q3','a7q4','a7q5'])">Check Answers</button>
+      <div class="act-score" id="score-a7">Score: <strong id="score-a7-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-dark" id="train">
+<div class="inner">
+  <p class="sect-label reveal">Section 03 · Train & Compete</p>
+  <h2 class="sect-title reveal">TRAIN & <span class="accent">COMPETE</span></h2>
+  <p class="lead reveal">Complete these challenges and record your results. Focus on technique before speed or power.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Forearm Pass Wall Rally</div><span class="ch-tag">Technical</span></div>
+        <p>Stand 2 metres from a wall and dig the ball continuously using forearm passes at head height. Count the most consecutive contacts without losing control.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c1r1">Best consecutive contacts achieved</label><textarea class="field-input" id="c1r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c1r2">What was your most common error? How did you adjust your technique?</label><textarea class="field-input" id="c1r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Setting Accuracy</div><span class="ch-tag">Technical</span></div>
+        <p>Stand 2 metres from a wall and set the ball to a target mark at 2.5 metres height. How many out of 10 hit the target? Try with both hands.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c2r1">Sets landing on target out of 10 (right hand, left hand, two hands)</label><textarea class="field-input" id="c2r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c2r2">What makes consistent setting technically difficult? What adjustment helped most?</label><textarea class="field-input" id="c2r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Serve Placement</div><span class="ch-tag">Tactical</span></div>
+        <p>Attempt 10 float serves. Target each corner of the opponent's court. Count how many land in the target zone vs random placement.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c3r1">Serves hitting the target zone out of 10 and which zones were easiest</label><textarea class="field-input" id="c3r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c3r2">What made the float serve unpredictable? Describe what you felt in your hand at contact.</label><textarea class="field-input" id="c3r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">3-Person Passing Circuit</div><span class="ch-tag">Team</span></div>
+        <p>With 2 teammates, practice the serve-receive sequence: one player serves, one passes to the third who sets and the passer spikes. Rotate after 10 rallies.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c4r1">How many complete sequences (pass-set-spike) were successfully executed out of 10?</label><textarea class="field-input" id="c4r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c4r2">What was the weakest link in your team's sequence and how did you try to fix it?</label><textarea class="field-input" id="c4r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">05</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Mini-game (3 vs 3)</div><span class="ch-tag">Game</span></div>
+        <p>Play a 3 vs 3 game (modified rules if needed) applying at least 3 tactical concepts from this unit. Reflect on your decision-making during the game.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c5r1">Final score and 3 tactical concepts you applied during the game</label><textarea class="field-input" id="c5r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c5r2">What was your most effective tactical decision? What would you change next time?</label><textarea class="field-input" id="c5r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-mid" id="evaluate">
+<div class="inner">
+  <p class="sect-label reveal">Section 04 · Evaluate</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">ATE</span></h2>
+  <p class="lead reveal">Demonstrate what you have learned and reflect on your progress.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Final Activity - Personal Reflection (open answer)</div>
+    <h4>Complete this unit honestly</h4>
+    <div class="field-group"><label class="field-label" for="af1">Which of the six positions would you most like to play and why? What physical and technical qualities would you need to develop?</label><textarea class="field-input" id="af1" placeholder="Your preferred position and development plan..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Name 3 things you learned in this unit that changed how you watch or understand volleyball.</label><textarea class="field-input" id="af2" placeholder="1. ... 2. ... 3. ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">If you were to design a 4-week volleyball training programme for your class, what skills would you prioritise in weeks 1 and 2 vs weeks 3 and 4? Justify your choices.</label><textarea class="field-input" id="af3" placeholder="Your training programme rationale..."></textarea></div>
+  </div>
+  <h3 class="subsect reveal">Concept Map</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">VOLLEYBALL <span>Six players - three touches - one goal</span></div>
+    <div style="text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0">|</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">RULES</div>
+        <input class="field-input" type="text" placeholder="3 contacts..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Rotation..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">POSITIONS</div>
+        <input class="field-input" type="text" placeholder="Setter..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Libero..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">OFFENCE</div>
+        <input class="field-input" type="text" placeholder="Serve..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Spike..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">DEFENCE</div>
+        <input class="field-input" type="text" placeholder="Dig..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Block..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">SYSTEMS</div>
+        <input class="field-input" type="text" placeholder="5-1..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="4-2..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">YOUR GLOBAL SCORE</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Multiple choice only. Open answers are reviewed by the teacher.</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:{bc};border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase" onclick="calcGlobalScore()">See my global score</button>
+  </div>
+</div>
+</section>
+<footer><p>Reproduction or distribution of this guide without the prior written authorisation of the author is strictly prohibited. For exclusive educational use by students of the centre. Colegio Santa Maria la Blanca. © Jaime Redondo</p></footer>
+
+<script>
+var STORE_KEY='ef4eso-volleyball-v1';
+var CORRECT={'a2q1':'B','a2q2':'B','a2q3':'B','a2q4':'B','a2q5':'C','a3q1':'B','a3q2':'B','a3q3':'C','a3q4':'B','a3q5':'B','a4q1':'B','a4q2':'B','a4q3':'A','a4q4':'B','a4q5':'B','a5q1':'B','a5q2':'B','a5q3':'B','a5q4':'B','a5q5':'B','a6q1':'B','a6q2':'B','a6q3':'B','a6q4':'B','a6q5':'B','a7q1':'B','a7q2':'B','a7q3':'B','a7q4':'C','a7q5':'B'};
+var EXPL={'a2q1':'Correct. Each team has 3 contacts. The same player cannot touch twice consecutively.','a2q2':'Correct. Rotation occurs when the receiving team wins a rally and takes the serve.','a2q3':'Correct. The 3m line prevents back-row players from attacking above net height from the front zone.','a2q4':'Correct. A point is scored on every rally in the modern rally point system.','a2q5':'Correct. Sets go to 25 (win by 2); the deciding 5th set is to 15 (win by 2).','a3q1':'Correct. The setter touches the ball on the 2nd contact to deliver accurate sets.','a3q2':'Correct. The libero has a different jersey and cannot attack, block or serve normally.','a3q3':'Correct. The middle blocker is tallest to close the net quickly in both directions.','a3q4':'Correct. The opposite hitter plays on the right side, opposite the setter.','a3q5':'Correct. A DS can serve and attack freely while libero substitution rules are strict.','a4q1':'Correct. No spin causes unpredictable flight movement that is hard for receivers to read.','a4q2':'Correct. The fingertips of both hands contact the ball above forehead height for the set.','a4q3':'Correct. The wrist snap angle at contact primarily determines spike direction.','a4q4':'Correct. A jump serve is tossed high and contacted in the air like a spike.','a4q5':'Correct. The sequence is pass (forearm) - set (fingertips) - spike.','a5q1':'Correct. Arms extended and locked at elbows create a flat platform for the dig.','a5q2':'Correct. Angling wrists inward directs blocked balls back into the opponent\'s court.','a5q3':'Correct. The block channels the ball to where defenders are positioned.','a5q4':'Correct. A dive is appropriate when the ball is falling rapidly near the floor.','a5q5':'Correct. Read the setter\'s body and hands to predict which attacker will be set.','a6q1':'Correct. In 5-1 there is one setter who plays all six rotations.','a6q2':'Correct. The 4-2 is simplest — two setters always in the front row.','a6q3':'Correct. 5 receivers form a W-shape with the setter positioned near the net outside the W.','a6q4':'Correct. A free ball is an easy return that gives your team an ideal platform to attack.','a6q5':'Correct. Front-row players position near the net to be ready for attacks and blocks.','a7q1':'Correct. Beach volleyball is 2 vs 2 on sand; indoor is 6 vs 6 on hard court.','a7q2':'Correct. Sand resistance means jumps require 15-20% more muscular effort.','a7q3':'Correct. Repeated jumping develops explosive leg power and rate of force development.','a7q4':'Correct. Beach volleyball debuted at the 1996 Atlanta Olympics.','a7q5':'Correct. The libero must react and position in fractions of a second to hard attacks.'};
+var ACTS={'a2':['a2q1','a2q2','a2q3','a2q4','a2q5'],'a3':['a3q1','a3q2','a3q3','a3q4','a3q5'],'a4':['a4q1','a4q2','a4q3','a4q4','a4q5'],'a5':['a5q1','a5q2','a5q3','a5q4','a5q5'],'a6':['a6q1','a6q2','a6q3','a6q4','a6q5'],'a7':['a7q1','a7q2','a7q3','a7q4','a7q5']};
+window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(function(r){ro.observe(r);});
+document.addEventListener('change',function(e){if(e.target.type==='radio'){var n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(function(r){r.closest('.opt').classList.toggle('selected',r.checked);});saveLocal();}});
+function checkQuiz(actId,qIds){
+  var correct=0;
+  qIds.forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    var fb=document.getElementById('fb-'+qId);
+    var cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(function(o){o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPL[qId]||'Correct';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var el=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');var ct=el?el.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrect. Correct answer: '+cv+' - '+ct;fb.className='q-feedback show ko';}}
+    else{fb.textContent='No option selected.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Keep reviewing the theory','On the right track - keep going','Good work! You know the concepts','Excellent - outstanding performance'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){var data={};document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});localStorage.setItem(STORE_KEY,JSON.stringify(data));}
+function loadLocal(){var raw=localStorage.getItem(STORE_KEY);if(!raw)return;var data=JSON.parse(raw);Object.keys(data).forEach(function(id){if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}else{var el=document.getElementById(id);if(el)el.value=data[id];}});}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparing PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){if(!confirm('Clear ALL answers?'))return;document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){var nombre=document.getElementById('st-name').value.trim();var res=document.getElementById('submitResumen');if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Name missing.</span> Please fill in your name.';}else{var g=document.getElementById('st-group').value.trim();var dt=document.getElementById('st-date').value.trim();res.innerHTML='<strong style="color:white">Student:</strong> '+nombre+' | <strong style="color:white">Group:</strong> '+(g||'-')+' | <strong style="color:white">Date:</strong> '+(dt||'-');}document.getElementById('submitConfirmView').style.display='block';document.getElementById('submitSentView').style.display='none';document.getElementById('submitConfirmBtn').disabled=!nombre;document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'4ESO-Volleyball'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){var sel=document.querySelector('input[name="'+qId+'"]:checked');data['resp_'+qId]=sel?sel.value:'-';data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correct':'incorrect'):'-';});
+  Object.keys(ACTS).forEach(function(act){var c=0;ACTS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});data['score_'+act]=c+'/'+ACTS[act].length;});
+  var tot=0,totQ=0;Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Sending...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});document.getElementById('submitConfirmView').style.display='none';document.getElementById('submitSentView').style.display='block';var mb=document.getElementById('btnSubmit');mb.textContent='Submitted';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';showToast('Submitted!','toast-ok');}
+  catch(err){btnText.innerHTML='Confirm submission';btn.disabled=false;showToast('Error sending.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+
+</script>
+</body>
+</html>

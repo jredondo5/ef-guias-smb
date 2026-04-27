@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia - Acrosport · 2 ESO · EF</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#E91E8C;--accent2:#F472B6;--accent3:#B01567;--dark:#080808;--mid:#111111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,0.75);--txt-dim:rgba(255,255,255,0.40)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.06);z-index:200}.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(233,30,140,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}.logo span{color:var(--accent)}
+.logo-badge{background:var(--accent);color:white;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(233,30,140,.08)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:white!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+#inicio{min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hc-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 12s ease-in-out infinite}
+.hc-orb:nth-child(1){width:500px;height:500px;background:var(--accent);top:-10%;right:-5%}
+.hc-orb:nth-child(2){width:300px;height:300px;background:var(--accent3);bottom:10%;right:20%;animation-delay:4s}
+.hc-orb:nth-child(3){width:200px;height:200px;background:var(--accent2);top:40%;right:8%;animation-delay:8s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-28px) scale(1.04)}}
+.hero-left{position:relative;z-index:2;padding:6rem 3rem 6rem 5rem}
+.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);background:rgba(233,30,140,.1);border:1px solid rgba(233,30,140,.2);padding:.35rem .9rem;border-radius:2px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(4rem,10vw,9rem);line-height:.85;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:.5rem}
+h1.hero-title .line2{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-size:clamp(3rem,7vw,7rem)}
+.hero-tagline{font-family:'Space Mono',monospace;font-size:.76rem;letter-spacing:.07em;color:var(--txt-dim);margin:1rem 0 2.5rem;border-left:3px solid var(--accent);padding-left:1rem;line-height:1.9}
+.hero-tagline strong{color:rgba(255,255,255,.9)}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:white}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(233,30,140,.4)}
+.btn-secondary{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+.hero-right{position:relative;z-index:2;padding:4rem 5rem 4rem 2rem;display:flex;flex-direction:column;gap:1.25rem;justify-content:center}
+.hero-stat-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1.25rem;transition:all .25s;position:relative;overflow:hidden}
+.hero-stat-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent);transform:scaleY(0);transition:transform .3s;transform-origin:bottom}
+.hero-stat-card:hover{background:rgba(233,30,140,.06);border-color:rgba(233,30,140,.2);transform:translateX(4px)}.hero-stat-card:hover::before{transform:scaleY(1)}
+.stat-icon{font-size:1.8rem;flex-shrink:0;width:48px;text-align:center}
+.stat-num{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.04em;color:var(--accent);line-height:1}
+.stat-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-top:.15rem}
+.stat-desc{font-size:.82rem;color:var(--txt);margin-top:.25rem;line-height:1.5}
+.inner{max-width:1100px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(233,30,140,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,5vw,4rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.95}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+.alumno-bar{background:rgba(233,30,140,.06);border:1px solid rgba(233,30,140,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.alumno-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.alumno-bar input{flex:1;min-width:180px;background:transparent;border:none;border-bottom:2px solid rgba(233,30,140,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.alumno-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.alumno-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(233,30,140,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(233,30,140,.06);border-color:rgba(233,30,140,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(233,30,140,.1);border-color:rgba(233,30,140,.35)}.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(233,30,140,.08);border:1px solid rgba(233,30,140,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(233,30,140,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(233,30,140,.04)}.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.concept-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(233,30,140,.25);transform:translateY(-3px)}.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}
+.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}
+.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(233,30,140,.12);color:var(--accent);border:1px solid rgba(233,30,140,.2)}
+.accordion{margin:1.5rem 0}
+.acc-item{border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:.75rem;overflow:hidden}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.75rem;cursor:pointer;background:rgba(255,255,255,.02);transition:background .2s;gap:1rem}
+.acc-header:hover{background:rgba(233,30,140,.06)}
+.acc-hl{display:flex;align-items:center;gap:1rem}.acc-icon{font-size:1.4rem;flex-shrink:0}
+.acc-title{font-weight:800;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;color:white}
+.acc-sub{font-size:.74rem;color:var(--txt-dim);margin-top:.15rem}
+.acc-arrow{color:var(--accent);transition:transform .3s;font-size:.8rem;flex-shrink:0}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease}.acc-item.open .acc-body{max-height:900px}
+.acc-content{padding:1.75rem;border-top:1px solid rgba(255,255,255,.05);background:rgba(255,255,255,.01)}
+.acc-content p{font-size:.9rem;color:var(--txt);line-height:1.8;margin-bottom:.85rem}.acc-content p strong{color:white}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.data-hl{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(233,30,140,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(233,30,140,.12);line-height:1;transition:color .2s}.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(233,30,140,.1);color:var(--accent);border:1px solid rgba(233,30,140,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-pipe{text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:120px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(233,30,140,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(233,30,140,.1),rgba(233,30,140,.04));border:1px solid rgba(233,30,140,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s;display:flex;align-items:center;gap:.5rem}
+.pdf-save{background:var(--accent);color:white}.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-entregar{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}.btn-entregar:hover{transform:translateY(-2px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:white}.toast-ok{background:#22c55e}.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}
+.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}.submit-box p strong{color:white}
+.submit-warning{background:rgba(233,30,140,.08);border:1px solid rgba(233,30,140,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}.submit-warning span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}.submit-confirm:hover{transform:translateY(-1px)}.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.img-strip{width:100%;overflow:hidden;position:relative;height:360px}
+.img-strip-overlay{position:absolute;inset:0;background:linear-gradient(90deg,var(--dark) 0%,transparent 40%,transparent 60%,var(--dark) 100%),linear-gradient(0deg,var(--dark) 0%,transparent 30%)}
+.img-strip-tag{position:absolute;top:2rem;right:4rem;background:rgba(233,30,140,.9);color:white;font-weight:800;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.4rem .9rem;border-radius:2px}
+.watermark{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.watermark,.prog-wrap,.submit-modal,#inicio,.img-strip,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #B01567!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){#inicio{grid-template-columns:1fr}.hero-left{padding:5rem 2rem 3rem}.hero-right{display:none}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="watermark">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">Borrar</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">Guardar PDF</button>
+  <button class="pdf-btn btn-entregar" id="btnEntregar" onclick="openSubmitModal()">Entregar</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span><h2>Entregar Guia</h2>
+      <p>Comprueba tu <strong>nombre y curso</strong> antes de enviar.</p>
+      <div class="submit-warning"><span>Recuerda:</span> Los test se corrigen solos. Las preguntas abiertas las revisa el profesor.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancelar</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">Confirmar entrega</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span><h3>Entregado!</h3>
+      <p>Tus respuestas han llegado al profesor.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:white">Guardar PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#inicio">🤼 ACROSPORT <span class="logo-badge">2 ESO · EF</span></a>
+  <nav>
+    <a href="#activacion">Activa</a>
+    <a href="#conceptos">Táctica, Técnica y Reglamento</a>
+    <a href="#practica">Entrena</a>
+    <a href="#compite">Compite</a>
+    <a href="#evalua">Evalúa</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+
+<div id="inicio" style="min-height:100vh;background:var(--dark);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center">
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden"><div class="hc-orb"></div><div class="hc-orb"></div><div class="hc-orb"></div></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="hero-badge">Educacion Fisica · 2 ESO</span><div class="hero-dot"></div><span style="font-size:.63rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--txt-dim)">Deportes acrobaticos</span></div>
+    <h1 class="hero-title">ACRO<span class="line2">SPORT</span></h1>
+    <p class="hero-tagline">Fuerza, confianza y <strong>trabajo en equipo</strong>.<br>Cuando dos o tres cuerpos se convierten en uno.</p>
+    <div class="hero-ctas">
+      <a href="#activacion" class="btn btn-primary">Empezar</a>
+      <a href="#conceptos" class="btn btn-secondary">Teoria</a>
+      <a href="#practica" class="btn btn-secondary">Practicar</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-card reveal"><div class="stat-icon">🤝</div><div><div class="stat-num">Confianza</div><div class="stat-label">La base de todo</div><div class="stat-desc">Sin confianza en los companeros no existe el acrosport — la confianza se construye, no se improvisa</div></div></div>
+    <div class="hero-stat-card reveal"><div class="stat-icon">🔺</div><div><div class="stat-num">3 Roles</div><div class="stat-label">Base, agil y observador</div><div class="stat-desc">Cada componente del grupo tiene un papel especifico e igual de importante</div></div></div>
+    <div class="hero-stat-card reveal"><div class="stat-icon">🏋</div><div><div class="stat-num">Fuerza</div><div class="stat-label">Y tecnica</div><div class="stat-desc">No gana el mas fuerte — gana el que sabe distribuir el peso y usar la tecnica correcta</div></div></div>
+    <div class="hero-stat-card reveal"><div class="stat-icon">🎭</div><div><div class="stat-num">Creatividad</div><div class="stat-label">Coreografia propia</div><div class="stat-desc">El acrosport permite crear composiciones unicas combinando figuras y transiciones</div></div></div>
+  </div>
+</div>
+<div class="img-strip">
+  <svg viewBox="0 0 1400 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0">
+    <defs>
+      <linearGradient id="bgG" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a0010"/><stop offset="100%" stop-color="#0d0008"/></linearGradient>
+      <radialGradient id="glowG" cx="50%" cy="80%" r="50%"><stop offset="0%" stop-color="#E91E8C" stop-opacity=".25"/><stop offset="100%" stop-color="#E91E8C" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="1400" height="360" fill="url(#bgG)"/>
+    <ellipse cx="700" cy="360" rx="800" ry="180" fill="url(#glowG)"/>
+    <g transform="translate(700,180)">
+    <circle cx="-30" cy="40" r="14" fill="#F472B6" opacity=".7"/>
+    <ellipse cx="-30" cy="65" rx="18" ry="22" fill="#E91E8C" opacity=".7"/>
+    <circle cx="30" cy="40" r="14" fill="#F472B6" opacity=".7"/>
+    <ellipse cx="30" cy="65" rx="18" ry="22" fill="#E91E8C" opacity=".7"/>
+    <circle cx="0" cy="-10" r="13" fill="#F472B6" opacity=".8"/>
+    <ellipse cx="0" cy="10" rx="15" ry="18" fill="#B01567" opacity=".8"/>
+    <line x1="-18" y1="48" x2="-5" y2="55" stroke="#E91E8C" stroke-width="8" stroke-linecap="round" opacity=".6"/>
+    <line x1="18" y1="48" x2="5" y2="55" stroke="#E91E8C" stroke-width="8" stroke-linecap="round" opacity=".6"/>
+  </g>
+  </svg>
+  <div class="img-strip-overlay"></div>
+  <div class="img-strip-tag">Guia 8 - Acrosport</div>
+</div>
+
+<section class="sect-dark" id="activacion">
+<div class="inner">
+  <p class="sect-label reveal">Sección 01 · Activa</p>
+  <h2 class="sect-title reveal">ACTI<span class="accent">VA</span></h2>
+  <div class="alumno-bar reveal">
+    <label for="al-nombre">Nombre</label><input type="text" id="al-nombre" placeholder="Nombre y apellidos...">
+    <label for="al-curso">Curso</label><input type="text" id="al-curso" placeholder="2 ESO -" style="max-width:180px">
+    <label for="al-fecha">Fecha</label><input type="text" id="al-fecha" placeholder="dd/mm/aaaa" style="max-width:130px">
+  </div>
+  <p class="lead reveal">El acrosport es una modalidad deportiva que combina <strong>acrobacia y trabajo en equipo</strong>. Los participantes forman figuras y coreografias colectivas en las que cada persona tiene un rol especifico. No es solo fuerza — es confianza, comunicacion y coordinacion.</p>
+  <div class="dh-row reveal">
+    <div class="data-hl"><div class="dh-num">3 roles</div><div class="dh-label">Base, agil, observador</div><div class="dh-desc">Cada rol tiene responsabilidades especificas. Todos son igualmente importantes.</div></div>
+    <div class="data-hl"><div class="dh-num">Confianza</div><div class="dh-label">La base del acrosport</div><div class="dh-desc">Sin confianza mutua entre los integrantes del grupo no es posible realizar las figuras con seguridad.</div></div>
+    <div class="data-hl"><div class="dh-num">Estaticas y dinamicas</div><div class="dh-label">Tipos de figuras</div><div class="dh-desc">Las figuras estaticas se mantienen inmoviles, las dinamicas incluyen movimiento y transicion.</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Actividad 1 - Lo que ya se (respuesta abierta)</div>
+    <h4>Reflexiona antes de estudiar la guia</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">Has hecho acrosport o piramides humanas antes? En que contexto? Como fue la experiencia de confiar en un companero para sostenerte?</label><textarea class="field-input" id="a1q1" placeholder="Tu respuesta..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">Cual crees que es mas dificil: ser la base (el que soporta) o el agil (el que sube)? Justifica tu respuesta.</label><textarea class="field-input" id="a1q2" placeholder="Tu respuesta..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ VÍDEO DE LA UNIDAD</span>
+    <span class="ebi-vid-ttl">Acrosport — Figuras y pirámides humanas</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="WVuB0ANfZuQ" data-title="Acrosport — Figuras y pirámides humanas" tabindex="0" role="button" aria-label="Play: Acrosport — Figuras y pirámides humanas">
+    <img src="https://img.youtube.com/vi/WVuB0ANfZuQ/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/WVuB0ANfZuQ/mqdefault.jpg'" alt="Acrosport — Figuras y pirámides humanas" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Haz clic en la imagen para reproducir · O ábrelo en</span>
+    <a href="https://www.youtube.com/watch?v=WVuB0ANfZuQ" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="conceptos">
+<div class="inner">
+  <p class="sect-label reveal">Sección 02 · Táctica, Técnica y Reglamento</p>
+  <h2 class="sect-title reveal">TÁCTICA, TÉCNICA Y <span class="accent">REGLAMENTO</span></h2>
+  <p class="lead reveal">El acrosport es un deporte acrobatico colectivo donde grupos de 2 a 6 personas crean <strong>figuras estaticas y secuencias dinamicas</strong> con un componente artistico y coreografico. Se valora la tecnica, la creatividad y la presentacion.</p>
+  <div class="concept-cards reveal">
+    <div class="cc"><span class="cc-icon">🏋</span><div class="cc-title">La BASE - quien soporta</div><div class="cc-body">La persona o personas que estan en contacto con el suelo y soportan el peso de los demas. Necesita fuerza, estabilidad y seguridad. Su comodidad es prioritaria — si la base no esta bien, todo se derrumba.</div><div class="cc-tag">Soporte y estabilidad</div></div>
+    <div class="cc"><span class="cc-icon">🌟</span><div class="cc-title">El AGIL - quien sube</div><div class="cc-body">La persona que asciende o se apoya sobre la base para crear la figura. No necesita ser la mas ligera — necesita ser la mas coordinada y la que mejor distribuye su peso sobre los puntos de apoyo de la base.</div><div class="cc-tag">Coordinacion y confianza</div></div>
+    <div class="cc"><span class="cc-icon">👁</span><div class="cc-title">El OBSERVADOR - los ojos</div><div class="cc-body">En grupos de 3 o mas, el observador no participa en la figura pero la vigila desde fuera, ayuda en la subida y bajada, y garantiza la seguridad del grupo. Un buen observador es tan valioso como la base.</div><div class="cc-tag">Seguridad y ayuda</div></div>
+    <div class="cc"><span class="cc-icon">🎭</span><div class="cc-title">Figuras estaticas</div><div class="cc-body">La figura se crea, se mantiene durante al menos 3 segundos y se deshace con control. Se valoran la verticalidad, la alineacion corporal y la tension muscular visible.</div><div class="cc-tag">3 segundos mínimo</div></div>
+  </div>
+
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Actividad 2 - El Acrosport y sus Roles (tipo test)</div>
+    <h4>Comprueba que entiendes los roles y la estructura del acrosport</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>En acrosport, cuantos roles distintos existen en un grupo de 3 personas</div>
+      <div class="options" data-q="a2q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Un unico rol — todos hacen lo mismo</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Dos roles: el que aguanta y el que sube</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Tres roles: base, agil y observador</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Cuatro roles incluido el capitan del grupo</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Que caracteristica principal necesita la persona que hace de BASE en acrosport</div>
+      <div class="options" data-q="a2q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Ser la mas ligera del grupo para reducir el peso total</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Ser la mas flexible para adoptar posiciones de soporte</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Tener fuerza y estabilidad para soportar el peso del agil con seguridad</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Ser la mas rapida en la ejecucion de los movimientos</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Por que la figura estatica debe mantenerse al menos 3 segundos</div>
+      <div class="options" data-q="a2q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Porque el reglamento oficial exige ese tiempo minimo</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Porque menos de 3 segundos no demuestra control y equilibrio reales</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Para que el observador pueda registrar la figura en su cuaderno</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Para dar tiempo al publico a aplaudir</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Que funcion tiene el observador en un grupo de acrosport</div>
+      <div class="options" data-q="a2q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Solo mira y evalua la figura desde fuera</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Ayuda en la subida y bajada del agil y garantiza la seguridad del grupo desde el exterior</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Dirige al grupo diciendo que figuras hacer</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">El observador no hace nada — es una figura prescindible</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Que es mas importante para el agil en acrosport</div>
+      <div class="options" data-q="a2q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Ser la persona mas ligera del grupo</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Tener mucha fuerza para aferrarse a la base</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Saber distribuir bien el peso sobre los puntos de apoyo de la base y comunicarse</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Ser el mas alto del grupo</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('act2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Corregir Actividad 2</button>
+      <div class="act-score" id="score-act2">Puntuacion: <strong id="score-act2-val">-</strong></div>
+    </div>
+
+
+  <h3 class="subsect reveal" style="margin-top:3rem">Figuras y técnica</h3>
+  <p class="lead reveal">Aprender las figuras básicas correctamente es el primer paso. La técnica protege a todos los miembros del grupo.</p>
+  <div class="accordion reveal">
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">📐</div><div><div class="acc-title">Posicion de la base</div><div class="acc-sub">La base de la base</div></div></div><span class="acc-arrow">v</span></div>
+      <div class="acc-body"><div class="acc-content"><p>La base debe crear superficies de apoyo estables. Las posiciones mas comunes: en cuadrupedia (manos y rodillas), en posicion de silla (de pie con brazos extendidos), tumbado boca arriba. La espalda debe estar plana y los puntos de apoyo alineados.<br><br><strong>Clave:</strong> la base nunca se mueve inesperadamente. Cualquier cambio se avisa verbalmente.</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🌟</div><div><div class="acc-title">Subida y bajada del agil</div><div class="acc-sub">El momento mas delicado</div></div></div><span class="acc-arrow">v</span></div>
+      <div class="acc-body"><div class="acc-content"><p>La subida y bajada son los momentos mas peligrosos. El agil siempre avisa antes de subir. Sube despacio, distribuyendo el peso gradualmente. Para bajar, avisa, se sujeta y desciende con control.<br><br><strong>Nunca:</strong> saltar sobre la base ni bajar bruscamente.</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">💬</div><div><div class="acc-title">Comunicacion constante</div><div class="acc-sub">El idioma del acrosport</div></div></div><span class="acc-arrow">v</span></div>
+      <div class="acc-body"><div class="acc-content"><p>Antes de cada accion: "¿Listo?" / "Listo". Sin esta confirmacion, no se ejecuta ningun movimiento. Si alguien siente dolor o inestabilidad, avisa inmediatamente — el grupo para y reajusta.</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-header" onclick="toggleAcc(this)"><div class="acc-hl"><div class="acc-icon">🎨</div><div><div class="acc-title">Estetica de la figura</div><div class="acc-sub">Mas alla de la fuerza</div></div></div><span class="acc-arrow">v</span></div>
+      <div class="acc-body"><div class="acc-content"><p>Una figura bien ejecutada muestra tension muscular visible, lineas corporales limpias (pies en punta, brazos estirados) y expresion facial neutral o positiva. La estetica es tan importante como la estabilidad.</p></div></div>
+    </div>
+  </div>
+
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Actividad 3 - Tecnica y Figuras (tipo test)</div>
+    <h4>Demuestra que conoces como ejecutar las figuras con seguridad</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Por que es el momento de la subida y bajada del agil el mas delicado en acrosport</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Porque es cuando se produce mas esfuerzo fisico para la base</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Porque el peso se concentra en puntos pequenos y cualquier desequilibrio puede causar una caida</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Porque el publico presta mas atencion en esos momentos</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Porque el observador no puede ayudar durante la subida</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Que debe hacer siempre el agil ANTES de subir sobre la base</div>
+      <div class="options" data-q="a3q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Hacer 10 flexiones para calentar</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Avisar verbalmente y esperar la confirmacion de la base</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Subir lo mas rapido posible para no perder el equilibrio</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Comprobar que el suelo este limpio antes de subir</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Que significa que una figura tenga buena estetica en acrosport</div>
+      <div class="options" data-q="a3q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Que se mantiene el maximo tiempo posible sin caerse</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Que los integrantes llevan ropa de colores coordinados</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Que muestra tension muscular, lineas limpias, pies en punta y expresion adecuada</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Que la musica de fondo es la correcta para la figura</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Cual es el error mas frecuente de la BASE en acrosport con principiantes</div>
+      <div class="options" data-q="a3q4" data-correct="A">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Moverse sin avisar o doblar la espalda cuando el agil sube</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Hablar demasiado durante la ejecucion de la figura</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Estar demasiado tenso y rigido en la posicion de soporte</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Ayudar al agil a subir cuando deberia quedarse quieto</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Si durante la ejecucion de una figura la base siente dolor, que debe hacer</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Aguantar hasta que la figura termine por el bien del grupo</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Avisar inmediatamente al grupo para detener la figura de forma controlada</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Solo avisar al observador en voz baja sin molestar al agil</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Continuar y comentarlo al final de la clase</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('act3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Corregir Actividad 3</button>
+      <div class="act-score" id="score-act3">Puntuacion: <strong id="score-act3-val">-</strong></div>
+    </div>
+
+
+  <h3 class="subsect reveal" style="margin-top:3rem">La coreografía</h3>
+  <p class="lead reveal">Una coreografía de acrosport es más que una colección de figuras - es una composición con inicio, desarrollo y final, con transiciones fluidas y un mensaje o historia que transmitir.</p>
+  <div class="concept-cards reveal">
+    <div class="cc"><span class="cc-icon">🎬</span><div class="cc-title">Estructura (inicio-nudo-desenlace)</div><div class="cc-body">Toda coreografia debe tener: entrada (como llegan los integrantes a escena), desarrollo (secuencia de figuras y transiciones) y salida (como terminan). La primera y la ultima figura son las mas impactantes.</div><div class="cc-tag">Estructura narrativa</div></div>
+    <div class="cc"><span class="cc-icon">🔀</span><div class="cc-title">Transiciones - el secreto</div><div class="cc-body">Las transiciones son los movimientos entre figuras. Una buena transicion es fluida, coordinada y forma parte de la coreografia. Muchos grupos se centran en las figuras y descuidan las transiciones — es un error.</div><div class="cc-tag">Fluidez entre figuras</div></div>
+    <div class="cc"><span class="cc-icon">🎵</span><div class="cc-title">La musica - acompaña y guia</div><div class="cc-body">La musica marca el ritmo de la coreografia. Las figuras estaticas deben coincidir con momentos musicales marcados (un golpe de musica, un cambio de ritmo). Escucha la musica mientras ensayas.</div><div class="cc-tag">Ritmo y expresion</div></div>
+    <div class="cc"><span class="cc-icon">📊</span><div class="cc-title">La valoracion - que se evalua</div><div class="cc-body">En la presentacion se valoran: dificultad de las figuras (1-5 puntos), ejecucion tecnica (1-5 puntos), coreografia y transiciones (1-5 puntos) e impresion general (1-5 puntos).</div><div class="cc-tag">Criterios de evaluacion</div></div>
+  </div>
+
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Actividad 4 - Coreografia y Presentacion (tipo test)</div>
+    <h4>Comprueba que entiendes como construir y presentar una coreografia</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Que tres partes debe tener la estructura de una coreografia de acrosport</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Calentamiento, desarrollo y vuelta a la calma</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Entrada, desarrollo con figuras y salida o final</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Saludo, figuras y agradecimiento al publico</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Planificacion, ensayo y presentacion</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Por que son tan importantes las transiciones en una coreografia de acrosport</div>
+      <div class="options" data-q="a4q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Porque son los momentos en que se descansa entre figuras</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Porque son los momentos mas faciles y permiten recuperar fuerzas</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Porque forman parte de la coreografia y su fluidez hace que el conjunto sea visualmente mejor</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Porque durante las transiciones se puede improvsar libremente</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Que rol tiene la musica en la coreografia de acrosport</div>
+      <div class="options" data-q="a4q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Es solo de fondo y no afecta a la ejecucion de las figuras</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Marca el ritmo y las figuras estaticas deben coincidir con momentos musicales marcados</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Solo se usa en competicion oficial, no en clase</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">La musica distrae a los integrantes durante la ejecucion</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>En la evaluacion de una coreografia de acrosport, que aspecto NO se valora normalmente</div>
+      <div class="options" data-q="a4q4" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">La dificultad de las figuras realizadas</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">La ejecucion tecnica y la seguridad</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">La musica que cada grupo ha elegido</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Las transiciones y la coreografia en conjunto</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Que figuras de una coreografia suelen ser las mas impactantes y las que mas se recuerdan</div>
+      <div class="options" data-q="a4q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Las figuras intermedias que el grupo domina mejor</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">La primera y la ultima figura de la coreografia</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Las figuras con mayor numero de integrantes</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Las figuras que duran mas tiempo</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('act4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Corregir Actividad 4</button>
+      <div class="act-score" id="score-act4">Puntuacion: <strong id="score-act4-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECCIÓN 03 — ENTRENA ═══ -->
+<section class="sect-dark" id="practica">
+<div class="inner">
+  <p class="sect-label reveal">Sección 03 · Entrena</p>
+  <h2 class="sect-title reveal">EN<span class="accent">TRENA</span></h2>
+  <p class="lead reveal">Hora de poner en práctica todo lo aprendido. Trabaja siempre con seguridad y comunicación constante.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Ejercicios de confianza</div><span class="ch-tag">Confianza en pareja</span></div>
+        <p>En parejas: 1. Caida hacia atras con el companero sujetandote 2. Caminar con ojos cerrados guiado por el companero 3. El companero te levanta del suelo. Reflexiona sobre como ha evolucionado la confianza.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d1r1">En que ejercicio has sentido mas confianza y en cual menos</label><textarea class="field-input" id="d1r1" placeholder="Tu respuesta..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="d1r2">Que ha hecho tu companero para que te sintieras mas seguro o segura</label><textarea class="field-input" id="d1r2" placeholder="Tu reflexion..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Figuras basicas de duo</div><span class="ch-tag">Primeras figuras</span></div>
+        <p>En parejas, practica estas figuras basicas: 1. El agil de pie sobre los muslos de la base (base en cuclillas) 2. El agil sentado sobre los hombros de la base (base de pie) 3. El agil en equilibrio horizontal sujetado por la base.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d2r1">Que figuras has conseguido mantener 3 segundos con buena tecnica</label><textarea class="field-input" id="d2r1" placeholder="Tu respuesta..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="d2r2">Cual ha sido la dificultad principal en cada figura</label><textarea class="field-input" id="d2r2" placeholder="Tu reflexion..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Construccion de mini-coreografia</div><span class="ch-tag">Trabajo creativo</span></div>
+        <p>En grupos de 3-4 personas, cread una coreografia de 60-90 segundos con: entrada, 3 figuras minimo, transiciones y salida. Ensayadla al menos 3 veces completa.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d3r1">Describe las 3 figuras y como son las transiciones entre ellas</label><textarea class="field-input" id="d3r1" placeholder="Tu respuesta..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="d3r2">Que parte de la coreografia ha salido mejor y cual peor en los ensayos</label><textarea class="field-input" id="d3r2" placeholder="Tu reflexion..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Presentacion de la coreografia</div><span class="ch-tag">Actuacion final</span></div>
+        <p>Presentad vuestra coreografia al resto de la clase. Valorad vosotros mismos cada aspecto: dificultad, ejecucion, coreografia e impresion general.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="d4r1">Autoevaluacion: nota propia en dificultad, ejecucion, coreografia e impresion</label><textarea class="field-input" id="d4r1" placeholder="Tu respuesta..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="d4r2">Que cambiariais si tuvierais una semana mas de ensayos</label><textarea class="field-input" id="d4r2" placeholder="Tu reflexion..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ SECCIÓN 04 — COMPITE ═══ -->
+<section class="sect-card" id="compite">
+<div class="inner">
+  <p class="sect-label reveal">Sección 04 · Compite</p>
+  <h2 class="sect-title reveal">COMPI<span class="accent">TE</span></h2>
+  <p class="lead reveal">Pon en práctica todo lo aprendido en situaciones reales. Aquí demuestras lo que sabes <strong>haciendo, compitiendo y analizando</strong>.</p>
+  <h3 class="subsect reveal">Reto 1 — Figuras Estáticas por Niveles</h3>
+  <p class="body-text reveal">En grupos, encadenad <strong>3 figuras estáticas</strong> de dificultad creciente. Cada figura debe mantenerse <strong>3 segundos</strong>.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">🤼 Nuestras figuras</div>
+    <div class="field-group"><label class="field-label" for="c1r1">Figura 1 (más sencilla) — nombre y tiempo aguantado</label><input class="field-input" id="c1r1" type="text" placeholder="Figura: ___ · Tiempo: ___ seg"></div>
+    <div class="field-group"><label class="field-label" for="c1r2">Figura 2 (dificultad media) — nombre y tiempo</label><input class="field-input" id="c1r2" type="text" placeholder="Figura: ___ · Tiempo: ___ seg"></div>
+    <div class="field-group"><label class="field-label" for="c1r3">Figura 3 (la más difícil) — nombre y tiempo</label><input class="field-input" id="c1r3" type="text" placeholder="Figura: ___ · Tiempo: ___ seg"></div>
+  </div>
+  <h3 class="subsect reveal">Reto 2 — Coreografía Grupal</h3>
+  <p class="body-text reveal">En grupos de 4-5, cread una coreografía de <strong>60-90 segundos</strong> con al menos 2 figuras estáticas, transiciones coordinadas y un elemento dinámico.</p>
+  <div class="cc-grid reveal">
+    <div class="cc"><span class="cc-icon">🎵</span><div class="cc-title">Música elegida</div><div class="cc-body"><input class="field-input" type="text" id="c2r1" placeholder="Canción/estilo..."></div></div>
+    <div class="cc"><span class="cc-icon">📋</span><div class="cc-title">Figuras incluidas</div><div class="cc-body"><input class="field-input" type="text" id="c2r2" placeholder="___ figuras"></div></div>
+    <div class="cc"><span class="cc-icon">⏱</span><div class="cc-title">Duración total</div><div class="cc-body"><input class="field-input" type="text" id="c2r3" placeholder="___ segundos"></div></div>
+  </div>
+  <h3 class="subsect reveal">Reto 3 — Coevaluación</h3>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">⭐ Evaluación del grupo observado</div>
+    <div class="field-group"><label class="field-label" for="c3r1">¿Qué destacas de su presentación?</label><textarea class="field-input" id="c3r1" placeholder="Lo mejor fue..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="c3r2">¿Qué aspecto mejorarías en su coreografía?</label><textarea class="field-input" id="c3r2" placeholder="Mejoraría..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="c3r3">Nota global (1-10) y justificación</label><input class="field-input" id="c3r3" type="text" placeholder="___ / 10 · Porque..."></div>
+  </div>
+</div>
+</section>
+
+<section class="sect-mid" id="evalua">
+<div class="inner">
+  <p class="sect-label reveal">Sección 05 · Evalúa</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">A</span></h2>
+  <p class="lead reveal">Demuestra lo que has aprendido y reflexiona sobre tu experiencia en esta unidad.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Actividad Final - Reflexion personal (respuesta abierta)</div>
+    <h4>Cierra la guia con honestidad</h4>
+    <div class="field-group"><label class="field-label" for="af1">Que es lo mas dificil del acrosport para ti: la parte fisica, la confianza o la coordinacion grupal? Por que?</label><textarea class="field-input" id="af1" placeholder="Aspecto mas dificil: ... Por que: ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Nombra 3 valores que se trabajan en el acrosport ademas de los fisicos.</label><textarea class="field-input" id="af2" placeholder="1. ... 2. ... 3. ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">Crees que la experiencia de confiar en otros fisicamente te ha ensenado algo util para la vida diaria?</label><textarea class="field-input" id="af3" placeholder="Tu reflexion..."></textarea></div>
+  </div>
+
+  <div class="quiz-box reveal" style="margin-top:2rem">
+    <div class="quiz-label">&#x1F4DD; Test Final &mdash; Acrosport (autocorregible)</div>
+    <h4>Demuestra lo que has aprendido en esta unidad</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span> Cual es el rol de la BASE en acrosport?</div>
+      <div class="options" data-q="a5q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">La persona que sube y crea la figura</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">El observador que corrige</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">La persona en contacto con el suelo que soporta el peso</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">El coreografo del grupo</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span> Por que no es necesario que el agil sea la persona mas ligera?</div>
+      <div class="options" data-q="a5q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">El reglamento prohibe seleccionar por peso</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Lo importante es la coordinacion y la buena distribucion del peso</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">El agil no tiene contacto con la base</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">La base siempre lleva arnes</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span> Cuantas personas pueden formar un grupo en acrosport?</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Exactamente 3</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Entre 2 y 6</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Entre 4 y 8</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Solo parejas</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span> Cual es la funcion del observador en acrosport?</div>
+      <div class="options" data-q="a5q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Dirigir la musica</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Vigilar la seguridad guiar verbalmente y ayudar en caso de caida</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Ejecutar los elementos mas dificiles</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Contar el tiempo de cada figura</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span> En que parte de la base NO debe apoyar el agil su peso?</div>
+      <div class="options" data-q="a5q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Hombros y manos</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Muslos y rodillas</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Columna vertebral y zona lumbar directamente</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Caderas</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">6.</span> Que elemento es imprescindible en una coreografia ademas de las figuras?</div>
+      <div class="options" data-q="a5q6" data-correct="C">
+        <label class="opt"><input type="radio" name="a5q6" value="A"><span class="opt-letter">A</span><span class="opt-text">Musica clasica obligatoria</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="B"><span class="opt-letter">B</span><span class="opt-text">Al menos un salto mortal</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="C"><span class="opt-letter">C</span><span class="opt-text">Transiciones y desplazamientos coordinados entre figuras</span></label>
+        <label class="opt"><input type="radio" name="a5q6" value="D"><span class="opt-letter">D</span><span class="opt-text">Vestuario de un unico color</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q6"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button class="calc-btn" style="margin:0" onclick="checkQuiz('act5',['a5q1','a5q2','a5q3','a5q4','a5q5','a5q6'])">Corregir Test Final &rarr;</button>
+      <div class="act-score" id="score-act5">Puntuaci&oacute;n: <strong id="score-act5-val">-</strong></div>
+    </div>
+  </div>
+
+  <h3 class="subsect reveal">Mapa Conceptual</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">ACROSPORT <span>Acrobacia colectiva - confianza y trabajo en equipo</span></div>
+    <div class="scheme-pipe">|</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">ROLES</div>
+        <input class="field-input" type="text" placeholder="Base..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Agil..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">FIGURAS</div>
+        <input class="field-input" type="text" placeholder="Estatica..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Dinamica..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">SEGURIDAD</div>
+        <input class="field-input" type="text" placeholder="Comunicacion..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Norma..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">COREOGRAFIA</div>
+        <input class="field-input" type="text" placeholder="Entrada..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Transicion..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">EVALUACION</div>
+        <input class="field-input" type="text" placeholder="Dificultad..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Ejecucion..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">TU PUNTUACION GLOBAL</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Solo incluye preguntas tipo test. Las abiertas las corrige el profesor.</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:{cfg['badge_color']};border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase" onclick="calcGlobalScore()">Ver mi puntuacion global</button>
+  </div>
+</div>
+</section>
+<footer><p>Queda expresamente prohibida cualquier reproduccion o distribucion sin autorizacion previa del autor. Uso exclusivo para alumnos del centro. Colegio Santa Maria la Blanca. © Jaime Redondo</p></footer>
+
+<script>
+var STORE_KEY='ef2eso-acrosport-v1';
+var CORRECT={'a2q1':'C','a2q2':'C','a2q3':'B','a2q4':'B','a2q5':'C','a3q1':'B','a3q2':'B','a3q3':'C','a3q4':'A','a3q5':'B','a4q1':'B','a4q2':'C','a4q3':'B','a4q4':'C','a4q5':'B'};
+var EXPL={'a2q1':'Correcto. Los 3 roles en acrosport son: base, agil y observador.','a2q2':'Correcto. La base necesita fuerza y estabilidad para soportar el peso con seguridad.','a2q3':'Correcto. Menos de 3 segundos no demuestra control y equilibrio reales.','a2q4':'Correcto. El observador ayuda y garantiza la seguridad desde el exterior.','a2q5':'Correcto. El agil debe saber distribuir el peso y comunicarse con la base.','a3q1':'Correcto. Es el momento mas delicado porque el peso se concentra en puntos pequenos.','a3q2':'Correcto. El agil siempre avisa y espera confirmacion antes de subir.','a3q3':'Correcto. Buena estetica incluye tension muscular, lineas limpias y expresion adecuada.','a3q4':'Correcto. El error mas frecuente de la base es moverse sin avisar o doblar la espalda.','a3q5':'Correcto. Si la base siente dolor debe avisar inmediatamente para detener la figura.','a4q1':'Correcto. La estructura de la coreografia es: entrada, desarrollo y salida.','a4q2':'Correcto. Las transiciones fluidas hacen que el conjunto sea visualmente mejor.','a4q3':'Correcto. La musica marca el ritmo y las figuras deben coincidir con momentos musicales.','a4q4':'Correcto. La musica elegida no suele ser un criterio de evaluacion en clase.','a4q5':'Correcto. La primera y ultima figura son las mas impactantes y recordadas.'};
+var ACTS={'act2':['a2q1','a2q2','a2q3','a2q4','a2q5'],'act3':['a3q1','a3q2','a3q3','a3q4','a3q5'],'act4':['a4q1','a4q2','a4q3','a4q4','a4q5']};
+window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(function(r){ro.observe(r);});
+function toggleAcc(h){var i=h.closest('.acc-item'),o=i.classList.contains('open');document.querySelectorAll('.acc-item.open').forEach(function(x){x.classList.remove('open');});if(!o)i.classList.add('open');}
+document.addEventListener('change',function(e){if(e.target.type==='radio'){var n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(function(r){r.closest('.opt').classList.toggle('selected',r.checked);});saveLocal();}});
+function checkQuiz(actId,qIds){
+  var correct=0;
+  qIds.forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    var fb=document.getElementById('fb-'+qId);
+    var cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(function(o){o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPL[qId]||'Correcto';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var el=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');var ct=el?el.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrecto. Respuesta correcta: '+cv+' - '+ct;fb.className='q-feedback show ko';}}
+    else{fb.textContent='No has seleccionado ninguna opcion.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Hay que repasar la teoria','Vas por buen camino','Buen trabajo','Excelente'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){var data={};document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});localStorage.setItem(STORE_KEY,JSON.stringify(data));}
+function loadLocal(){var raw=localStorage.getItem(STORE_KEY);if(!raw)return;var data=JSON.parse(raw);Object.keys(data).forEach(function(id){if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}else{var el=document.getElementById(id);if(el)el.value=data[id];}});}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparando PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){if(!confirm('Borrar TODAS las respuestas?'))return;document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){var nombre=document.getElementById('al-nombre').value.trim();var res=document.getElementById('submitResumen');if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Falta el nombre.</span>';}else{var c=document.getElementById('al-curso').value.trim();var f=document.getElementById('al-fecha').value.trim();res.innerHTML='<strong style="color:white">Alumno:</strong> '+nombre+' | <strong style="color:white">Curso:</strong> '+(c||'-')+' | <strong style="color:white">Fecha:</strong> '+(f||'-');}document.getElementById('submitConfirmView').style.display='block';document.getElementById('submitSentView').style.display='none';document.getElementById('submitConfirmBtn').disabled=!nombre;document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'2ESO-Acrosport'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){var sel=document.querySelector('input[name="'+qId+'"]:checked');data['resp_'+qId]=sel?sel.value:'-';data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correcto':'incorrecto'):'-';});
+  Object.keys(ACTS).forEach(function(act){var c=0;ACTS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});data['nota_'+act]=c+'/'+ACTS[act].length;});
+  var tot=0,totQ=0;Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Enviando...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});document.getElementById('submitConfirmView').style.display='none';document.getElementById('submitSentView').style.display='block';var mb=document.getElementById('btnEntregar');mb.textContent='Entregado';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';showToast('Entregado!','toast-ok');}
+  catch(err){btnText.innerHTML='Confirmar entrega';btn.disabled=false;showToast('Error al enviar.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+</script>
+</body>
+</html>

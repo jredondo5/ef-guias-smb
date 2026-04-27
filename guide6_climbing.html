@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Guide – Climbing · 4º ESO · PE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#E07B39;--accent2:#F0A06E;--accent3:#A85520;--dark:#080808;--mid:#111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,.75);--txt-dim:rgba(255,255,255,.4)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.06);z-index:200}.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(224,123,57,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}.logo-badge{background:var(--accent);color:white;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(224,123,57,.08)}
+.subnav{position:relative}
+.subnav-menu{display:none;position:absolute;top:115%;left:0;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:8px;overflow:hidden;min-width:220px;box-shadow:0 16px 40px rgba(0,0,0,.7);z-index:200}
+.subnav:hover .subnav-menu{display:block}
+.subnav-menu a{display:block;border-radius:0;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:white!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+.hero{min-height:92vh;background:var(--dark);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 5rem}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;animation:orbF 12s ease-in-out infinite}
+.hero-orb:nth-child(1){width:600px;height:600px;background:var(--accent);top:-15%;right:-10%}
+.hero-orb:nth-child(2){width:350px;height:350px;background:var(--accent3);bottom:5%;right:25%;animation-delay:5s}
+@keyframes orbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);background:rgba(224,123,57,.1);border:1px solid rgba(224,123,57,.2);padding:.35rem .9rem;border-radius:2px;display:inline-block;margin-bottom:2rem}
+.hero-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite;margin:0 .5rem;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(5rem,12vw,11rem);line-height:.82;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:1rem}
+h1.hero-title em{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-style:normal;font-size:.7em}
+.hero-sub{font-size:1.05rem;color:var(--txt);line-height:1.8;margin-bottom:2.5rem;max-width:560px}.hero-sub strong{color:white}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:white}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(224,123,57,.4)}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.inner{max-width:1060px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(224,123,57,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.92}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+.student-bar{background:rgba(224,123,57,.06);border:1px solid rgba(224,123,57,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.student-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.student-bar input{flex:1;min-width:160px;background:transparent;border:none;border-bottom:2px solid rgba(224,123,57,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.student-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.student-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(224,123,57,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(224,123,57,.06);border-color:rgba(224,123,57,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(224,123,57,.1);border-color:rgba(224,123,57,.35)}.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(224,123,57,.08);border:1px solid rgba(224,123,57,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(224,123,57,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(224,123,57,.04)}.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(224,123,57,.25);transform:translateY(-3px)}.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(224,123,57,.12);color:var(--accent);border:1px solid rgba(224,123,57,.2)}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.dh{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(224,123,57,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(224,123,57,.12);line-height:1;transition:color .2s}.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(224,123,57,.1);color:var(--accent);border:1px solid rgba(224,123,57,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:110px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(224,123,57,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(224,123,57,.1),rgba(224,123,57,.04));border:1px solid rgba(224,123,57,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s}
+.pdf-save{background:var(--accent);color:white}.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}.btn-submit:hover{transform:translateY(-1px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:white}.toast-ok{background:#22c55e}.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}.submit-box p strong{color:white}
+.submit-warn{background:rgba(224,123,57,.08);border:1px solid rgba(224,123,57,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}.submit-warn span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}.submit-confirm:hover{transform:translateY(-1px)}.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.wm{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.wm,.prog-wrap,.submit-modal,.hero,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #A85520!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){.hero{padding:5rem 2rem 3rem}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+/* ── Bloques teóricos 4ESO ── */
+.theory-block{background:var(--card);border-radius:10px;padding:2.5rem;margin:1.5rem 0;border:1px solid rgba(255,255,255,.05)}
+.theory-block+.theory-block{margin-top:1.5rem}
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="wm">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">Clear</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">Save PDF</button>
+  <button class="pdf-btn btn-submit" id="btnSubmit" onclick="openSubmitModal()">Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span><h2>Submit Guide</h2>
+      <p>Check your <strong>name and group</strong> before submitting.</p>
+      <div class="submit-warn"><span>Note:</span> Multiple choice answers are auto-graded. Open questions are reviewed by the teacher.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancel</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">Confirm submission</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span><h3>Submitted!</h3>
+      <p>Your answers have reached the teacher.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:white">Save PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#home">🧗 CLIMBING <span class="logo-badge">4 ESO · PE</span></a>
+    <nav>
+    <a href="#get-active">Get Active</a>
+    <div class="subnav">
+      <a href="#theory">Challenge Yourself</a>
+      <div class="subnav-menu">
+        <a href="#theory-a">History & Disciplines</a>
+        <a href="#theory-b">Grading System</a>
+        <a href="#theory-c">Safety & Equipment</a>
+        <a href="#theory-d">Technical Footwork</a>
+        <a href="#theory-e">Handholds & Body Position</a>
+        <a href="#theory-f">Physical Training</a>
+      </div>
+    </div>
+    <a href="#train">Train &amp; Compete</a>
+    <a href="#evaluate">Evaluate</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+<div id="home" class="hero">
+  <div class="hero-orb"></div><div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Physical Education · 4 ESO · CLIL</div>
+    <h1 class="hero-title">CLIMB<em>ING</em></h1>
+    <p class="hero-sub">One of the fastest growing sports in the world — now an Olympic discipline. Climbing develops <strong>physical strength, mental resilience, problem-solving</strong> and trust in equipment, partners and yourself.</p>
+    <div class="cta-row">
+      <a href="#get-active" class="btn btn-primary">Get Started</a>
+      <a href="#theory" class="btn btn-outline">Study</a>
+      <a href="#train" class="btn btn-outline">Train</a>
+    </div>
+  </div>
+</div>
+
+<section class="sect-dark" id="get-active">
+<div class="inner">
+  <p class="sect-label reveal">Section 01 · Get Active</p>
+  <h2 class="sect-title reveal">GET <span class="accent">ACTIVE</span></h2>
+  <div class="student-bar reveal">
+    <label for="st-name">Name</label><input type="text" id="st-name" placeholder="First and last name...">
+    <label for="st-group">Group</label><input type="text" id="st-group" placeholder="4 ESO" style="max-width:160px">
+    <label for="st-date">Date</label><input type="text" id="st-date" placeholder="dd/mm/yyyy" style="max-width:130px">
+  </div>
+  <p class="lead reveal">Rock climbing has existed as long as humans have needed to cross mountainous terrain. As a competitive sport, it developed in the 1980s, first in the Soviet Union and France. Today, sport climbing comprises three Olympic disciplines: Lead, Speed and Bouldering. Alberto Gines Lopez won Spain's first-ever Olympic gold medal in climbing at Tokyo 2020.</p>
+  <div class="dh-row reveal">
+    <div class="dh"><div class="dh-num">Tokyo 2020</div><div class="dh-label">Spain's first climbing gold</div><div class="dh-desc">Alberto Gines Lopez won the combined format gold medal — the first Olympic climbing gold for Spain.</div></div>
+    <div class="dh"><div class="dh-num">5a → 9b+</div><div class="dh-label">Grading scale</div><div class="dh-desc">The French grading system — 5a is beginner level, 9b+ is the limit of human achievement.</div></div>
+    <div class="dh"><div class="dh-num">3</div><div class="dh-label">Olympic disciplines</div><div class="dh-desc">Lead climbing, Speed climbing and Bouldering — three disciplines requiring different strengths.</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Activity 1 - Prior Knowledge (open answer)</div>
+    <h4>Reflect before studying the unit</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">Have you ever been to an indoor climbing wall or climbed outdoors? Describe your experience.</label><textarea class="field-input" id="a1q1" placeholder="Your experience..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">What do you think is the most challenging aspect of climbing — the physical or the mental? Give reasons.</label><textarea class="field-input" id="a1q2" placeholder="Your analysis..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q3">Why do you think climbing is growing so rapidly as a sport? What makes it appealing to young people?</label><textarea class="field-input" id="a1q3" placeholder="Your answer..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ UNIT VIDEO</span>
+    <span class="ebi-vid-ttl">Sport Climbing — Technique and safety</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="v-_jOSBz5QA" data-title="Sport Climbing — Technique and safety" tabindex="0" role="button" aria-label="Play: Sport Climbing — Technique and safety">
+    <img src="https://img.youtube.com/vi/v-_jOSBz5QA/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/v-_jOSBz5QA/mqdefault.jpg'" alt="Sport Climbing — Technique and safety" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Click image to play · Or open it on</span>
+    <a href="https://www.youtube.com/watch?v=v-_jOSBz5QA" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="theory">
+<div class="inner">
+  <p class="sect-label reveal">Section 02 · Challenge Yourself</p>
+  <h2 class="sect-title reveal">CLIMBING: DISCIPLINES, <span class="accent">TECHNIQUE & SAFETY</span></h2>
+  <p class="lead reveal">Six blocks covering climbing history, Olympic disciplines, grades, safety, technique and physical training.</p></div>
+</section>
+
+<section class="sect-dark" id="theory-a">
+<div class="inner">
+    <p class="sect-label reveal">Section 02A · Theory Block</p>
+    <h3 class="subsect reveal">History & Olympic Disciplines</h3>
+    <p class="body-text reveal">Sport climbing's competitive history began in the Soviet Union in 1947. The IFSC (International Federation of Sport Climbing) was founded in 2007, and climbing made its Olympic debut at Tokyo 2020.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🏅</span><div class="cc-title">Tokyo 2020</div><div class="cc-body">Climbing's Olympic debut. Alberto Gines Lopez (Spain) won the combined gold medal.</div><div class="cc-tag">First Olympic gold</div></div>
+      <div class="cc"><span class="cc-icon">B</span><div class="cc-title">Bouldering</div><div class="cc-body">Short powerful problems up to 5m without a rope. Focus on strength, technique and problem-solving.</div><div class="cc-tag">No rope needed</div></div>
+      <div class="cc"><span class="cc-icon">LD</span><div class="cc-title">Lead Climbing</div><div class="cc-body">Roped climbing up long routes. Climber clips protection as they ascend. Falls go below the last clip.</div><div class="cc-tag">Advanced technique</div></div>
+      <div class="cc"><span class="cc-icon">SP</span><div class="cc-title">Speed Climbing</div><div class="cc-body">Two climbers race on a standardised 15m route. World record: under 5 seconds.</div><div class="cc-tag">Pure explosive power</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 2 - History & Olympic Disciplines</div>
+      <h4>Check your knowledge of climbing's Olympic debut and the three disciplines</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>At which Olympic Games did sport climbing make its debut?</div>
+      <div class="options" data-q="a2q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Rio 2016</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Tokyo 2020</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Paris 2024 (alongside Tokyo 2020)</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Seoul 1988</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Who won Spain's first-ever Olympic gold medal in sport climbing?</div>
+      <div class="options" data-q="a2q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">David Lamas at the Barcelona 1992 Games in the demonstration event</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Alberto Gines Lopez at the Tokyo 2020 Games</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Mina Markovic representing Spain in the lead discipline</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Ramon Julian Puigblanque at the London 2012 demonstration</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the key characteristic that distinguishes bouldering from lead climbing?</div>
+      <div class="options" data-q="a2q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Bouldering uses special foam-soled shoes while lead climbing uses sticky rubber shoes</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Bouldering is performed without a rope on problems up to 5m with crash pads only</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Bouldering routes are graded higher than lead climbing because of the difficulty</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Bouldering competitions are only for professionals while lead is accessible to all levels</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In the speed climbing discipline, approximately what world record time has been achieved on the standardised 15m route?</div>
+      <div class="options" data-q="a2q4" data-correct="A">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Under 5 seconds</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Under 10 seconds</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Under 20 seconds</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Under 30 seconds</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>How did the Olympic climbing format change between Tokyo 2020 and Paris 2024?</div>
+      <div class="options" data-q="a2q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The competition was cancelled in Paris — only Tokyo featured climbing</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">In Paris, Lead and Bouldering were combined in one event and Speed was a separate discipline</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Paris returned to the original three-discipline combined format from Tokyo</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Speed climbing was removed from Paris 2024 and replaced with deep water soloing</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Check Answers</button>
+      <div class="act-score" id="score-a2">Score: <strong id="score-a2-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-b">
+<div class="inner">
+    <p class="sect-label reveal">Section 02B · Theory Block</p>
+    <h3 class="subsect reveal">The French Grading System</h3>
+    <p class="body-text reveal">The French sport climbing grading system (used throughout Europe and internationally) grades routes from 5a (beginner) to 9b+ (elite/Olympic level). Understanding grades helps climbers progress safely.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">5a-5c</span><div class="cc-title">Beginner</div><div class="cc-body">Moderate angle, large holds, simple sequences. Appropriate for school climbing sessions.</div><div class="cc-tag">Starting level</div></div>
+      <div class="cc"><span class="cc-icon">6a-6c</span><div class="cc-title">Intermediate</div><div class="cc-body">Steeper angles, smaller holds, more complex sequences requiring technique and strength.</div><div class="cc-tag">School development</div></div>
+      <div class="cc"><span class="cc-icon">7a-7c</span><div class="cc-title">Advanced</div><div class="cc-body">Overhanging sections, technical moves, significant strength required. Club-level training.</div><div class="cc-tag">Club athlete</div></div>
+      <div class="cc"><span class="cc-icon">8a+</span><div class="cc-title">Elite</div><div class="cc-body">World-class level. Only achievable with years of specialised training and exceptional natural talent.</div><div class="cc-tag">Professional athlete</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 3 - Grading & Progression</div>
+      <h4>Understand the grading system and how to progress safely</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>The French sport climbing grade "6a" indicates:</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">A route suitable for absolute beginners with no previous climbing experience</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">A route of intermediate difficulty requiring developing technique and some strength</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">An advanced route only appropriate for experienced club-level climbers</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">An elite-level route requiring professional training to attempt safely</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is it important for a beginner climber to start on routes significantly below their maximum ability?</div>
+      <div class="options" data-q="a3q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Because lower-grade routes are more fun and enjoyable for beginners</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">To build technique and movement patterns correctly before adding difficulty — bad habits are hard to unlearn</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Because climbing walls require a minimum number of lower-grade completions before upgrading</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">To reduce the chance of being seen struggling by more experienced climbers</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What does the letter after the number in French grades (e.g., 6a, 6b, 6c) indicate?</div>
+      <div class="options" data-q="a3q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">The length of the route in tens of metres</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">A subdivision within that grade — finer distinction between difficulty levels</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The angle of the wall (a = slab, b = vertical, c = overhang)</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">The type of holds used (a = crimps, b = slopers, c = pinches)</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>At what grade range do most indoor climbing walls begin grading routes for school groups?</div>
+      <div class="options" data-q="a3q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Starting from 3a — very easy warm-up level</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Starting from 5a — accessible for most beginners with basic instruction</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Starting from 7a — indoor walls are designed for experienced climbers only</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Starting from 4a — walls use a colour system that doesn't correspond to French grades</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Why is it considered dangerous to attempt a route significantly beyond your current grade level?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because harder routes have different-coloured holds that are slippery</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Because the physical and technical demands increase rapidly and falls from higher grades carry greater injury risk</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because harder routes have height limits that require special insurance</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Because the grading system only applies to outdoor climbing, not indoor walls</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Check Answers</button>
+      <div class="act-score" id="score-a3">Score: <strong id="score-a3-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card2" id="theory-c">
+<div class="inner">
+    <p class="sect-label reveal">Section 02C · Theory Block</p>
+    <h3 class="subsect reveal">Safety & Equipment</h3>
+    <p class="body-text reveal">Climbing is inherently risky. Strict adherence to safety protocols is non-negotiable. These rules apply to all climbing environments — indoor walls included.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🦺</span><div class="cc-title">Harness</div><div class="cc-body">Worn around the waist and thighs. Must be fitted correctly before every climb — check tie-in point.</div><div class="cc-tag">Essential check</div></div>
+      <div class="cc"><span class="cc-icon">🪢</span><div class="cc-title">Dynamic Rope</div><div class="cc-body">Stretches under load to absorb the energy of a fall. 9.5-10.5mm for single rope lead climbing.</div><div class="cc-tag">Energy absorption</div></div>
+      <div class="cc"><span class="cc-icon">🔗</span><div class="cc-title">Belay Device</div><div class="cc-body">Friction device (ATC, Grigri) used by the belayer to control the rope and arrest a falling climber.</div><div class="cc-tag">Belayer's tool</div></div>
+      <div class="cc"><span class="cc-icon">👟</span><div class="cc-title">Climbing Shoes</div><div class="cc-body">Tight rubber-soled shoes maximising friction on small holds. Snug fit essential for footwork precision.</div><div class="cc-tag">Technical footwear</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 4 - Safety & Equipment</div>
+      <h4>Know your safety protocols and why each piece of equipment matters</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Why must a harness be checked and verified EVERY time before climbing, even if worn by the same person?</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Because harnesses degrade rapidly and must be inspected by a certified technician before each use</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Because equipment can be fitted incorrectly even by experienced climbers — equipment failure is the most preventable cause of climbing accidents</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the climbing wall insurance requires photographic evidence of harness inspection</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Because different routes require the harness buckle in different positions</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is a DYNAMIC rope (as opposed to a static rope) required for sport climbing?</div>
+      <div class="options" data-q="a4q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Because dynamic ropes are lighter and easier to clip to protection bolts</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Because a dynamic rope stretches and absorbs the energy of a fall, reducing the impact force on the climber and anchor</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Because static ropes are prohibited in all indoor climbing facilities by IFSC regulations</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Because dynamic ropes are more visible in different colours, making them easier to inspect</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the role of the belay device in climbing?</div>
+      <div class="options" data-q="a4q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">To automatically stop the climber if they fall — no belayer action required in all devices</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">To create friction on the rope, allowing the belayer to arrest the fall of a climbing partner</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">To clip the rope to the protection bolts on the wall as the climber ascends</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">To measure the length of rope paid out and alert the belayer when the climber is near the top</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Standard verbal commands in climbing are "Climbing!" and "Climb on!" — why is standardised communication critical?</div>
+      <div class="options" data-q="a4q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">To impress other climbers at the wall with correct terminology</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Because a miscommunication between climber and belayer (such as the belayer releasing the rope too early) can be fatal</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">To comply with indoor wall regulations requiring verbal communication before each attempt</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Because verbal commands are how climbers request the specific grade of the next route</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>In bouldering, why must the area under the problem (below the climber) always be kept clear of people and equipment?</div>
+      <div class="options" data-q="a4q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the crash pad is only large enough for one person to land on safely</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Because anything or anyone in the fall zone becomes a dangerous landing obstacle if the climber falls</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because gym regulations require a clear zone for aesthetic and filming purposes</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Because other climbers need to be able to see the holds clearly from directly below</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Check Answers</button>
+      <div class="act-score" id="score-a4">Score: <strong id="score-a4-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-mid" id="theory-d">
+<div class="inner">
+    <p class="sect-label reveal">Section 02D · Theory Block</p>
+    <h3 class="subsect reveal">Technical Footwork</h3>
+    <p class="body-text reveal">Climbing efficiency comes from footwork, not arm strength. The best climbers climb with their legs — arms provide balance and movement, legs provide the power.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">👁</span><div class="cc-title">Read the route</div><div class="cc-body">Before starting, identify the sequence of moves from the ground. Plan the feet first.</div><div class="cc-tag">Cognitive climbing</div></div>
+      <div class="cc"><span class="cc-icon">👟</span><div class="cc-title">Edging</div><div class="cc-body">Using the inside or outside edge of the shoe on small holds. Precision placement before loading.</div><div class="cc-tag">Precision technique</div></div>
+      <div class="cc"><span class="cc-icon">🔲</span><div class="cc-title">Smearing</div><div class="cc-body">Pressing the sole against the wall where there are no holds — relies entirely on rubber friction.</div><div class="cc-tag">Friction technique</div></div>
+      <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Foot placement</div><div class="cc-body">Place the foot precisely and commit to it before moving. Never shuffle or search for the foothold.</div><div class="cc-tag">Golden rule</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 5 - Technical Footwork</div>
+      <h4>Demonstrate your understanding of efficient climbing technique</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Why do experienced climbers emphasise footwork over arm strength when advising beginners?</div>
+      <div class="options" data-q="a5q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the arms are not used in climbing — all movement is generated by the legs</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Because legs and feet generate the upward movement while arms provide balance — using arms for power leads to rapid fatigue</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the grading system rewards footwork technique more than arm strength in competitions</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Because arm strength cannot be developed through climbing — it requires gym training</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is "edging" in climbing footwork?</div>
+      <div class="options" data-q="a5q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Using the tip of the toe to hook on a hold above the climber's head</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Placing the inside or outside edge of the climbing shoe precisely on a hold for maximum contact</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Running the sole of the shoe along the wall to gain friction on a blank section</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Crossing one foot behind the other to maintain balance on a traverse</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is "smearing" and when is it used?</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Placing the toes precisely on a hold with maximum friction — used on all types of routes</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Pressing the maximum area of the rubber sole against the wall where there are no defined holds — relies on friction</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Using the heel of the climbing shoe to hook a hold or edge from above</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Dragging the toe along the wall to read which holds are most secure</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>What is the primary cognitive skill required before starting a bouldering problem or sport climbing route?</div>
+      <div class="options" data-q="a5q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Calculating the minimum number of moves required to reach the top</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Reading the route from the ground to plan the sequence of hand and foot moves before starting</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Identifying the grade of the route and comparing it to your personal maximum grade</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Memorising the colour of the holds to distinguish them from other routes on the same wall</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Why is it recommended to place the foot precisely and commit to it before transferring weight, rather than shuffling or repositioning?</div>
+      <div class="options" data-q="a5q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because multiple foot movements waste chalk and damage the rubber of the climbing shoe</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Because each repositioning uses energy and time — precise placement and commitment is more efficient and preserves strength for harder moves above</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the rules of competition climbing penalise any foot movement after the first contact</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Because shuffling on small holds causes the rubber to heat up and lose friction quickly</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a5',['a5q1','a5q2','a5q3','a5q4','a5q5'])">Check Answers</button>
+      <div class="act-score" id="score-a5">Score: <strong id="score-a5-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-dark" id="theory-e">
+<div class="inner">
+    <p class="sect-label reveal">Section 02E · Theory Block</p>
+    <h3 class="subsect reveal">Handholds & Body Positioning</h3>
+    <p class="body-text reveal">Understanding different types of handholds and how to position the body to use them efficiently is the foundation of technical climbing.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">✊</span><div class="cc-title">Crimp</div><div class="cc-body">Small edge gripped with fingertips. Strongest grip but highest injury risk — avoid in beginners.</div><div class="cc-tag">Technical grip</div></div>
+      <div class="cc"><span class="cc-icon">🖐</span><div class="cc-title">Sloper</div><div class="cc-body">Round hold with no positive edge — requires open-hand grip and body tension to use.</div><div class="cc-tag">Body tension hold</div></div>
+      <div class="cc"><span class="cc-icon">👆</span><div class="cc-title">Pinch</div><div class="cc-body">Hold gripped between thumb and fingers — common on artificial walls.</div><div class="cc-tag">Thumb technique</div></div>
+      <div class="cc"><span class="cc-icon">📐</span><div class="cc-title">Drop Knee</div><div class="cc-body">Body position technique where the inside knee is dropped to create a hip turn, increasing reach.</div><div class="cc-tag">Body position</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 6 - Handholds & Body Positioning</div>
+      <h4>Understand the different hold types and how to use them efficiently</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is a "crimp" hold in climbing and what is its main risk?</div>
+      <div class="options" data-q="a6q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q1" value="A"><span class="opt-letter">A</span><span class="opt-text">A large jug hold that provides maximum security — risk is overconfidence on easy sections</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="B"><span class="opt-letter">B</span><span class="opt-text">A small edge gripped with the fingertips — the strongest grip type but highest risk of finger tendon injury</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="C"><span class="opt-letter">C</span><span class="opt-text">A rounded hold requiring open-hand grip — risk is slipping on overhanging sections</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="D"><span class="opt-letter">D</span><span class="opt-text">A pinch hold between thumb and fingers — risk is dropping the hold when the thumb fatigues</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What characterises a "sloper" hold and why is it technically demanding?</div>
+      <div class="options" data-q="a6q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q2" value="A"><span class="opt-letter">A</span><span class="opt-text">A sloper is a sharp crimp edge — demanding because it requires maximum finger strength</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="B"><span class="opt-letter">B</span><span class="opt-text">A sloper is a rounded hold with no positive edge — demanding because it requires open-hand grip and significant body tension to use effectively</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="C"><span class="opt-letter">C</span><span class="opt-text">A sloper is a small foothold requiring precise edging — demanding because of the narrow contact surface</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="D"><span class="opt-letter">D</span><span class="opt-text">A sloper is a hold placed in a horizontal position requiring the climber to hang sideways</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the purpose of using a "flag" position in climbing?</div>
+      <div class="options" data-q="a6q3" data-correct="A">
+        <label class="opt"><input type="radio" name="a6q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Extending one foot out to the side or behind without placing it on a hold — to counterbalance and prevent swinging</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Pointing with one foot at the next hold to help the brain plan the next foot placement</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Waving one leg to indicate to the belayer that the climber needs more rope</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Extending both legs to opposite sides to create a stable bridging position</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In a "drop knee" technique, what does dropping the inside knee allow the climber to do?</div>
+      <div class="options" data-q="a6q4" data-correct="A">
+        <label class="opt"><input type="radio" name="a6q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Turn the hip inward, bringing the body closer to the wall and extending reach toward the next hold</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Descend more quickly down the route by shifting weight away from the upper body</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Create a stable rest position on a difficult section of the route</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Cross one foot behind the other to reach a hold on the opposite side of the body</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Why do overhanging sections of a climbing wall require greater core strength than vertical or slab sections?</div>
+      <div class="options" data-q="a6q5" data-correct="A">
+        <label class="opt"><input type="radio" name="a6q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Because the climber must constantly fight gravity to maintain body position — the core prevents the hips from sagging away from the wall</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Because overhanging walls are always graded higher requiring stronger overall fitness</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the holds on overhangs are always smaller and require more finger strength</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Because overhanging climbing requires the climber to generate upward momentum through core power alone</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a6',['a6q1','a6q2','a6q3','a6q4','a6q5'])">Check Answers</button>
+      <div class="act-score" id="score-a6">Score: <strong id="score-a6-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-f">
+<div class="inner">
+    <p class="sect-label reveal">Section 02F · Theory Block</p>
+    <h3 class="subsect reveal">Physical Training for Climbing</h3>
+    <p class="body-text reveal">Climbing requires a specific physical profile. Understanding the physical demands allows climbers to train more effectively and reduce injury risk.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">💪</span><div class="cc-title">Finger Strength</div><div class="cc-body">The most specific physical quality for climbing. Developed through hangboard training for advanced climbers.</div><div class="cc-tag">Limiting factor</div></div>
+      <div class="cc"><span class="cc-icon">🧘</span><div class="cc-title">Flexibility</div><div class="cc-body">Hip flexibility is critical for high footholds. Core flexibility improves body position on overhangs.</div><div class="cc-tag">Range of motion</div></div>
+      <div class="cc"><span class="cc-icon">🏃</span><div class="cc-title">Anaerobic Power</div><div class="cc-body">Bouldering and hard redpoints require explosive power over short durations — high intensity.</div><div class="cc-tag">Energy system</div></div>
+      <div class="cc"><span class="cc-icon">❤️</span><div class="cc-title">Aerobic Base</div><div class="cc-body">Longer routes require aerobic endurance. Strong aerobic base = faster recovery between boulder problems.</div><div class="cc-tag">Endurance foundation</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 7 - Physical Training for Climbing</div>
+      <h4>Understand the physical demands and training principles for climbing</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Why is finger strength considered the primary limiting factor in sport climbing performance?</div>
+      <div class="options" data-q="a7q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Because fingers are the weakest part of the human body and always fail first in any physical activity</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Because climbing requires continuous gripping of holds of all sizes — finger flexor strength directly determines what grades a climber can attempt</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Because climbing walls are specifically designed to target finger strength above all other qualities</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Because finger strength is genetically fixed and cannot be improved through training</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is hip flexibility particularly important for climbing?</div>
+      <div class="options" data-q="a7q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Because climbers must sit in a squat position during the belay phase</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Because high foot placements (near waist height or above) require good hip flexibility to use them efficiently without lifting the heel</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Because hip flexibility determines how quickly a climber can descend after completing a route</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Because the belay device is worn at the hip and must be accessible throughout the climb</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What energy system primarily powers a hard bouldering session (intense problems lasting 5-30 seconds each)?</div>
+      <div class="options" data-q="a7q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q3" value="A"><span class="opt-letter">A</span><span class="opt-text">The aerobic system — oxidative phosphorylation in the mitochondria</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="B"><span class="opt-letter">B</span><span class="opt-text">The ATP-PCr and anaerobic glycolytic systems — providing immediate and short-duration explosive power</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="C"><span class="opt-letter">C</span><span class="opt-text">The phosphocreatine system exclusively — all bouldering problems use the same energy pathway</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="D"><span class="opt-letter">D</span><span class="opt-text">The aerobic-anaerobic mixed system exclusively used for activities lasting exactly 30 seconds</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Why do climbers benefit from having a strong aerobic base even if they primarily boulder (short, intense problems)?</div>
+      <div class="options" data-q="a7q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Because bouldering sessions always include running to warm up, requiring aerobic capacity</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Because a strong aerobic base accelerates recovery between individual boulder attempts, allowing more quality sessions per week</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Because the aerobic system is activated after the 5th consecutive boulder problem regardless of difficulty</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Because IFSC competition rules require climbers to complete a cardiovascular assessment</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What is the most important principle for a beginning climber to follow when starting a training programme?</div>
+      <div class="options" data-q="a7q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Focus exclusively on finger strength using a hangboard from the first week</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Prioritise technique and movement quality over intensity — climbing frequently on easy routes builds movement patterns safely</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Train maximum effort every session to stimulate rapid strength adaptation</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Focus only on the upper body — legs are secondary in climbing training</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:white;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a7',['a7q1','a7q2','a7q3','a7q4','a7q5'])">Check Answers</button>
+      <div class="act-score" id="score-a7">Score: <strong id="score-a7-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-dark" id="train">
+<div class="inner">
+  <p class="sect-label reveal">Section 03 · Train & Compete</p>
+  <h2 class="sect-title reveal">TRAIN & <span class="accent">COMPETE</span></h2>
+  <p class="lead reveal">Complete these challenges. Record your results and upload evidence to Classroom. Always prioritise safety.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Boulder Problem (Beginner Grade)</div><span class="ch-tag">Technical</span></div>
+        <p>Attempt 3 bouldering problems at beginner level (5a-5c or equivalent wall colour). Focus exclusively on footwork — where you place your feet, not your hands.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c1r1">Which of the 3 problems did you complete? What was your footwork quality like?</label><textarea class="field-input" id="c1r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c1r2">What footwork technique did you apply most? What was the most common footwork error?</label><textarea class="field-input" id="c1r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Route Reading Exercise</div><span class="ch-tag">Cognitive</span></div>
+        <p>Stand below a route and, without touching the wall, identify: the first 5 hand moves, the first 5 foot placements, and the hardest section. Then attempt the route.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c2r1">How many moves did your plan match the actual climb?</label><textarea class="field-input" id="c2r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c2r2">How did planning the route in advance change how you climbed it compared to a previous route you did spontaneously?</label><textarea class="field-input" id="c2r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Hangboard / Grip Strength Test</div><span class="ch-tag">Strength</span></div>
+        <p>If a hangboard or edge is available: hang with both hands on an edge for as long as possible (arms straight). If not, use a door frame edge or bar. Record time for 3 attempts.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c3r1">Time held on each of 3 attempts (seconds)</label><textarea class="field-input" id="c3r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c3r2">Which fingers fatigued first? Was there any difference between left and right hand?</label><textarea class="field-input" id="c3r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Safety Protocol Demonstration</div><span class="ch-tag">Safety</span></div>
+        <p>With a partner, demonstrate: correct harness fitting (verbal walkthrough), belay device setup, verbal commands (Climbing!/Climb on!/Take!/Lower!). Swap roles.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c4r1">What steps did you and your partner complete correctly? What needed correction?</label><textarea class="field-input" id="c4r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c4r2">Why is the belay communication system described as "a language that saves lives"?</label><textarea class="field-input" id="c4r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">05</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Reflective Climbing Session</div><span class="ch-tag">Evaluation</span></div>
+        <p>Complete a full climbing session at the wall. Before each route, spend 1 minute reading it. After each route, note what went as planned and what surprised you.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c5r1">Best grade attempted and how many problems/routes completed in the session</label><textarea class="field-input" id="c5r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c5r2">What one technical improvement had the biggest positive effect on your climbing today?</label><textarea class="field-input" id="c5r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-mid" id="evaluate">
+<div class="inner">
+  <p class="sect-label reveal">Section 04 · Evaluate</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">ATE</span></h2>
+  <p class="lead reveal">Demonstrate what you have learned and reflect on your progress.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Final Activity - Personal Reflection (open answer)</div>
+    <h4>Complete this unit honestly</h4>
+    <div class="field-group"><label class="field-label" for="af1">What is the connection between "reading the route" before you climb and performing better? Use examples from your sessions in this unit.</label><textarea class="field-input" id="af1" placeholder="Your connection with examples..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Alberto Gines Lopez won Spain's first Olympic climbing gold at Tokyo 2020 at just 18 years old. What mental qualities do you think allowed him to achieve this at such a young age?</label><textarea class="field-input" id="af2" placeholder="Your analysis of the mental game..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">How has your understanding of risk changed after studying the safety protocols in this unit? Are you more or less confident around climbing? Explain.</label><textarea class="field-input" id="af3" placeholder="Your honest reflection on risk and confidence..."></textarea></div>
+  </div>
+  <h3 class="subsect reveal">Concept Map</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">CLIMBING <span>Strength - technique - problem solving - trust</span></div>
+    <div style="text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0">|</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">DISCIPLINES</div>
+        <input class="field-input" type="text" placeholder="Bouldering..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Lead..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">GRADES</div>
+        <input class="field-input" type="text" placeholder="Beginner..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Elite..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">SAFETY</div>
+        <input class="field-input" type="text" placeholder="Harness..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Belay device..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">FOOTWORK</div>
+        <input class="field-input" type="text" placeholder="Edging..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Smearing..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">TRAINING</div>
+        <input class="field-input" type="text" placeholder="Finger strength..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Aerobic base..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">YOUR GLOBAL SCORE</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Multiple choice only. Open answers are reviewed by the teacher.</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:{bc};border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase" onclick="calcGlobalScore()">See my global score</button>
+  </div>
+</div>
+</section>
+<footer><p>Reproduction or distribution of this guide without the prior written authorisation of the author is strictly prohibited. For exclusive educational use by students of the centre. Colegio Santa Maria la Blanca. © Jaime Redondo</p></footer>
+
+<script>
+var STORE_KEY='ef4eso-climbing-v1';
+var CORRECT={'a2q1':'B','a2q2':'B','a2q3':'B','a2q4':'A','a2q5':'B','a3q1':'B','a3q2':'B','a3q3':'B','a3q4':'B','a3q5':'B','a4q1':'B','a4q2':'B','a4q3':'B','a4q4':'B','a4q5':'B','a5q1':'B','a5q2':'B','a5q3':'B','a5q4':'B','a5q5':'B','a6q1':'B','a6q2':'B','a6q3':'A','a6q4':'A','a6q5':'A','a7q1':'B','a7q2':'B','a7q3':'B','a7q4':'B','a7q5':'B'};
+var EXPL={'a2q1':'Correct. Sport climbing debuted at the Tokyo 2020 Olympics.','a2q2':'Correct. Alberto Gines Lopez won the combined format gold at Tokyo 2020.','a2q3':'Correct. Bouldering is performed without a rope on problems up to 5m with crash pads.','a2q4':'Correct. The world record on the standardised 15m speed route is under 5 seconds.','a2q5':'Correct. In Paris 2024, Lead/Bouldering were combined and Speed was separate.','a3q1':'Correct. 6a is intermediate difficulty — developing technique and some strength required.','a3q2':'Correct. Starting below maximum allows correct technique to develop without bad habits.','a3q3':'Correct. The letter (a, b, c) indicates a subdivision within the grade.','a3q4':'Correct. Most walls begin grading for school groups from 5a — accessible with instruction.','a3q5':'Correct. Higher grades have greater physical demands and falls carry more injury risk.','a4q1':'Correct. Even experienced climbers can fit harnesses incorrectly — always check.','a4q2':'Correct. A dynamic rope stretches to absorb fall energy and reduce impact force.','a4q3':'Correct. The belay device creates friction to arrest the fall of a climbing partner.','a4q4':'Correct. Miscommunication between climber and belayer can be fatal.','a4q5':'Correct. Anything in the fall zone becomes a dangerous obstacle if the climber falls.','a5q1':'Correct. Legs generate upward movement — using arms for power leads to rapid fatigue.','a5q2':'Correct. Edging uses the inside or outside edge of the shoe precisely on a hold.','a5q3':'Correct. Smearing presses the maximum rubber sole area against the wall for friction.','a5q4':'Correct. Reading the route means planning the sequence of moves before starting.','a5q5':'Correct. Precise placement and commitment is more efficient and preserves strength.','a6q1':'Correct. A crimp is a small edge gripped with fingertips — highest finger tendon injury risk.','a6q2':'Correct. A sloper is rounded with no positive edge — requires open grip and body tension.','a6q3':'Correct. A flag extends one foot to the side to counterbalance and prevent swinging.','a6q4':'Correct. A drop knee turns the hip inward, bringing the body closer to the wall and increasing reach.','a6q5':'Correct. Overhangs require core strength to prevent hips from sagging away from the wall.','a7q1':'Correct. Finger flexor strength directly determines what grades a climber can attempt.','a7q2':'Correct. High foot placements require good hip flexibility to use them efficiently.','a7q3':'Correct. Bouldering primarily uses the ATP-PCr and anaerobic glycolytic systems.','a7q4':'Correct. A strong aerobic base accelerates recovery between boulder attempts.','a7q5':'Correct. Beginners should prioritise technique on easy routes, not high-intensity training.'};
+var ACTS={'a2':['a2q1','a2q2','a2q3','a2q4','a2q5'],'a3':['a3q1','a3q2','a3q3','a3q4','a3q5'],'a4':['a4q1','a4q2','a4q3','a4q4','a4q5'],'a5':['a5q1','a5q2','a5q3','a5q4','a5q5'],'a6':['a6q1','a6q2','a6q3','a6q4','a6q5'],'a7':['a7q1','a7q2','a7q3','a7q4','a7q5']};
+window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(function(r){ro.observe(r);});
+document.addEventListener('change',function(e){if(e.target.type==='radio'){var n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(function(r){r.closest('.opt').classList.toggle('selected',r.checked);});saveLocal();}});
+function checkQuiz(actId,qIds){
+  var correct=0;
+  qIds.forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    var fb=document.getElementById('fb-'+qId);
+    var cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(function(o){o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPL[qId]||'Correct';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var el=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');var ct=el?el.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrect. Correct answer: '+cv+' - '+ct;fb.className='q-feedback show ko';}}
+    else{fb.textContent='No option selected.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Keep reviewing the theory','On the right track - keep going','Good work! You know the concepts','Excellent - outstanding performance'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){var data={};document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});localStorage.setItem(STORE_KEY,JSON.stringify(data));}
+function loadLocal(){var raw=localStorage.getItem(STORE_KEY);if(!raw)return;var data=JSON.parse(raw);Object.keys(data).forEach(function(id){if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}else{var el=document.getElementById(id);if(el)el.value=data[id];}});}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparing PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){if(!confirm('Clear ALL answers?'))return;document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){var nombre=document.getElementById('st-name').value.trim();var res=document.getElementById('submitResumen');if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Name missing.</span> Please fill in your name.';}else{var g=document.getElementById('st-group').value.trim();var dt=document.getElementById('st-date').value.trim();res.innerHTML='<strong style="color:white">Student:</strong> '+nombre+' | <strong style="color:white">Group:</strong> '+(g||'-')+' | <strong style="color:white">Date:</strong> '+(dt||'-');}document.getElementById('submitConfirmView').style.display='block';document.getElementById('submitSentView').style.display='none';document.getElementById('submitConfirmBtn').disabled=!nombre;document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'4ESO-Climbing'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){var sel=document.querySelector('input[name="'+qId+'"]:checked');data['resp_'+qId]=sel?sel.value:'-';data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correct':'incorrect'):'-';});
+  Object.keys(ACTS).forEach(function(act){var c=0;ACTS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});data['score_'+act]=c+'/'+ACTS[act].length;});
+  var tot=0,totQ=0;Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Sending...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});document.getElementById('submitConfirmView').style.display='none';document.getElementById('submitSentView').style.display='block';var mb=document.getElementById('btnSubmit');mb.textContent='Submitted';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';showToast('Submitted!','toast-ok');}
+  catch(err){btnText.innerHTML='Confirm submission';btn.disabled=false;showToast('Error sending.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+
+</script>
+</body>
+</html>

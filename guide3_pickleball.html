@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Guide – Pickleball · 4º ESO · PE</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#7CB518;--accent2:#A0D936;--accent3:#5A8A10;--dark:#080808;--mid:#111;--card:#181818;--card2:#1E1E1E;--nav-h:68px;--txt:rgba(255,255,255,.75);--txt-dim:rgba(255,255,255,.4)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Mulish',sans-serif;background:var(--dark);color:#F0F0F0;overflow-x:hidden}
+.prog-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.06);z-index:200}.prog-fill{height:100%;background:linear-gradient(90deg,var(--accent3),var(--accent),var(--accent2));width:0%;transition:width .2s}
+header{background:rgba(8,8,8,.97);height:var(--nav-h);display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(124,181,24,.15);backdrop-filter:blur(16px)}
+.logo{font-family:'Anton',sans-serif;font-size:1rem;letter-spacing:.1em;color:white;text-decoration:none;display:flex;align-items:center;gap:.6rem;white-space:nowrap;flex-shrink:0}.logo-badge{background:var(--accent);color:#001a00;font-family:'Space Mono',monospace;font-size:.52rem;padding:.15rem .5rem;border-radius:2px;letter-spacing:.08em;font-weight:700}
+nav{display:flex;align-items:center;gap:.15rem;flex-wrap:wrap;flex:1}
+nav a{font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);text-decoration:none;padding:.4rem .75rem;border-radius:4px;transition:all .18s;white-space:nowrap}
+nav a:hover{color:var(--accent);background:rgba(124,181,24,.08)}
+.subnav{position:relative}
+.subnav-menu{display:none;position:absolute;top:115%;left:0;background:var(--card);border:1px solid rgba(255,255,255,.12);border-radius:8px;overflow:hidden;min-width:220px;box-shadow:0 16px 40px rgba(0,0,0,.7);z-index:200}
+.subnav:hover .subnav-menu{display:block}
+.subnav-menu a{display:block;border-radius:0;border-bottom:1px solid rgba(255,255,255,.04)}
+.nav-pdf{margin-left:auto;background:var(--accent);color:#001a00!important;border-radius:4px;padding:.45rem 1rem!important;font-weight:800!important}
+.hero{min-height:92vh;background:var(--dark);display:flex;align-items:center;position:relative;overflow:hidden;padding:6rem 5rem}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.12;animation:orbF 12s ease-in-out infinite}
+.hero-orb:nth-child(1){width:600px;height:600px;background:var(--accent);top:-15%;right:-10%}
+.hero-orb:nth-child(2){width:350px;height:350px;background:var(--accent3);bottom:5%;right:25%;animation-delay:5s}
+@keyframes orbF{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-content{position:relative;z-index:2;max-width:700px}
+.hero-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);background:rgba(124,181,24,.1);border:1px solid rgba(124,181,24,.2);padding:.35rem .9rem;border-radius:2px;display:inline-block;margin-bottom:2rem}
+.hero-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 1.5s ease-in-out infinite;margin:0 .5rem;vertical-align:middle}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1.hero-title{font-family:'Anton',sans-serif;font-size:clamp(5rem,12vw,11rem);line-height:.82;letter-spacing:.03em;color:white;text-transform:uppercase;margin-bottom:1rem}
+h1.hero-title em{display:block;-webkit-text-stroke:2px var(--accent);color:transparent;font-style:normal;font-size:.7em}
+.hero-sub{font-size:1.05rem;color:var(--txt);line-height:1.8;margin-bottom:2.5rem;max-width:560px}.hero-sub strong{color:white}
+.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;padding:.9rem 2rem;border-radius:4px;text-decoration:none;transition:all .22s;cursor:pointer;border:none;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary{background:var(--accent);color:#001a00}.btn-primary:hover{background:var(--accent2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(124,181,24,.4)}
+.btn-outline{background:transparent;color:var(--txt);border:1px solid rgba(255,255,255,.15)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.inner{max-width:1060px;margin:0 auto;padding:0 4rem}
+.sect-dark{background:var(--dark);padding:5.5rem 0}.sect-mid{background:var(--mid);padding:5.5rem 0}
+.sect-card{background:var(--card);padding:5.5rem 0}.sect-card2{background:var(--card2);padding:5.5rem 0}
+.sect-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.85rem;display:flex;align-items:center;gap:.75rem}
+.sect-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(124,181,24,.3),transparent);max-width:100px}
+h2.sect-title{font-family:'Anton',sans-serif;font-size:clamp(2.8rem,5vw,4.2rem);letter-spacing:.04em;text-transform:uppercase;color:white;margin-bottom:1.4rem;line-height:.92}
+h2.sect-title .accent{color:var(--accent)}
+h3.subsect{font-weight:900;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;margin-top:2.5rem;display:flex;align-items:center;gap:.65rem}
+h3.subsect::before{content:'';width:20px;height:2px;background:var(--accent);flex-shrink:0}
+.lead{font-size:1.08rem;line-height:1.9;color:var(--txt);margin-bottom:1.2rem;max-width:760px}.lead strong{color:white;font-weight:800}
+p.body-text{font-size:.98rem;line-height:1.85;color:var(--txt);margin-bottom:1rem}
+.student-bar{background:rgba(124,181,24,.06);border:1px solid rgba(124,181,24,.2);border-radius:8px;padding:1.5rem 2rem;margin-bottom:2.5rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.student-bar label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);flex-shrink:0}
+.student-bar input{flex:1;min-width:160px;background:transparent;border:none;border-bottom:2px solid rgba(124,181,24,.3);padding:.5rem .5rem;font-family:'Anton',sans-serif;font-size:1.1rem;letter-spacing:.05em;color:white}
+.student-bar input:focus{outline:none;border-bottom-color:var(--accent)}
+.student-bar input::placeholder{color:var(--txt-dim);font-family:'Mulish',sans-serif;font-size:.85rem;font-weight:400;letter-spacing:0}
+.quiz-box{background:var(--card2);border:1px solid rgba(124,181,24,.15);border-left:4px solid var(--accent);border-radius:8px;padding:2.25rem 2.75rem;margin:3rem 0}
+.quiz-label{font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.quiz-box h4{font-weight:900;font-size:.86rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:1.4rem;padding-bottom:.7rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.q-item{margin-bottom:2rem}
+.q-text{font-size:.98rem;color:rgba(255,255,255,.92);font-weight:700;margin-bottom:.9rem;line-height:1.55}
+.q-num{display:inline-block;font-family:'Anton',sans-serif;font-size:1rem;color:var(--accent);margin-right:.4rem}
+.options{display:flex;flex-direction:column;gap:.5rem}
+.opt{display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;padding:.7rem 1rem;border-radius:6px;border:1px solid rgba(255,255,255,.07);transition:all .18s;background:rgba(255,255,255,.02)}
+.opt:hover{background:rgba(124,181,24,.06);border-color:rgba(124,181,24,.2)}
+.opt input[type=radio]{display:none}
+.opt-letter{font-family:'Anton',sans-serif;font-size:.9rem;color:var(--accent);flex-shrink:0;width:22px;line-height:1.5}
+.opt-text{font-size:.9rem;color:var(--txt);line-height:1.55}
+.opt.correct{background:rgba(34,197,94,.1)!important;border-color:rgba(34,197,94,.4)!important}.opt.correct .opt-letter,.opt.correct .opt-text{color:#4ade80!important}
+.opt.wrong{background:rgba(239,68,68,.08)!important;border-color:rgba(239,68,68,.3)!important}.opt.wrong .opt-letter,.opt.wrong .opt-text{color:#f87171!important}
+.opt.selected{background:rgba(124,181,24,.1);border-color:rgba(124,181,24,.35)}.opt.selected .opt-text{color:white}
+.q-feedback{display:none;margin-top:.6rem;font-size:.82rem;font-weight:700;padding:.55rem .85rem;border-radius:5px}
+.q-feedback.show{display:block}.q-feedback.ok{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.2)}.q-feedback.ko{background:rgba(239,68,68,.08);color:#f87171;border:1px solid rgba(239,68,68,.2)}
+.act-score{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,181,24,.08);border:1px solid rgba(124,181,24,.2);border-radius:20px;padding:.3rem .9rem;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--accent);margin-top:1.25rem;opacity:0;transition:opacity .3s}.act-score.show{opacity:1}
+.field-group{margin-bottom:1.1rem}
+.field-label{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:.4rem}
+.field-input{width:100%;background:rgba(255,255,255,.03);border:none;border-bottom:2px solid rgba(124,181,24,.2);border-radius:3px 3px 0 0;padding:.65rem .85rem;font-family:'Mulish',sans-serif;font-size:.94rem;color:#F0F0F0;transition:border-color .2s,background .2s;resize:none}
+.field-input:focus{outline:none;border-bottom-color:var(--accent);background:rgba(124,181,24,.04)}.field-input::placeholder{color:rgba(255,255,255,.11)}
+textarea.field-input{min-height:80px;line-height:1.7}
+.cc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem;margin:2rem 0}
+.cc{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:1.75rem;transition:all .25s;position:relative;overflow:hidden}
+.cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.cc:hover{border-color:rgba(124,181,24,.25);transform:translateY(-3px)}.cc:hover::after{transform:scaleX(1)}
+.cc-icon{font-size:2.4rem;margin-bottom:.8rem;display:block}.cc-title{font-weight:900;font-size:.83rem;letter-spacing:.1em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.cc-body{font-size:.85rem;color:var(--txt);line-height:1.6}.cc-tag{display:inline-block;font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-top:.75rem;background:rgba(124,181,24,.12);color:var(--accent);border:1px solid rgba(124,181,24,.2)}
+.dh-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.25rem;margin:2rem 0}
+.dh{border-left:4px solid var(--accent);padding:1.4rem 1.75rem;background:rgba(124,181,24,.04);border-radius:0 8px 8px 0}
+.dh-num{font-family:'Anton',sans-serif;font-size:3rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.dh-label{font-size:.72rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:white;margin-bottom:.4rem}
+.dh-desc{font-size:.86rem;color:var(--txt);line-height:1.6}
+.ch-list{margin:2.5rem 0}
+.ch-item{display:grid;grid-template-columns:70px 1fr;gap:1.75rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:start;transition:padding-left .2s}
+.ch-item:hover{padding-left:.5rem}
+.ch-num{font-family:'Anton',sans-serif;font-size:3.2rem;color:rgba(124,181,24,.12);line-height:1;transition:color .2s}.ch-item:hover .ch-num{color:var(--accent)}
+.ch-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.5rem;flex-wrap:wrap}
+.ch-title{font-weight:900;font-size:.88rem;letter-spacing:.1em;text-transform:uppercase;color:white}
+.ch-tag{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:2px;background:rgba(124,181,24,.1);color:var(--accent);border:1px solid rgba(124,181,24,.18);white-space:nowrap;flex-shrink:0}
+.ch-body p{font-size:.88rem;color:var(--txt);margin-bottom:.5rem;line-height:1.65}
+.scheme-box{background:var(--card2);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:2.5rem;overflow-x:auto}
+.scheme-center{text-align:center;font-family:'Anton',sans-serif;font-size:1.7rem;letter-spacing:.07em;color:var(--accent);margin-bottom:.4rem;text-transform:uppercase}
+.scheme-center span{font-size:.95rem;display:block;color:var(--txt-dim);font-family:'Mulish',sans-serif;font-weight:400;letter-spacing:.04em;margin-top:.3rem}
+.scheme-row{display:flex;gap:.75rem;justify-content:center;margin:.65rem 0;flex-wrap:wrap}
+.scheme-col{flex:1;min-width:110px;text-align:center}
+.scheme-col-title{font-weight:900;color:white;font-size:.72rem;border-bottom:2px solid rgba(124,181,24,.3);padding-bottom:.35rem;margin-bottom:.55rem;letter-spacing:.1em;text-transform:uppercase}
+#global-score-box{display:none;margin:3rem 0;background:linear-gradient(135deg,rgba(124,181,24,.1),rgba(124,181,24,.04));border:1px solid rgba(124,181,24,.3);border-radius:12px;padding:2.5rem;text-align:center}
+.pdf-btn-wrap{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);z-index:300;display:flex;gap:.75rem;align-items:center;background:rgba(8,8,8,.92);border:1px solid rgba(255,255,255,.08);border-radius:50px;padding:.5rem;backdrop-filter:blur(12px)}
+.pdf-btn{font-family:'Mulish',sans-serif;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;padding:.72rem 1.6rem;border-radius:40px;border:none;cursor:pointer;transition:all .22s}
+.pdf-save{background:var(--accent);color:#001a00}.pdf-save:hover{background:var(--accent2);transform:translateY(-1px)}
+.pdf-clear{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.1)}.pdf-clear:hover{color:white;border-color:rgba(255,255,255,.3)}
+.btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;font-weight:900;box-shadow:0 4px 18px rgba(34,197,94,.3)}.btn-submit:hover{transform:translateY(-1px)}
+.toast{position:fixed;bottom:5.5rem;left:50%;transform:translateX(-50%);color:white;font-weight:800;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;padding:.7rem 1.5rem;border-radius:40px;z-index:350;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}.toast.show{opacity:1}
+.toast-pdf{background:var(--accent);color:#001a00}.toast-ok{background:#22c55e}.toast-err{background:#ef4444}
+.submit-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:600;display:flex;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .3s}.submit-modal.open{opacity:1;pointer-events:all}
+.submit-box{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:16px;max-width:500px;width:100%;padding:2.75rem;transform:translateY(20px) scale(.97);transition:transform .3s;text-align:center}.submit-modal.open .submit-box{transform:translateY(0) scale(1)}
+.submit-icon{font-size:3.2rem;margin-bottom:.9rem;display:block}.submit-box h2{font-family:'Anton',sans-serif;font-size:1.9rem;letter-spacing:.06em;text-transform:uppercase;color:white;margin-bottom:.5rem}
+.submit-box p{font-size:.9rem;color:var(--txt);line-height:1.7;margin-bottom:1.4rem}.submit-box p strong{color:white}
+.submit-warn{background:rgba(124,181,24,.08);border:1px solid rgba(124,181,24,.2);border-radius:8px;padding:.9rem 1.1rem;margin-bottom:1.5rem;font-size:.82rem;color:var(--txt-dim);text-align:left;line-height:1.6}.submit-warn span{color:var(--accent);font-weight:800}
+.submit-actions{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.submit-confirm{background:linear-gradient(135deg,#22c55e,#16a34a);color:white;border:none;border-radius:8px;padding:.85rem 1.9rem;font-family:'Mulish',sans-serif;font-weight:900;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:.5rem}.submit-confirm:hover{transform:translateY(-1px)}.submit-confirm:disabled{background:#444;color:#888;cursor:not-allowed;transform:none}
+.submit-cancel{background:transparent;color:var(--txt-dim);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:.85rem 1.4rem;font-family:'Mulish',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}.submit-cancel:hover{color:white;border-color:rgba(255,255,255,.3)}
+.submit-sent{display:none;text-align:center;padding:1rem 0}.submit-sent .sent-icon{font-size:3.8rem;display:block;margin-bottom:.9rem}
+.submit-sent h3{font-family:'Anton',sans-serif;font-size:1.5rem;letter-spacing:.06em;text-transform:uppercase;color:#22c55e;margin-bottom:.5rem}
+.submit-sent p{font-size:.87rem;color:var(--txt);line-height:1.7}
+.spinner{display:inline-block;width:17px;height:17px;border:2px solid rgba(255,255,255,.3);border-top-color:white;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+.wm{position:fixed;bottom:1.2rem;right:1.5rem;z-index:9999;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.1);pointer-events:none;user-select:none}
+footer{background:#040404;padding:3rem 4rem 8rem;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:820px}
+@media print{header,footer,.pdf-btn-wrap,.wm,.prog-wrap,.submit-modal,.hero,.hero-ctas{display:none!important}body{background:white!important;color:#111!important}section{background:white!important;padding:1.5rem 0}.quiz-box{border-left:4px solid #5A8A10!important;background:#f5f5f5!important;break-inside:avoid}.reveal{opacity:1!important;transform:none!important}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+@media(max-width:900px){.hero{padding:5rem 2rem 3rem}.inner{padding:0 1.5rem}header{padding:0 1.5rem}.pdf-btn-wrap{width:calc(100% - 3rem)}}
+
+
+
+/* ── Bloques teóricos 4ESO ── */
+.theory-block{background:var(--card);border-radius:10px;padding:2.5rem;margin:1.5rem 0;border:1px solid rgba(255,255,255,.05)}
+.theory-block+.theory-block{margin-top:1.5rem}
+
+
+
+
+/* ─── EBI video block ─────────────────────────────── */
+.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
+.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
+.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
+.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
+.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.ebi-vid-thumb:hover img{transform:scale(1.03)}
+.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
+.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
+.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
+.ebi-vid-foot a:hover{text-decoration:underline}
+/* Overlay */
+#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
+#ebi-vid-overlay.open{display:flex}
+.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
+.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
+.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
+.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
+.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
+.ebi-ov-note a{color:var(--accent);font-weight:700}
+@media(max-width:600px){.ebi-ov-close{top:-40px}}
+@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+</style>
+</head>
+<body>
+<div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+<div class="wm">© Jaime Redondo</div>
+<div class="pdf-btn-wrap">
+  <button class="pdf-btn pdf-clear" onclick="clearAll()">Clear</button>
+  <button class="pdf-btn pdf-save" onclick="savePDF()">Save PDF</button>
+  <button class="pdf-btn btn-submit" id="btnSubmit" onclick="openSubmitModal()">Submit</button>
+</div>
+<div class="toast" id="toast"></div>
+<div class="submit-modal" id="submitModal">
+  <div class="submit-box">
+    <div id="submitConfirmView">
+      <span class="submit-icon">📤</span><h2>Submit Guide</h2>
+      <p>Check your <strong>name and group</strong> before submitting.</p>
+      <div class="submit-warn"><span>Note:</span> Multiple choice answers are auto-graded. Open questions are reviewed by the teacher.</div>
+      <div id="submitResumen" style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.85rem;color:var(--txt);text-align:left"></div>
+      <div class="submit-actions">
+        <button class="submit-cancel" onclick="closeSubmitModal()">Cancel</button>
+        <button class="submit-confirm" id="submitConfirmBtn" onclick="submitToSheets()"><span id="submitBtnText">Confirm submission</span></button>
+      </div>
+    </div>
+    <div class="submit-sent" id="submitSentView">
+      <span class="sent-icon">🎉</span><h3>Submitted!</h3>
+      <p>Your answers have reached the teacher.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap">
+        <button class="submit-confirm" onclick="closeSubmitModal();savePDF()" style="background:linear-gradient(135deg,var(--accent),var(--accent3));color:#001a00">Save PDF</button>
+        <button class="submit-cancel" onclick="closeSubmitModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header>
+  <a class="logo" href="#home">🏓 PICKLEBALL <span class="logo-badge">4 ESO · PE</span></a>
+    <nav>
+    <a href="#get-active">Get Active</a>
+    <div class="subnav">
+      <a href="#theory">Challenge Yourself</a>
+      <div class="subnav-menu">
+        <a href="#theory-a">History & Origins</a>
+        <a href="#theory-b">Court, Equipment & Scoring</a>
+        <a href="#theory-c">Core Rules</a>
+        <a href="#theory-d">The Five Key Shots</a>
+        <a href="#theory-e">Doubles Tactics</a>
+        <a href="#theory-f">Fitness & Physical Demands</a>
+      </div>
+    </div>
+    <a href="#train">Train &amp; Compete</a>
+    <a href="#evaluate">Evaluate</a>
+    <a href="#" class="nav-pdf" onclick="savePDF();return false">📄 PDF</a>
+  </nav>
+</header>
+<div id="home" class="hero">
+  <div class="hero-orb"></div><div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Physical Education · 4 ESO · CLIL</div>
+    <h1 class="hero-title">PICKLE<em>BALL</em></h1>
+    <p class="hero-sub">Invented in 1965, now played by over 8 million people in the US alone. A blend of <strong>tennis, badminton and ping-pong</strong> — the world's fastest growing sport.</p>
+    <div class="cta-row">
+      <a href="#get-active" class="btn btn-primary">Get Started</a>
+      <a href="#theory" class="btn btn-outline">Study</a>
+      <a href="#train" class="btn btn-outline">Train</a>
+    </div>
+  </div>
+</div>
+
+<section class="sect-dark" id="get-active">
+<div class="inner">
+  <p class="sect-label reveal">Section 01 · Get Active</p>
+  <h2 class="sect-title reveal">GET <span class="accent">ACTIVE</span></h2>
+  <div class="student-bar reveal">
+    <label for="st-name">Name</label><input type="text" id="st-name" placeholder="First and last name...">
+    <label for="st-group">Group</label><input type="text" id="st-group" placeholder="4 ESO" style="max-width:160px">
+    <label for="st-date">Date</label><input type="text" id="st-date" placeholder="dd/mm/yyyy" style="max-width:130px">
+  </div>
+  <p class="lead reveal">Pickleball was created on Bainbridge Island, Washington in 1965 by three fathers improvising a game for their bored children. What started as a backyard game has become the fastest growing sport in the United States and is rapidly expanding into European schools and clubs.</p>
+  <div class="dh-row reveal">
+    <div class="dh"><div class="dh-num">1965</div><div class="dh-label">Year pickleball was invented</div><div class="dh-desc">Three fathers improvised a game using ping-pong paddles, a perforated ball and a badminton court.</div></div>
+    <div class="dh"><div class="dh-num">8.9M</div><div class="dh-label">Players in the US (2023)</div><div class="dh-desc">A 158% increase in just three years — pickleball is one of the fastest growing sports in history.</div></div>
+    <div class="dh"><div class="dh-num">6.1m x 13.4m</div><div class="dh-label">Court dimensions</div><div class="dh-desc">The same size as a doubles badminton court — much smaller than a tennis court.</div></div>
+  </div>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Activity 1 - Prior Knowledge (open answer)</div>
+    <h4>Reflect before studying the unit</h4>
+    <div class="field-group"><label class="field-label" for="a1q1">Have you played pickleball or any racket sport before? What skills do you think transfer?</label><textarea class="field-input" id="a1q1" placeholder="Your experience..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q2">Why do you think pickleball is growing so rapidly worldwide? What makes it appealing?</label><textarea class="field-input" id="a1q2" placeholder="Your analysis..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="a1q3">What do you think the most difficult rule will be to understand or apply? Why?</label><textarea class="field-input" id="a1q3" placeholder="Your prediction..."></textarea></div>
+  </div>
+</div>
+</section>
+
+<!-- EBI-VIDEO-BLOCK -->
+<div class="ebi-vid-wrap reveal">
+  <div class="ebi-vid-header">
+    <span class="ebi-vid-badge">▶ UNIT VIDEO</span>
+    <span class="ebi-vid-ttl">Pickleball Explained — Rules and techniques</span>
+  </div>
+  <div class="ebi-vid-thumb" data-vid="FbpPMvHJxqI" data-title="Pickleball Explained — Rules and techniques" tabindex="0" role="button" aria-label="Play: Pickleball Explained — Rules and techniques">
+    <img src="https://img.youtube.com/vi/FbpPMvHJxqI/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/FbpPMvHJxqI/mqdefault.jpg'" alt="Pickleball Explained — Rules and techniques" loading="lazy" width="1280" height="720">
+    <div class="ebi-vid-play">
+      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+  </div>
+  <div class="ebi-vid-foot">
+    <span>Click image to play · Or open it on</span>
+    <a href="https://www.youtube.com/watch?v=FbpPMvHJxqI" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+  </div>
+</div>
+<section class="sect-mid" id="theory">
+<div class="inner">
+  <p class="sect-label reveal">Section 02 · Challenge Yourself</p>
+  <h2 class="sect-title reveal">PICKLEBALL: RULES, <span class="accent">TECHNIQUE & TACTICS</span></h2>
+  <p class="lead reveal">Six blocks covering the history, court, rules, scoring, shots and tactics of pickleball.</p></div>
+</section>
+
+<section class="sect-dark" id="theory-a">
+<div class="inner">
+    <p class="sect-label reveal">Section 02A · Theory Block</p>
+    <h3 class="subsect reveal">History & Origins</h3>
+    <p class="body-text reveal">Pickleball was invented in 1965 on Bainbridge Island, Washington. Three fathers — Joel Pritchard, Bill Bell and Barney McCallum — created it to entertain their families using improvised equipment from their garage.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">📅</span><div class="cc-title">1965</div><div class="cc-body">Year of invention on Bainbridge Island, Washington by three fathers.</div><div class="cc-tag">Origin</div></div>
+      <div class="cc"><span class="cc-icon">🏓</span><div class="cc-title">Hybrid Sport</div><div class="cc-body">Combines elements of tennis (court size, scoring), badminton (net height) and ping-pong (paddle feel).</div><div class="cc-tag">Three sports in one</div></div>
+      <div class="cc"><span class="cc-icon">🇺🇸</span><div class="cc-title">US Growth</div><div class="cc-body">In 2023, the USA Pickleball Association reported over 8.9 million players — a 158% increase in 3 years.</div><div class="cc-tag">Fastest growing sport</div></div>
+      <div class="cc"><span class="cc-icon">🇪🇸</span><div class="cc-title">Spain</div><div class="cc-body">The Royal Spanish Tennis Federation officially integrated pickleball in 2020 — growing in schools and clubs.</div><div class="cc-tag">European expansion</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 2 - History & Origins</div>
+      <h4>Check your knowledge of where pickleball comes from</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>In what year was pickleball invented?</div>
+      <div class="options" data-q="a2q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q1" value="A"><span class="opt-letter">A</span><span class="opt-text">1945</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="B"><span class="opt-letter">B</span><span class="opt-text">1965</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="C"><span class="opt-letter">C</span><span class="opt-text">1975</span></label>
+        <label class="opt"><input type="radio" name="a2q1" value="D"><span class="opt-letter">D</span><span class="opt-text">1985</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What three sports does pickleball most closely combine?</div>
+      <div class="options" data-q="a2q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Football, basketball and volleyball</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Cricket, tennis and squash</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Tennis, badminton and ping-pong</span></label>
+        <label class="opt"><input type="radio" name="a2q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Hockey, badminton and tennis</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>According to the USA Pickleball Association, approximately how many players were there in the US in 2023?</div>
+      <div class="options" data-q="a2q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q3" value="A"><span class="opt-letter">A</span><span class="opt-text">1 million</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="B"><span class="opt-letter">B</span><span class="opt-text">3 million</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="C"><span class="opt-letter">C</span><span class="opt-text">8.9 million</span></label>
+        <label class="opt"><input type="radio" name="a2q3" value="D"><span class="opt-letter">D</span><span class="opt-text">25 million</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Despite popular myths about the name, what is the most likely origin of the word "pickleball"?</div>
+      <div class="options" data-q="a2q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a2q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Named after a dog called Pickle who used to chase the ball</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="B"><span class="opt-letter">B</span><span class="opt-text">From "pickle boat" in rowing where oarsmen were chosen from leftovers of other crews</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="C"><span class="opt-letter">C</span><span class="opt-text">An abbreviation of "Pidgeon King's Ball" — an early inventor</span></label>
+        <label class="opt"><input type="radio" name="a2q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Named after the pickle-jar lid used as the first ball</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Which Spanish federation officially integrated pickleball in 2020?</div>
+      <div class="options" data-q="a2q5" data-correct="C">
+        <label class="opt"><input type="radio" name="a2q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The Royal Spanish Badminton Federation</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The Royal Spanish Paddle Tennis Federation</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The Royal Spanish Tennis Federation</span></label>
+        <label class="opt"><input type="radio" name="a2q5" value="D"><span class="opt-letter">D</span><span class="opt-text">The Royal Spanish Table Tennis Federation</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a2q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a2',['a2q1','a2q2','a2q3','a2q4','a2q5'])">Check Answers</button>
+      <div class="act-score" id="score-a2">Score: <strong id="score-a2-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-b">
+<div class="inner">
+    <p class="sect-label reveal">Section 02B · Theory Block</p>
+    <h3 class="subsect reveal">Court, Equipment & Scoring</h3>
+    <p class="body-text reveal">The pickleball court is the same size as a doubles badminton court. Understanding the key zones — especially the kitchen — is essential for playing correctly.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">📏</span><div class="cc-title">Court Size</div><div class="cc-body">20ft x 44ft (6.1m x 13.4m). Same for singles and doubles. Net height: 91cm at sidelines, 86cm in the centre.</div><div class="cc-tag">Dimensions</div></div>
+      <div class="cc"><span class="cc-icon">🍳</span><div class="cc-title">The Kitchen</div><div class="cc-body">The non-volley zone (NVZ) — 7ft either side of the net. Cannot volley while standing in or touching the kitchen line.</div><div class="cc-tag">Most important zone</div></div>
+      <div class="cc"><span class="cc-icon">🏓</span><div class="cc-title">Equipment</div><div class="cc-body">Solid paddle (wood, composite or graphite) and a perforated plastic ball. Different balls for indoor and outdoor.</div><div class="cc-tag">Gear</div></div>
+      <div class="cc"><span class="cc-icon">🔢</span><div class="cc-title">Scoring</div><div class="cc-body">First to 11 points (win by 2). Only the serving team scores. Tournament play to 15 or 21.</div><div class="cc-tag">Points system</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 3 - Court, Equipment & Scoring</div>
+      <h4>Know the court dimensions, zones and scoring system</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What are the dimensions of a standard pickleball court?</div>
+      <div class="options" data-q="a3q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Same as a singles tennis court</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="B"><span class="opt-letter">B</span><span class="opt-text">20ft x 44ft (6.1m x 13.4m) — same as a doubles badminton court</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="C"><span class="opt-letter">C</span><span class="opt-text">30ft x 60ft — slightly smaller than a tennis court</span></label>
+        <label class="opt"><input type="radio" name="a3q1" value="D"><span class="opt-letter">D</span><span class="opt-text">16ft x 30ft — the same as a table tennis table</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What is "the kitchen" in pickleball?</div>
+      <div class="options" data-q="a3q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q2" value="A"><span class="opt-letter">A</span><span class="opt-text">The small area behind the baseline where the server stands</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The non-volley zone — the 7-foot area either side of the net where players cannot volley</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The scoring zone at the centre of the court</span></label>
+        <label class="opt"><input type="radio" name="a3q2" value="D"><span class="opt-letter">D</span><span class="opt-text">The area between the service boxes and the non-volley line</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What happens if a player volleys the ball while standing in the kitchen or touching the kitchen line?</div>
+      <div class="options" data-q="a3q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q3" value="A"><span class="opt-letter">A</span><span class="opt-text">They receive a warning on the first offence, then lose the point</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="B"><span class="opt-letter">B</span><span class="opt-text">It is a fault — they lose the rally immediately</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="C"><span class="opt-letter">C</span><span class="opt-text">They can volley from the kitchen if the ball has already bounced once on their side</span></label>
+        <label class="opt"><input type="radio" name="a3q3" value="D"><span class="opt-letter">D</span><span class="opt-text">They must replay the point without counting it</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In standard pickleball scoring, what is required to win a game?</div>
+      <div class="options" data-q="a3q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q4" value="A"><span class="opt-letter">A</span><span class="opt-text">First to 10 points wins outright</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="B"><span class="opt-letter">B</span><span class="opt-text">First to reach 11 points with a minimum 2-point lead over the opponent</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="C"><span class="opt-letter">C</span><span class="opt-text">First to win 3 sets of 6 games each</span></label>
+        <label class="opt"><input type="radio" name="a3q4" value="D"><span class="opt-letter">D</span><span class="opt-text">First to 15 points regardless of margin</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>In pickleball, which team can score points?</div>
+      <div class="options" data-q="a3q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a3q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Both teams score on every rally, like in modern volleyball</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Only the serving team scores — a fault by the serving team results in side-out</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Only the receiving team scores when the serving team makes an error</span></label>
+        <label class="opt"><input type="radio" name="a3q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Points can only be scored on a winner, not on unforced errors</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a3q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a3',['a3q1','a3q2','a3q3','a3q4','a3q5'])">Check Answers</button>
+      <div class="act-score" id="score-a3">Score: <strong id="score-a3-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card2" id="theory-c">
+<div class="inner">
+    <p class="sect-label reveal">Section 02C · Theory Block</p>
+    <h3 class="subsect reveal">Core Rules: Double Bounce & Kitchen</h3>
+    <p class="body-text reveal">Two rules make pickleball unique among racket sports: the double bounce rule and the non-volley zone (kitchen) rule. Understanding them is essential for correct play.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">2x</span><div class="cc-title">Double Bounce Rule</div><div class="cc-body">The ball must bounce once on each side before either team can volley. This prevents serve-and-volley dominance.</div><div class="cc-tag">Eliminates power serves</div></div>
+      <div class="cc"><span class="cc-icon">🚫</span><div class="cc-title">Kitchen Rule</div><div class="cc-body">No volleying while in the NVZ. You may enter the kitchen after the ball bounces — but not to volley.</div><div class="cc-tag">Strategy changer</div></div>
+      <div class="cc"><span class="cc-icon">↗️</span><div class="cc-title">Serve Rules</div><div class="cc-body">Underhand serve below the waist, diagonally cross-court. Must clear the kitchen and land in the opposite service box.</div><div class="cc-tag">Serve constraints</div></div>
+      <div class="cc"><span class="cc-icon">🔄</span><div class="cc-title">Side-Out</div><div class="cc-body">When the serving team faults, service passes to the opponent. In doubles, both partners serve before side-out.</div><div class="cc-tag">Service rotation</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 4 - Core Rules: Double Bounce & Kitchen</div>
+      <h4>Master the two most important rules in pickleball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What does the Double Bounce Rule require?</div>
+      <div class="options" data-q="a4q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q1" value="A"><span class="opt-letter">A</span><span class="opt-text">The ball must bounce exactly twice on each side before it can be returned</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The ball must bounce once on the server's side and once on the receiver's side before either team can volley</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="C"><span class="opt-letter">C</span><span class="opt-text">The serve must bounce twice before the receiver may hit it</span></label>
+        <label class="opt"><input type="radio" name="a4q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Both players must let the ball bounce before the match begins</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why was the Double Bounce Rule introduced into pickleball?</div>
+      <div class="options" data-q="a4q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q2" value="A"><span class="opt-letter">A</span><span class="opt-text">To make the game slower and easier for older players</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="B"><span class="opt-letter">B</span><span class="opt-text">To prevent serve-and-volley dominance and encourage longer rallies from the baseline</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="C"><span class="opt-letter">C</span><span class="opt-text">To compensate for the smaller court size compared to tennis</span></label>
+        <label class="opt"><input type="radio" name="a4q2" value="D"><span class="opt-letter">D</span><span class="opt-text">To reduce the risk of injury from hard-hit volleys</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>Which of the following actions is LEGAL in pickleball?</div>
+      <div class="options" data-q="a4q3" data-correct="C">
+        <label class="opt"><input type="radio" name="a4q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Volleying the ball while your foot is on the kitchen line</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Walking into the kitchen to return a ball that has already bounced there</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Standing in the kitchen and letting the ball bounce, then hitting it</span></label>
+        <label class="opt"><input type="radio" name="a4q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Jumping from outside the kitchen, volleying, and landing inside the kitchen</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>In pickleball, the serve must be:</div>
+      <div class="options" data-q="a4q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q4" value="A"><span class="opt-letter">A</span><span class="opt-text">Overhead like a tennis serve, hit from behind the baseline</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="B"><span class="opt-letter">B</span><span class="opt-text">Underhand, below the waist, hit diagonally cross-court into the correct service box</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Either underhand or overhead depending on player preference</span></label>
+        <label class="opt"><input type="radio" name="a4q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Hit from inside the kitchen toward the opposite service box</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What happens in doubles pickleball when the serving team makes a fault on the first server's turn?</div>
+      <div class="options" data-q="a4q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a4q5" value="A"><span class="opt-letter">A</span><span class="opt-text">The other team scores and takes the serve immediately</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The second partner of the serving team gets to serve next before a side-out occurs</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="C"><span class="opt-letter">C</span><span class="opt-text">The serving team loses the point and the match if it is their second fault</span></label>
+        <label class="opt"><input type="radio" name="a4q5" value="D"><span class="opt-letter">D</span><span class="opt-text">The receiving team now serves from the same position on court</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a4q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a4',['a4q1','a4q2','a4q3','a4q4','a4q5'])">Check Answers</button>
+      <div class="act-score" id="score-a4">Score: <strong id="score-a4-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-mid" id="theory-d">
+<div class="inner">
+    <p class="sect-label reveal">Section 02D · Theory Block</p>
+    <h3 class="subsect reveal">The Five Key Shots</h3>
+    <p class="body-text reveal">Pickleball rewards placement and strategy over power. These five shots form the technical foundation every player must develop.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">↗️</span><div class="cc-title">Serve</div><div class="cc-body">Underhand, below waist. Aim deep to push opponent back. Consistency trumps power.</div><div class="cc-tag">Initiate the rally</div></div>
+      <div class="cc"><span class="cc-icon">↩️</span><div class="cc-title">Return</div><div class="cc-body">Drive it deep — keep the serving team at the baseline — then rush to the kitchen line.</div><div class="cc-tag">Tactical positioning</div></div>
+      <div class="cc"><span class="cc-icon">🫧</span><div class="cc-title">Dink</div><div class="cc-body">Soft shot arcing gently over the net, landing in opponent's kitchen. The signature shot of pickleball.</div><div class="cc-tag">The most strategic shot</div></div>
+      <div class="cc"><span class="cc-icon">💥</span><div class="cc-title">Volley</div><div class="cc-body">Hit out of the air before it bounces. Must be outside the kitchen. Speed and angle.</div><div class="cc-tag">Attacking shot</div></div>
+      <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Third Shot Drop</div><div class="cc-body">The most important tactical shot — played softly on shot 3 to allow the serving team to advance to the net.</div><div class="cc-tag">Key transition shot</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 5 - The Five Key Shots</div>
+      <h4>Demonstrate your understanding of pickleball technique</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>What is a "dink" in pickleball?</div>
+      <div class="options" data-q="a5q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q1" value="A"><span class="opt-letter">A</span><span class="opt-text">A hard overhead smash designed to end the rally quickly</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="B"><span class="opt-letter">B</span><span class="opt-text">A soft shot that arcs over the net and lands in the opponent's non-volley zone (kitchen)</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="C"><span class="opt-letter">C</span><span class="opt-text">A defensive shot hit from the baseline to reset the rally</span></label>
+        <label class="opt"><input type="radio" name="a5q1" value="D"><span class="opt-letter">D</span><span class="opt-text">A serve technique where the ball spins sharply after bouncing</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is the third shot drop considered the most important tactical shot in pickleball?</div>
+      <div class="options" data-q="a5q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Because it is the hardest shot to execute technically</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Because it allows the serving team to transition from the baseline to the kitchen line safely</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Because it is the only shot that scores a point directly in competitive play</span></label>
+        <label class="opt"><input type="radio" name="a5q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Because it resets the point and forces the opponent to start from the back of the court</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What is the strategic purpose of hitting a deep return of serve?</div>
+      <div class="options" data-q="a5q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q3" value="A"><span class="opt-letter">A</span><span class="opt-text">To win the rally immediately with a powerful shot</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="B"><span class="opt-letter">B</span><span class="opt-text">To keep the serving team pinned at the baseline while you advance to the kitchen line</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="C"><span class="opt-letter">C</span><span class="opt-text">To set up an easy third shot drop for your partner</span></label>
+        <label class="opt"><input type="radio" name="a5q3" value="D"><span class="opt-letter">D</span><span class="opt-text">To reduce the chance of the serve landing in the kitchen</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>When can a player volley in pickleball?</div>
+      <div class="options" data-q="a5q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q4" value="A"><span class="opt-letter">A</span><span class="opt-text">At any time during the rally from any position on the court</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="B"><span class="opt-letter">B</span><span class="opt-text">After the Double Bounce Rule has been satisfied AND the player is outside the kitchen zone</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="C"><span class="opt-letter">C</span><span class="opt-text">Only after the ball has bounced twice on their side</span></label>
+        <label class="opt"><input type="radio" name="a5q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Only when the serve is returned from the baseline</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>What characterises a well-executed dink compared to a groundstroke drive?</div>
+      <div class="options" data-q="a5q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a5q5" value="A"><span class="opt-letter">A</span><span class="opt-text">A dink is hit harder and flatter to keep the ball low over the net</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="B"><span class="opt-letter">B</span><span class="opt-text">A dink is hit softly with an upward arc so it lands in the kitchen — control over power</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="C"><span class="opt-letter">C</span><span class="opt-text">A dink is played defensively from behind the baseline toward the net</span></label>
+        <label class="opt"><input type="radio" name="a5q5" value="D"><span class="opt-letter">D</span><span class="opt-text">A dink is an overhead shot played above the kitchen zone line</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a5q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a5',['a5q1','a5q2','a5q3','a5q4','a5q5'])">Check Answers</button>
+      <div class="act-score" id="score-a5">Score: <strong id="score-a5-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-dark" id="theory-e">
+<div class="inner">
+    <p class="sect-label reveal">Section 02E · Theory Block</p>
+    <h3 class="subsect reveal">Doubles Tactics & Positioning</h3>
+    <p class="body-text reveal">Doubles is by far the most popular format in pickleball. Understanding positioning and movement patterns is the key to winning rallies.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">🏆</span><div class="cc-title">Kitchen Line Dominance</div><div class="cc-body">Control the kitchen line and you control the rally. Both partners should move to the NVZ as fast as possible.</div><div class="cc-tag">Positioning priority</div></div>
+      <div class="cc"><span class="cc-icon">🤝</span><div class="cc-title">Move Together</div><div class="cc-body">Doubles partners move as a unit — side by side, mirroring each other. Never let a large gap open.</div><div class="cc-tag">Coordinate movement</div></div>
+      <div class="cc"><span class="cc-icon">🎯</span><div class="cc-title">Stacking</div><div class="cc-body">An advanced tactic where both players position on the same side to exploit a strong forehand.</div><div class="cc-tag">Advanced formation</div></div>
+      <div class="cc"><span class="cc-icon">🧠</span><div class="cc-title">Shot Selection</div><div class="cc-body">In a dinking rally, look for a "speedup" opportunity — attack a high ball to force an error.</div><div class="cc-tag">Reading the rally</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 6 - Doubles Tactics & Positioning</div>
+      <h4>Understand the strategic principles of doubles pickleball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>In doubles pickleball, why is controlling the non-volley zone (kitchen line) so important?</div>
+      <div class="options" data-q="a6q1" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Players at the kitchen line can hit harder volleys due to proximity to the net</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="B"><span class="opt-letter">B</span><span class="opt-text">The team at the kitchen line has better court angles and can put away dinks more easily</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Only kitchen-line players can score points in doubles pickleball</span></label>
+        <label class="opt"><input type="radio" name="a6q1" value="D"><span class="opt-letter">D</span><span class="opt-text">The kitchen line marks the boundary of the legal serving zone</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>What does it mean for doubles partners to "move together" as a unit?</div>
+      <div class="options" data-q="a6q2" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Both players always hit the ball alternately, never letting one player dominate</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="B"><span class="opt-letter">B</span><span class="opt-text">Partners maintain their relative positions side-by-side, closing gaps and covering the court as a team</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="C"><span class="opt-letter">C</span><span class="opt-text">Both players stand in the same position for the duration of each rally</span></label>
+        <label class="opt"><input type="radio" name="a6q2" value="D"><span class="opt-letter">D</span><span class="opt-text">One partner moves to the net while the other stays at the baseline at all times</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>In a dinking rally, what is the optimal time to "speed up" the ball?</div>
+      <div class="options" data-q="a6q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Whenever you feel tired — a hard shot ends the rally faster than a slow one</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="B"><span class="opt-letter">B</span><span class="opt-text">When your opponent hits a high dink above the net — attack it to force an error</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="C"><span class="opt-letter">C</span><span class="opt-text">After the fifth consecutive dink — a speed-up must come before the sixth shot</span></label>
+        <label class="opt"><input type="radio" name="a6q3" value="D"><span class="opt-letter">D</span><span class="opt-text">When the ball lands in your kitchen — volley it immediately before it bounces</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>What is "stacking" in pickleball doubles?</div>
+      <div class="options" data-q="a6q4" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q4" value="A"><span class="opt-letter">A</span><span class="opt-text">A legal rule where both players stand in a vertical line during the serve</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="B"><span class="opt-letter">B</span><span class="opt-text">An advanced formation where both partners position on the same side to optimise forehand coverage</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="C"><span class="opt-letter">C</span><span class="opt-text">A serving tactic where the ball is hit with heavy topspin to stack on the baseline</span></label>
+        <label class="opt"><input type="radio" name="a6q4" value="D"><span class="opt-letter">D</span><span class="opt-text">The act of placing paddles on top of each other to signal a time-out to the referee</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>Which of the following best describes an effective doubles strategy after returning the serve?</div>
+      <div class="options" data-q="a6q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a6q5" value="A"><span class="opt-letter">A</span><span class="opt-text">Stay at the baseline — let the ball come to you and play defensively</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="B"><span class="opt-letter">B</span><span class="opt-text">Hit deep and move together to the kitchen line to take control of the net</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Rush the kitchen immediately after serving, leaving the back court undefended</span></label>
+        <label class="opt"><input type="radio" name="a6q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Dink every ball regardless of its height or position to avoid making errors</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a6q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a6',['a6q1','a6q2','a6q3','a6q4','a6q5'])">Check Answers</button>
+      <div class="act-score" id="score-a6">Score: <strong id="score-a6-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="sect-card" id="theory-f">
+<div class="inner">
+    <p class="sect-label reveal">Section 02F · Theory Block</p>
+    <h3 class="subsect reveal">Pickleball & Physical Fitness</h3>
+    <p class="body-text reveal">Pickleball provides a complete physical workout while being low impact and accessible to all ages and fitness levels.</p>
+    <div class="cc-grid reveal">
+      <div class="cc"><span class="cc-icon">❤️</span><div class="cc-title">Cardiovascular</div><div class="cc-body">Rallies require constant movement — stepping, lunging, pivoting. Excellent aerobic workout.</div><div class="cc-tag">Heart health</div></div>
+      <div class="cc"><span class="cc-icon">💪</span><div class="cc-title">Muscular</div><div class="cc-body">Engages core, legs and arms simultaneously. Lateral movement strengthens stabiliser muscles.</div><div class="cc-tag">Full body</div></div>
+      <div class="cc"><span class="cc-icon">⚖️</span><div class="cc-title">Balance & Coordination</div><div class="cc-body">Constant direction changes and eye-hand coordination development.</div><div class="cc-tag">Neuromuscular benefits</div></div>
+      <div class="cc"><span class="cc-icon">🧠</span><div class="cc-title">Cognitive</div><div class="cc-body">Strategy, anticipation and decision-making under pressure — pickleball is chess at speed.</div><div class="cc-tag">Mental workout</div></div>
+    </div>
+    <div class="quiz-box reveal">
+      <div class="quiz-label">Activity 7 - Pickleball & Physical Fitness</div>
+      <h4>Understand the health and fitness benefits of pickleball</h4>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">1.</span>Which physical capacity is LEAST developed by pickleball compared to other sports?</div>
+      <div class="options" data-q="a7q1" data-correct="C">
+        <label class="opt"><input type="radio" name="a7q1" value="A"><span class="opt-letter">A</span><span class="opt-text">Cardiovascular endurance through constant movement</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="B"><span class="opt-letter">B</span><span class="opt-text">Eye-hand coordination through tracking and hitting a moving ball</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="C"><span class="opt-letter">C</span><span class="opt-text">Maximum absolute strength — pickleball does not develop maximal power</span></label>
+        <label class="opt"><input type="radio" name="a7q1" value="D"><span class="opt-letter">D</span><span class="opt-text">Balance through constant directional changes and weight transfers</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q1"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">2.</span>Why is pickleball considered a "low impact" sport?</div>
+      <div class="options" data-q="a7q2" data-correct="C">
+        <label class="opt"><input type="radio" name="a7q2" value="A"><span class="opt-letter">A</span><span class="opt-text">Players do not run during the game</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="B"><span class="opt-letter">B</span><span class="opt-text">The court surface absorbs all impact, protecting the joints completely</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="C"><span class="opt-letter">C</span><span class="opt-text">The smaller court reduces running distance and the underhand serve avoids overhead stress</span></label>
+        <label class="opt"><input type="radio" name="a7q2" value="D"><span class="opt-letter">D</span><span class="opt-text">Players are not allowed to jump or dive for balls in competitive play</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q2"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">3.</span>What cognitive skills does pickleball develop during competitive play?</div>
+      <div class="options" data-q="a7q3" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q3" value="A"><span class="opt-letter">A</span><span class="opt-text">Memorisation and spatial memory of the court surface</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="B"><span class="opt-letter">B</span><span class="opt-text">Strategy, anticipation of opponent's shots, and real-time decision-making under pressure</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="C"><span class="opt-letter">C</span><span class="opt-text">Mathematical calculation of angles and trajectories before each shot</span></label>
+        <label class="opt"><input type="radio" name="a7q3" value="D"><span class="opt-letter">D</span><span class="opt-text">Language skills through calling the score after each point</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q3"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">4.</span>Why is pickleball particularly recommended for older adults or people with joint issues?</div>
+      <div class="options" data-q="a7q4" data-correct="C">
+        <label class="opt"><input type="radio" name="a7q4" value="A"><span class="opt-letter">A</span><span class="opt-text">The rules prohibit hard-hit shots which could strain joints</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="B"><span class="opt-letter">B</span><span class="opt-text">It can be played sitting down in an adapted version</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="C"><span class="opt-letter">C</span><span class="opt-text">The smaller court, lower net and slower ball reduce joint stress compared to tennis</span></label>
+        <label class="opt"><input type="radio" name="a7q4" value="D"><span class="opt-letter">D</span><span class="opt-text">Older adults have a natural advantage because the serve is played underhand</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q4"></div>
+    </div>
+    <div class="q-item">
+      <div class="q-text"><span class="q-num">5.</span>In terms of fitness, what makes pickleball superior to a 30-minute walk for most recreational players?</div>
+      <div class="options" data-q="a7q5" data-correct="B">
+        <label class="opt"><input type="radio" name="a7q5" value="A"><span class="opt-letter">A</span><span class="opt-text">It covers more total distance than a standard walk</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="B"><span class="opt-letter">B</span><span class="opt-text">The combination of cardiovascular work, lateral movement, and coordination challenges provides a more complete workout</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="C"><span class="opt-letter">C</span><span class="opt-text">Walking burns more calories per minute than pickleball</span></label>
+        <label class="opt"><input type="radio" name="a7q5" value="D"><span class="opt-letter">D</span><span class="opt-text">Walking does not develop any upper-body fitness unlike pickleball</span></label>
+      </div>
+      <div class="q-feedback" id="fb-a7q5"></div>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+      <button style="background:var(--accent);color:#001a00;border:none;cursor:pointer;border-radius:6px;padding:.7rem 1.75rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase" onclick="checkQuiz('a7',['a7q1','a7q2','a7q3','a7q4','a7q5'])">Check Answers</button>
+      <div class="act-score" id="score-a7">Score: <strong id="score-a7-val">-</strong></div>
+    </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-dark" id="train">
+<div class="inner">
+  <p class="sect-label reveal">Section 03 · Train & Compete</p>
+  <h2 class="sect-title reveal">TRAIN & <span class="accent">COMPETE</span></h2>
+  <p class="lead reveal">Complete these challenges and record your results. Upload evidence to Classroom.</p>
+  <div class="ch-list">
+    <div class="ch-item reveal">
+      <div class="ch-num">01</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Serve Accuracy Test</div><span class="ch-tag">Technical</span></div>
+        <p>Attempt 10 underhand serves from the correct position. Count how many land in the target service box. Try to beat your score in a second attempt after practising.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c1r1">Number of serves landing in the box on attempt 1 and attempt 2</label><textarea class="field-input" id="c1r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c1r2">What adjustments did you make between attempts? What improved your accuracy?</label><textarea class="field-input" id="c1r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">02</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Dink Rally</div><span class="ch-tag">Consistency</span></div>
+        <p>With a partner, stand at the kitchen line and maintain a continuous dinking rally. Count your longest streak without an error. Can you beat 20 consecutive dinks?</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c2r1">Longest dink rally achieved and typical error type (too hard / too short / out)</label><textarea class="field-input" id="c2r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c2r2">What technical adjustment helped you keep the ball low and controlled?</label><textarea class="field-input" id="c2r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">03</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Third Shot Drop Practice</div><span class="ch-tag">Tactical shot</span></div>
+        <p>From the baseline, attempt 10 third shot drops aiming to land softly in the opponent's kitchen. Your partner feeds you the second shot from the net.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c3r1">How many of your 10 drops landed correctly in the kitchen?</label><textarea class="field-input" id="c3r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c3r2">What made this shot difficult? What would you change in your technique?</label><textarea class="field-input" id="c3r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">04</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Mini-Game (Dinks Only)</div><span class="ch-tag">Game application</span></div>
+        <p>Play a point-scoring game with a partner where all shots must bounce in the kitchen or be a dink — no hard drives allowed. First to 11 wins.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c4r1">Final score and your assessment of your dinking consistency during the game</label><textarea class="field-input" id="c4r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c4r2">What tactical decisions did you make to win points without hard-hit shots?</label><textarea class="field-input" id="c4r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+    <div class="ch-item reveal">
+      <div class="ch-num">05</div>
+      <div class="ch-body">
+        <div class="ch-header"><div class="ch-title">Full Game Match</div><span class="ch-tag">Competitive play</span></div>
+        <p>Play a full game to 11 (win by 2) against a classmate applying all the rules learned. Reflect on your tactical decision-making.</p>
+        <div class="field-group" style="margin-top:.9rem"><label class="field-label" for="c5r1">Final score and 3 tactical decisions you made during the game</label><textarea class="field-input" id="c5r1" placeholder="Your answer..."></textarea></div>
+        <div class="field-group"><label class="field-label" for="c5r2">What was your biggest strength and biggest weakness in the full game?</label><textarea class="field-input" id="c5r2" placeholder="Your reflection..."></textarea></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="sect-mid" id="evaluate">
+<div class="inner">
+  <p class="sect-label reveal">Section 04 · Evaluate</p>
+  <h2 class="sect-title reveal">EVALU<span class="accent">ATE</span></h2>
+  <p class="lead reveal">Demonstrate what you have learned and reflect on your progress.</p>
+  <div class="quiz-box reveal">
+    <div class="quiz-label">Final Activity - Personal Reflection (open answer)</div>
+    <h4>Complete this unit honestly</h4>
+    <div class="field-group"><label class="field-label" for="af1">What aspect of pickleball do you find most interesting or unique compared to other racket sports you know?</label><textarea class="field-input" id="af1" placeholder="Your reflection..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af2">Name 3 tactical or technical concepts from this unit that you will apply the next time you play.</label><textarea class="field-input" id="af2" placeholder="1. ... 2. ... 3. ..."></textarea></div>
+    <div class="field-group"><label class="field-label" for="af3">Do you think pickleball could become as popular as tennis in Spain in the next 10 years? Justify your answer with arguments from this unit.</label><textarea class="field-input" id="af3" placeholder="Your justified answer..."></textarea></div>
+  </div>
+  <h3 class="subsect reveal">Concept Map</h3>
+  <div class="scheme-box reveal">
+    <div class="scheme-center">PICKLEBALL <span>The world's fastest growing sport</span></div>
+    <div style="text-align:center;color:rgba(255,255,255,.1);font-size:1.2rem;margin:.4rem 0">|</div>
+    <div class="scheme-row">
+      <div class="scheme-col"><div class="scheme-col-title">HISTORY</div>
+        <input class="field-input" type="text" placeholder="Year..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Creator..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">COURT ZONES</div>
+        <input class="field-input" type="text" placeholder="Kitchen..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Baseline..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">RULES</div>
+        <input class="field-input" type="text" placeholder="Double bounce..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Serve rule..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">SHOTS</div>
+        <input class="field-input" type="text" placeholder="Dink..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="3rd shot..." style="text-align:center;font-size:.82rem">
+      </div>
+      <div class="scheme-col"><div class="scheme-col-title">TACTICS</div>
+        <input class="field-input" type="text" placeholder="Kitchen control..." style="margin-bottom:.4rem;text-align:center;font-size:.82rem">
+        <input class="field-input" type="text" placeholder="Move together..." style="text-align:center;font-size:.82rem">
+      </div>
+    </div>
+  </div>
+  <div id="global-score-box">
+    <div style="font-family:'Space Mono',monospace;font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem">YOUR GLOBAL SCORE</div>
+    <div id="global-score-num" style="font-family:'Anton',sans-serif;font-size:5rem;color:white;letter-spacing:.05em;line-height:1"></div>
+    <div id="global-score-label" style="font-size:.9rem;color:var(--txt);margin-top:.5rem"></div>
+    <div style="font-size:.75rem;color:var(--txt-dim);margin-top:1rem">Multiple choice only. Open answers are reviewed by the teacher.</div>
+  </div>
+  <div style="text-align:center;margin:2rem 0" class="reveal">
+    <button style="background:var(--accent);color:{bc};border:none;cursor:pointer;border-radius:6px;padding:1rem 2.5rem;font-family:'Mulish',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase" onclick="calcGlobalScore()">See my global score</button>
+  </div>
+</div>
+</section>
+<footer><p>Reproduction or distribution of this guide without the prior written authorisation of the author is strictly prohibited. For exclusive educational use by students of the centre. Colegio Santa Maria la Blanca. © Jaime Redondo</p></footer>
+
+<script>
+var STORE_KEY='ef4eso-pickleball-v1';
+var CORRECT={'a2q1':'B','a2q2':'C','a2q3':'C','a2q4':'B','a2q5':'C','a3q1':'B','a3q2':'B','a3q3':'B','a3q4':'B','a3q5':'B','a4q1':'B','a4q2':'B','a4q3':'C','a4q4':'B','a4q5':'B','a5q1':'B','a5q2':'B','a5q3':'B','a5q4':'B','a5q5':'B','a6q1':'B','a6q2':'B','a6q3':'B','a6q4':'B','a6q5':'B','a7q1':'C','a7q2':'C','a7q3':'B','a7q4':'C','a7q5':'B'};
+var EXPL={'a2q1':'Correct. Pickleball was invented in 1965.','a2q2':'Correct. Pickleball combines elements of tennis, badminton and ping-pong.','a2q3':'Correct. The USA Pickleball Association reported 8.9 million players in 2023.','a2q4':'Correct. The name most likely comes from "pickle boat" in rowing.','a2q5':'Correct. The Royal Spanish Tennis Federation integrated pickleball in 2020.','a3q1':'Correct. The court is 20ft x 44ft (6.1m x 13.4m).','a3q2':'Correct. The kitchen is the non-volley zone 7 feet either side of the net.','a3q3':'Correct. Volleying while in or touching the kitchen line is a fault.','a3q4':'Correct. First to 11 with a 2-point lead wins.','a3q5':'Correct. Only the serving team can score points.','a4q1':'Correct. The ball must bounce once on each side before either team can volley.','a4q2':'Correct. The Double Bounce Rule prevents serve-and-volley dominance.','a4q3':'Correct. You may enter the kitchen after the ball has bounced there.','a4q4':'Correct. The serve must be underhand, below the waist, diagonally cross-court.','a4q5':'Correct. In doubles, both partners serve before a side-out occurs.','a5q1':'Correct. A dink is a soft shot landing in the opponent\'s kitchen.','a5q2':'Correct. The third shot drop allows the serving team to advance to the kitchen.','a5q3':'Correct. A deep return keeps the serving team at the baseline.','a5q4':'Correct. Volleying requires being outside the kitchen after the double bounce rule.','a5q5':'Correct. A dink is hit softly with an upward arc — control over power.','a6q1':'Correct. The kitchen-line team has better angles and can put dinks away more easily.','a6q2':'Correct. Partners maintain side-by-side positioning, closing gaps as a team.','a6q3':'Correct. Speed up on high dinks above the net to force an error.','a6q4':'Correct. Stacking is both partners on the same side to optimise forehand coverage.','a6q5':'Correct. Hit deep and move together to the kitchen line to control the net.','a7q1':'Correct. Pickleball does not develop maximal absolute strength.','a7q2':'Correct. The smaller court and underhand serve make it low impact.','a7q3':'Correct. Pickleball develops strategy, anticipation and real-time decision-making.','a7q4':'Correct. The smaller court and slower ball reduce joint stress.','a7q5':'Correct. The combination of cardiovascular work and coordination is more complete.'};
+var ACTS={'a2':['a2q1','a2q2','a2q3','a2q4','a2q5'],'a3':['a3q1','a3q2','a3q3','a3q4','a3q5'],'a4':['a4q1','a4q2','a4q3','a4q4','a4q5'],'a5':['a5q1','a5q2','a5q3','a5q4','a5q5'],'a6':['a6q1','a6q2','a6q3','a6q4','a6q5'],'a7':['a7q1','a7q2','a7q3','a7q4','a7q5']};
+window.addEventListener('scroll',function(){var d=document.documentElement;document.getElementById('progFill').style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible');});},{threshold:.07});
+document.querySelectorAll('.reveal').forEach(function(r){ro.observe(r);});
+document.addEventListener('change',function(e){if(e.target.type==='radio'){var n=e.target.name;document.querySelectorAll('.opt input[name="'+n+'"]').forEach(function(r){r.closest('.opt').classList.toggle('selected',r.checked);});saveLocal();}});
+function checkQuiz(actId,qIds){
+  var correct=0;
+  qIds.forEach(function(qId){
+    var sel=document.querySelector('input[name="'+qId+'"]:checked');
+    var fb=document.getElementById('fb-'+qId);
+    var cv=CORRECT[qId];
+    document.querySelectorAll('.options[data-q="'+qId+'"] .opt').forEach(function(o){o.classList.remove('correct','wrong','selected');if(o.querySelector('input').value===cv)o.classList.add('correct');});
+    if(sel){if(sel.value===cv){correct++;fb.textContent=EXPL[qId]||'Correct';fb.className='q-feedback show ok';}
+    else{sel.closest('.opt').classList.add('wrong');var el=document.querySelector('.options[data-q="'+qId+'"] input[value="'+cv+'"]');var ct=el?el.closest('.opt').querySelector('.opt-text').textContent:'';fb.textContent='Incorrect. Correct answer: '+cv+' - '+ct;fb.className='q-feedback show ko';}}
+    else{fb.textContent='No option selected.';fb.className='q-feedback show ko';}
+  });
+  var sv=document.getElementById('score-'+actId+'-val');var se=document.getElementById('score-'+actId);
+  if(sv&&se){sv.textContent=correct+'/'+qIds.length+' ('+Math.round(correct/qIds.length*100)+'%)';se.classList.add('show');}
+  var d=JSON.parse(localStorage.getItem(STORE_KEY)||'{}');d['score_'+actId]=correct+'/'+qIds.length;localStorage.setItem(STORE_KEY,JSON.stringify(d));saveLocal();
+}
+function calcGlobalScore(){
+  var tot=0,totQ=0;
+  Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  var pct=totQ>0?Math.round(tot/totQ*100):0;var nota=(pct/100*10).toFixed(1);
+  var box=document.getElementById('global-score-box');
+  document.getElementById('global-score-num').textContent=nota+'/10';
+  var lbls=['Keep reviewing the theory','On the right track - keep going','Good work! You know the concepts','Excellent - outstanding performance'];
+  document.getElementById('global-score-label').textContent=pct<40?lbls[0]:pct<60?lbls[1]:pct<80?lbls[2]:lbls[3];
+  box.style.display='block';box.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function saveLocal(){var data={};document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value;});document.querySelectorAll('input[type=radio]:checked').forEach(function(r){data['radio_'+r.name]=r.value;});localStorage.setItem(STORE_KEY,JSON.stringify(data));}
+function loadLocal(){var raw=localStorage.getItem(STORE_KEY);if(!raw)return;var data=JSON.parse(raw);Object.keys(data).forEach(function(id){if(id.indexOf('radio_')===0){var n=id.replace('radio_','');var r=document.querySelector('input[name="'+n+'"][value="'+data[id]+'"]');if(r){r.checked=true;r.closest('.opt').classList.add('selected');}}else{var el=document.getElementById(id);if(el)el.value=data[id];}});}
+document.querySelectorAll('input,textarea').forEach(function(el){el.addEventListener('input',saveLocal);});
+window.addEventListener('load',function(){loadLocal();});
+function savePDF(){saveLocal();showToast('Preparing PDF...','toast-pdf');setTimeout(function(){window.print();},400);}
+function clearAll(){if(!confirm('Clear ALL answers?'))return;document.querySelectorAll('input,textarea').forEach(function(el){el.value='';});document.querySelectorAll('input[type=radio]').forEach(function(r){r.checked=false;r.closest('.opt').classList.remove('selected','correct','wrong');});document.querySelectorAll('.q-feedback').forEach(function(f){f.className='q-feedback';f.textContent='';});document.querySelectorAll('.act-score').forEach(function(s){s.classList.remove('show');});document.getElementById('global-score-box').style.display='none';localStorage.removeItem(STORE_KEY);}
+function showToast(msg,cls){var t=document.getElementById('toast');t.textContent=msg;t.className='toast '+cls+' show';setTimeout(function(){t.classList.remove('show');},3000);}
+var SCRIPT_URL='https://script.google.com/macros/s/AKfycbzqJXJkxxCjwLl4meXVV67Y3Xba32GFKxBl7kYk9DLxAUNwYeKMjn2Bx6wHv-neF37W/exec';
+function openSubmitModal(){var nombre=document.getElementById('st-name').value.trim();var res=document.getElementById('submitResumen');if(!nombre){res.innerHTML='<span style="color:#ef4444;font-weight:800">Name missing.</span> Please fill in your name.';}else{var g=document.getElementById('st-group').value.trim();var dt=document.getElementById('st-date').value.trim();res.innerHTML='<strong style="color:white">Student:</strong> '+nombre+' | <strong style="color:white">Group:</strong> '+(g||'-')+' | <strong style="color:white">Date:</strong> '+(dt||'-');}document.getElementById('submitConfirmView').style.display='block';document.getElementById('submitSentView').style.display='none';document.getElementById('submitConfirmBtn').disabled=!nombre;document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmitModal(){document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('submitModal').addEventListener('click',function(e){if(e.target===this)closeSubmitModal();});
+async function submitToSheets(){
+  var btn=document.getElementById('submitConfirmBtn');var btnText=document.getElementById('submitBtnText');
+  var data={__guide__:'4ESO-Pickleball'};
+  document.querySelectorAll('input[id],textarea[id]').forEach(function(el){if(el.id)data[el.id]=el.value.trim();});
+  Object.keys(CORRECT).forEach(function(qId){var sel=document.querySelector('input[name="'+qId+'"]:checked');data['resp_'+qId]=sel?sel.value:'-';data['corr_'+qId]=sel?(sel.value===CORRECT[qId]?'correct':'incorrect'):'-';});
+  Object.keys(ACTS).forEach(function(act){var c=0;ACTS[act].forEach(function(qId){var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])c++;});data['score_'+act]=c+'/'+ACTS[act].length;});
+  var tot=0,totQ=0;Object.keys(ACTS).forEach(function(act){ACTS[act].forEach(function(qId){totQ++;var s=document.querySelector('input[name="'+qId+'"]:checked');if(s&&s.value===CORRECT[qId])tot++;});});
+  data['nota_global_pct']=totQ>0?Math.round(tot/totQ*100)+'%':'-';data['nota_global_10']=totQ>0?(tot/totQ*10).toFixed(1):'-';
+  btn.disabled=true;btnText.innerHTML='<span class="spinner"></span> Sending...';
+  try{await fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});document.getElementById('submitConfirmView').style.display='none';document.getElementById('submitSentView').style.display='block';var mb=document.getElementById('btnSubmit');mb.textContent='Submitted';mb.style.background='linear-gradient(135deg,#16a34a,#15803d)';showToast('Submitted!','toast-ok');}
+  catch(err){btnText.innerHTML='Confirm submission';btn.disabled=false;showToast('Error sending.','toast-err');}
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'});});});
+
+/* ── Vídeo overlay ── */
+(function(){
+  document.querySelectorAll('.vid-thumb').forEach(function(thumb){
+    thumb.addEventListener('click',function(){
+      var vid=thumb.dataset.vid;
+      var title=thumb.dataset.title||'';
+      var overlay=document.getElementById('vid-overlay-global');
+      if(!overlay){
+        overlay=document.createElement('div');
+        overlay.id='vid-overlay-global';
+        overlay.className='vid-overlay';
+        overlay.innerHTML='<div class="vid-overlay-inner"><button class="vid-overlay-close" onclick="document.getElementById(\'vid-overlay-global\').classList.remove(\'open\');this.closest(\'.vid-overlay\').querySelector(\'iframe\').src=\'\'" title="Cerrar">✕</button><iframe allowfullscreen allow="autoplay; encrypted-media"></iframe></div><p class="vid-overlay-note">Si no carga, <a id=\'vid-direct-link\' href=\'#\' target=\'_blank\' rel=\'noopener\'>ábrelo en YouTube</a></p>';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click',function(e){
+          if(e.target===overlay){overlay.classList.remove('open');overlay.querySelector('iframe').src='';}
+        });
+      }
+      var iframe=overlay.querySelector('iframe');
+      var link=document.getElementById('vid-direct-link');
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      overlay.classList.add('open');
+    });
+  });
+})();
+
+
+/* ─── EBI video overlay ─────── */
+(function(){
+  // Crear overlay una sola vez
+  var ov=document.createElement('div');
+  ov.id='ebi-vid-overlay';
+  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
+  document.body.appendChild(ov);
+  var iframe=document.getElementById('ebi-ov-iframe');
+  var link=document.getElementById('ebi-ov-link');
+  function closeOv(){ov.classList.remove('open');iframe.src='';}
+  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
+  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
+  // Enlazar todos los thumbnails
+  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
+    function open(){
+      var vid=t.dataset.vid;
+      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
+      if(link)link.href='https://www.youtube.com/watch?v='+vid;
+      ov.classList.add('open');
+    }
+    t.addEventListener('click',open);
+    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
+  });
+})();
+
+</script>
+</body>
+</html>
