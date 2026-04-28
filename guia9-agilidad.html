@@ -181,6 +181,21 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:8
 .ebi-ov-note a{color:var(--accent);font-weight:700}
 @media(max-width:600px){.ebi-ov-close{top:-40px}}
 @media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+
+/* ── BACK TO INDEX BUTTON ── */
+.nav-back {
+  font-size: .7rem !important;
+  padding: .45rem .9rem !important;
+  background: rgba(255,255,255,.07) !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  margin-right: .5rem !important;
+  transition: background .2s !important;
+  white-space: nowrap;
+}
+.nav-back:hover {
+  background: rgba(255,255,255,.14) !important;
+}
 </style>
 </head>
 <body>
@@ -217,6 +232,7 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:8
 <header>
   <a class="logo" href="#inicio">⚡ AGILIDAD <span class="logo-badge">2 ESO · EF</span></a>
   <nav>
+    <a href="index.html" class="nav-back">← Inicio</a>
     <a href="#activacion">Activa</a>
     <a href="#conceptos">Táctica, Técnica y Reglamento</a>
     <a href="#practica">Entrena</a>
