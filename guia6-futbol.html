@@ -157,30 +157,9 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:8
 
 
 
-/* ─── EBI video block ─────────────────────────────── */
-.ebi-vid-wrap{margin:2.5rem 0 3rem;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#0a0a0a}
-.ebi-vid-header{display:flex;align-items:center;gap:.85rem;padding:.8rem 1.4rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.07)}
-.ebi-vid-badge{font-family:'Space Mono',monospace;font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
-.ebi-vid-ttl{font-size:.8rem;font-weight:700;color:rgba(255,255,255,.65);flex:1}
-.ebi-vid-thumb{position:relative;cursor:pointer;display:block;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
-.ebi-vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
-.ebi-vid-thumb:hover img{transform:scale(1.03)}
-.ebi-vid-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;background:rgba(0,0,0,.72);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
-.ebi-vid-thumb:hover .ebi-vid-play{background:var(--accent);transform:translate(-50%,-50%) scale(1.08)}
-.ebi-vid-foot{padding:.65rem 1.4rem;font-size:.72rem;color:rgba(255,255,255,.38);display:flex;align-items:center;gap:.5rem}
-.ebi-vid-foot a{color:var(--accent);font-weight:700;text-decoration:none}
-.ebi-vid-foot a:hover{text-decoration:underline}
-/* Overlay */
-#ebi-vid-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:9900;align-items:center;justify-content:center;flex-direction:column;gap:1.25rem}
-#ebi-vid-overlay.open{display:flex}
-.ebi-ov-inner{position:relative;width:min(92vw,1000px);aspect-ratio:16/9}
-.ebi-ov-inner iframe{position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:10px}
-.ebi-ov-close{position:absolute;top:-46px;right:0;background:rgba(255,255,255,.12);border:none;color:white;font-size:1.1rem;width:38px;height:38px;border-radius:50%;cursor:pointer;font-weight:700;transition:background .2s}
-.ebi-ov-close:hover{background:rgba(255,255,255,.3)}
-.ebi-ov-note{font-size:.76rem;color:rgba(255,255,255,.45);text-align:center}
-.ebi-ov-note a{color:var(--accent);font-weight:700}
-@media(max-width:600px){.ebi-ov-close{top:-40px}}
-@media print{.ebi-vid-wrap,#ebi-vid-overlay{display:none!important}}
+/* ── VIDEO EMBED ── */
+.video-wrap{position:relative;width:100%;max-width:800px;margin:2rem auto;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;box-shadow:0 16px 48px rgba(0,0,0,.5)}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
 
 /* ── BACK TO INDEX BUTTON ── */
 .nav-back {
@@ -303,22 +282,8 @@ footer p{font-size:.7rem;color:rgba(255,255,255,.14);line-height:1.7;max-width:8
 </div>
 </section>
 
-<!-- EBI-VIDEO-BLOCK -->
-<div class="ebi-vid-wrap reveal">
-  <div class="ebi-vid-header">
-    <span class="ebi-vid-badge">▶ VÍDEO DE LA UNIDAD</span>
-    <span class="ebi-vid-ttl">Técnica de Fútbol — Control y pase</span>
-  </div>
-  <div class="ebi-vid-thumb" data-vid="KMxNGSFNFuA" data-title="Técnica de Fútbol — Control y pase" tabindex="0" role="button" aria-label="Play: Técnica de Fútbol — Control y pase">
-    <img src="https://img.youtube.com/vi/KMxNGSFNFuA/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/KMxNGSFNFuA/mqdefault.jpg'" alt="Técnica de Fútbol — Control y pase" loading="lazy" width="1280" height="720">
-    <div class="ebi-vid-play">
-      <svg viewBox="0 0 24 24" fill="white" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
-    </div>
-  </div>
-  <div class="ebi-vid-foot">
-    <span>Haz clic en la imagen para reproducir · O ábrelo en</span>
-    <a href="https://www.youtube.com/watch?v=KMxNGSFNFuA" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
-  </div>
+<div class="video-wrap reveal">
+  <iframe src="https://drive.google.com/file/d/15RiZhWfoCa2LPLnls9s3xIASpoIv2jZf/preview" allow="autoplay" allowfullscreen loading="lazy"></iframe>
 </div>
 <section class="sect-mid" id="conceptos">
 <div class="inner">
@@ -830,31 +795,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener
 })();
 
 
-/* ─── EBI video overlay ─────── */
-(function(){
-  // Crear overlay una sola vez
-  var ov=document.createElement('div');
-  ov.id='ebi-vid-overlay';
-  ov.innerHTML='<div class="ebi-ov-inner"><button class="ebi-ov-close" id="ebi-ov-cls">✕</button><iframe id="ebi-ov-iframe" allowfullscreen allow="autoplay;encrypted-media;picture-in-picture"></iframe></div><p class="ebi-ov-note">Si no carga: <a id="ebi-ov-link" href="#" target="_blank" rel="noopener">abrir en YouTube ↗</a></p>';
-  document.body.appendChild(ov);
-  var iframe=document.getElementById('ebi-ov-iframe');
-  var link=document.getElementById('ebi-ov-link');
-  function closeOv(){ov.classList.remove('open');iframe.src='';}
-  document.getElementById('ebi-ov-cls').addEventListener('click',closeOv);
-  ov.addEventListener('click',function(e){if(e.target===ov)closeOv();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeOv();});
-  // Enlazar todos los thumbnails
-  document.querySelectorAll('.ebi-vid-thumb').forEach(function(t){
-    function open(){
-      var vid=t.dataset.vid;
-      iframe.src='https://www.youtube-nocookie.com/embed/'+vid+'?autoplay=1&rel=0&modestbranding=1';
-      if(link)link.href='https://www.youtube.com/watch?v='+vid;
-      ov.classList.add('open');
-    }
-    t.addEventListener('click',open);
-    t.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
-  });
-})();
+
 </script>
 </body>
 </html>
